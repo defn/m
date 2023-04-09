@@ -30,7 +30,7 @@ Other useful info to include: vault pod logs, `kubectl describe statefulset vaul
 A clear and concise description of what you expected to happen.
 
 **Environment**
-* Kubernetes version:
+* Kubernetes version: 
   * Distribution or cloud vendor (OpenShift, EKS, GKE, AKS, etc.):
   * Other configuration options or runtime services (istio, etc.):
 * vault-helm version:

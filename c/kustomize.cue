@@ -242,21 +242,25 @@ kustomize: "keda": #KustomizeHelm & {
 	}
 }
 
-// https://artifacthub.io/packages/helm/external-dns/external-dns
+// https://artifacthub.io/packages/helm/bitnami/external-dns
 kustomize: "external-dns": #KustomizeHelm & {
 	namespace: "external-dns"
 
 	helm: {
 		release: "external-dns"
 		name:    "external-dns"
-		version: "1.12.2"
-		repo:    "https://kubernetes-sigs.github.io/external-dns"
+		version: "6.17.0"
+		repo:    "https://charts.bitnami.com/bitnami"
 		values: {
 			sources: [
 				"service",
 				"ingress",
 			]
 			provider: "cloudflare"
+			cloudflare: {
+				email:   "cloudflare@defn.us"
+				proxied: false
+			}
 			domainFilters: [
 				"defn.run",
 			]

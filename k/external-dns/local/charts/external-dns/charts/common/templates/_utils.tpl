@@ -6,7 +6,7 @@ Usage:
 */}}
 {{- define "common.utils.secret.getvalue" -}}
 {{- $varname := include "common.utils.fieldToEnvVar" . -}}
-export {{ $varname }}=$(kubectl get secret --namespace {{ .context.Release.Namespace | quote }} {{ .secret }} -o jsonpath="{.data.{{ .field }}}" | base64 -d)
+export {{ $varname }}=$(kubectl get secret --namespace {{ include "common.names.namespace" .context | quote }} {{ .secret }} -o jsonpath="{.data.{{ .field }}}" | base64 -d)
 {{- end -}}
 
 {{/*
@@ -41,7 +41,7 @@ Usage:
   {{- $value = ( index $latestObj . ) -}}
   {{- $latestObj = $value -}}
 {{- end -}}
-{{- printf "%v" (default "" $value) -}}
+{{- printf "%v" (default "" $value) -}} 
 {{- end -}}
 
 {{/*
@@ -58,5 +58,5 @@ Usage:
     {{- $key = . }}
   {{- end -}}
 {{- end -}}
-{{- printf "%s" $key -}}
+{{- printf "%s" $key -}} 
 {{- end -}}
