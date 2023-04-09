@@ -340,17 +340,17 @@
       },
       "locked": {
         "dir": "pkg/n",
-        "lastModified": 1681022568,
-        "narHash": "sha256-3dAQYU+nH+f3EjtZfUDxxV6cp7ao4NbjlMQWmM9RbbE=",
+        "lastModified": 1681024028,
+        "narHash": "sha256-80KAbn8pwawsxI8ARHqQ7wzxccyPL/O6sqUdg5HUpxg=",
         "owner": "defn",
         "repo": "m",
-        "rev": "a2b200d47d7eda6295b29045749df4c77b0c4820",
+        "rev": "2c285d8c6e1591083d9ab524e7880592928b89c0",
         "type": "github"
       },
       "original": {
         "dir": "pkg/n",
         "owner": "defn",
-        "ref": "pkg-n-0.0.90",
+        "ref": "pkg-n-0.0.91",
         "repo": "m",
         "type": "github"
       }
