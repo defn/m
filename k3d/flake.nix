@@ -53,7 +53,6 @@
             ;;
           create)
             export DEFN_DEV_HOST_API="$(host $host | grep 'has address' | awk '{print $NF}')"
-            if [[ -z "$DEFN_DEV_HOST_API" ]]; then DEFN_DEV_HOST_API=169.254.32.2; fi
             this-k3d-provision ${nme} $name
             ;;
           root)
