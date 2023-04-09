@@ -2,11 +2,14 @@
 
 patches:
   - path: patch-service-tailscale.yaml
-namespace: caddy
 resources:
   - resource-namespace-caddy.yaml
+namespace: caddy
 helmCharts:
   - releaseName: caddy
+    name: caddy
+    version: 0.2.4
+    repo: https://charts.alekc.dev
     namespace: caddy
     valuesInline:
       listenPort: 80
@@ -37,7 +40,4 @@ helmCharts:
       volumeMounts:
         - name: certs
           mountPath: /certs
-    name: caddy
-    version: 0.2.4
-    repo: https://charts.alekc.dev
     includeCRDs: true
