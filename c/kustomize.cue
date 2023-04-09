@@ -736,7 +736,7 @@ kustomize: "caddy": #KustomizeHelm & {
 
 				https://hello.defn.run {
 					tls /certs/tls.crt /certs/tls.key
-					reverse_proxy http://hellommake.default.svc.cluster.local{uri} {
+					reverse_proxy hello.default.svc.cluster.local {
 						header_up -Host
 						header_up X-defn-label0	"{http.request.host.labels.0}"
 						header_up X-defn-label1	"{http.request.host.labels.1}"
