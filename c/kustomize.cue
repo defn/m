@@ -897,7 +897,7 @@ kustomize: "defn-shared": #Kustomize & {
 				name: "dev"
 			}
 			dataFrom: [{
-				extract: key: "dev/amanibhavam-global-external-dns"
+				extract: key: "dev/amanibhavam-global"
 			}]
 			target: {
 				name:           "external-dns"
