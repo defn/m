@@ -734,10 +734,14 @@ kustomize: "caddy": #KustomizeHelm & {
 					}
 				}
 
-				{api}.defn.run {
+				https://{api}.defn.run {
 					tls /certs/tls.crt /certs/tls.key
-					reverse_proxy {api}.default.svc.cluster.local{uri} {
+					reverse_proxy {http.request.host.labels.2}.default.svc.cluster.local{uri} {
 						header_up -Host
+						header_up X-defn-api "{api}"
+						header_up X-defn-label0	"{http.request.host.labels.0}"
+						header_up X-defn-label1	"{http.request.host.labels.1}"
+						header_up X-defn-label2	"{http.request.host.labels.2}"
 					}
 				}
 				"""
