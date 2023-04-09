@@ -30,7 +30,6 @@ spec:
   destination:
     name: k3d-global
     namespace: argo-workflows
-    createNamespace: true
   project: default
   source:
     path: r/argo-workflows
@@ -40,7 +39,8 @@ spec:
     automated:
       prune: true
       selfHeal: true
-    syncOptions: []
+    syncOptions:
+    - CreateNamespace=true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application

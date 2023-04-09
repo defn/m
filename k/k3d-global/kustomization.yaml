@@ -169,6 +169,7 @@ helmCharts:
             project: default
             destination:
               name: k3d-global
+              namespace: argo-workflows
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
@@ -177,7 +178,8 @@ helmCharts:
               automated:
                 prune: true
                 selfHeal: true
-              syncOptions: []
+              syncOptions:
+                - CreateNamespace=true
         tfo: |
           apiVersion: argoproj.io/v1alpha1
           kind: Application

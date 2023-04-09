@@ -28,7 +28,7 @@ env: (#Transform & {
 
 		[N=string]: {
 			bootstrap: {
-				"cert-manager": [1]
+				"cert-manager": [1, ""]
 			}
 		}
 	}
@@ -41,30 +41,30 @@ env: (#Transform & {
 		// control is the control plane, used by the operator.
 		control: {
 			bootstrap: {
-				"cert-manager": [1]
-				"pod-identity-webhook": [10]
-				"external-secrets-operator": [10]
-				"k3d-control-secrets-store": [20]
+				"cert-manager": [1, ""]
+				"pod-identity-webhook": [10, ""]
+				"external-secrets-operator": [10, ""]
+				"k3d-control-secrets-store": [20, ""]
 			}
 		}
 
 		// global is the global control plane, used by all machines.
 		global: {
 			bootstrap: {
-				"kyverno": [1, "ServerSideApply=true"]
-				"cert-manager": [2]
-				"pod-identity-webhook": [10]
-				"external-secrets-operator": [10]
-				"k3d-global-secrets-store": [20]
-				"defn-shared": [30]
-				"external-dns": [40]
-				"argo-workflows": [40]
-				"tfo": [40]
-				"knative": [40]
-				"kourier": [40]
-				"defn": [40]
-				"caddy": [50]
-				"argo-cd": [1000]
+				"kyverno": [1, "", "ServerSideApply=true"]
+				"cert-manager": [2, ""]
+				"pod-identity-webhook": [10, ""]
+				"external-secrets-operator": [10, ""]
+				"k3d-global-secrets-store": [20, ""]
+				"defn-shared": [30, ""]
+				"external-dns": [40, ""]
+				"argo-workflows": [40, "argo-workflows", "CreateNamespace=true"]
+				"tfo": [40, ""]
+				"knative": [40, ""]
+				"kourier": [40, ""]
+				"defn": [40, ""]
+				"caddy": [50, ""]
+				"argo-cd": [1000, ""]
 			}
 		}
 	}

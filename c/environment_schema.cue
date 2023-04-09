@@ -82,7 +82,8 @@ import (
 				machine_name:     ctx.machine_name
 				app_name:         _app_name
 				app_wave:         _app[0]
-				app_sync_options: _app[1:]
+				app_namespace:    _app[1]
+				app_sync_options: _app[2:]
 			}
 		}
 	}
@@ -92,6 +93,7 @@ import (
 	machine_type:     string
 	machine_name:     string
 	app_name:         string
+	app_namespace:    string
 	app_wave:         int
 	app_sync_options: [...string] | *[]
 
@@ -115,6 +117,9 @@ import (
 
 			destination: {
 				name: "\(machine_type)-\(machine_name)"
+				if app_namespace != "" {
+					namespace: app_namespace
+				}
 			}
 
 			source: {
@@ -162,7 +167,8 @@ import (
 	spec: {
 		project: "default"
 
-		destination: name: string
+		destination: name:       string
+		destination: namespace?: string
 		source: {
 			repoURL:        "https://github.com/defn/m"
 			targetRevision: "main"
