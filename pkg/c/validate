@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+cue version
+hof version
