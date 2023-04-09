@@ -724,18 +724,16 @@ kustomize: "caddy": #KustomizeHelm & {
 				port:    443
 			}
 			config: global: """
-				{
-					auto_https on
+				auto_https on
 
-					local_certs
+				local_certs
 
-					log {
-						output stdout
-					}
+				log {
+					output stdout
+				}
 
-					map {http.request.host.labels.2} $upstream_scheme {
-						default http
-					}
+				map {http.request.host.labels.2} $upstream_scheme {
+					default http
 				}
 				"""
 
