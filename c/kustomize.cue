@@ -725,7 +725,7 @@ kustomize: "caddy": #KustomizeHelm & {
 			}
 			config: caddyFile: """
 				map {http.request.host.labels.2} $upstream_scheme {
-					default http
+					"default" "http"
 				}
 
 				https://argocd.defn.run {
