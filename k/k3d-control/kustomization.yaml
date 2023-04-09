@@ -24,7 +24,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/cert-manager
+              path: k/cert-manager/release
             syncPolicy:
               automated:
                 prune: true
@@ -45,7 +45,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/pod-identity-webhook
+              path: k/pod-identity-webhook/release
             syncPolicy:
               automated:
                 prune: true
@@ -66,7 +66,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/external-secrets-operator
+              path: k/external-secrets-operator/release
             syncPolicy:
               automated:
                 prune: true
@@ -87,7 +87,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/k3d-control-secrets-store
+              path: k/k3d-control-secrets-store/release
             syncPolicy:
               automated:
                 prune: true

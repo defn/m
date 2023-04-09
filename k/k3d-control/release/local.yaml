@@ -10,7 +10,7 @@ spec:
     name: k3d-control
   project: default
   source:
-    path: k/cert-manager
+    path: k/cert-manager/release
     repoURL: https://github.com/defn/m
     targetRevision: main
   syncPolicy:
@@ -31,7 +31,7 @@ spec:
     name: k3d-control
   project: default
   source:
-    path: k/external-secrets-operator
+    path: k/external-secrets-operator/release
     repoURL: https://github.com/defn/m
     targetRevision: main
   syncPolicy:
@@ -52,7 +52,7 @@ spec:
     name: k3d-control
   project: default
   source:
-    path: k/pod-identity-webhook
+    path: k/pod-identity-webhook/release
     repoURL: https://github.com/defn/m
     targetRevision: main
   syncPolicy:
@@ -73,7 +73,7 @@ spec:
     name: k3d-control
   project: default
   source:
-    path: k/k3d-control-secrets-store
+    path: k/k3d-control-secrets-store/release
     repoURL: https://github.com/defn/m
     targetRevision: main
   syncPolicy:

@@ -3,14 +3,14 @@ kind: Application
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "1"
-  name: vcluster-control-vc0-cert-manager
+  name: vcluster-control-vc3-cert-manager
   namespace: argocd
 spec:
   destination:
-    name: vcluster-control-vc0
+    name: vcluster-control-vc3
   project: default
   source:
-    path: k/cert-manager
+    path: k/cert-manager/release
     repoURL: https://github.com/defn/m
     targetRevision: main
   syncPolicy:
