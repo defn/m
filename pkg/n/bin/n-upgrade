@@ -16,8 +16,10 @@ function main {
 					fi
 					echo $repo $tag "$(cat "/tmp/tags/$repo/tags.json" | jq -r '.[].ref' | grep refs/tags | perl -pe 's{refs/tags/}{}' | grep "^$prefix" | egrep -v '[-](rc|beta)'| tail -1)"
 				done | while read -r repo tag latest; do 
-					echo "$repo $tag $latest" 1>&2
-					perl -pe "s{github:$repo/$tag}{github:$repo/$latest}" -i flake.nix
+					if [[ -n "$latest" ]]; then
+						echo "$repo $tag $latest" 1>&2
+						perl -pe "s{github:$repo/$tag}{github:$repo/$latest}" -i flake.nix
+					fi
 				done
 		)
 	done
