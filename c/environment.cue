@@ -64,6 +64,7 @@ env: (#Transform & {
 				"kourier": [40, ""]
 				"defn": [40, ""]
 				"caddy": [50, ""]
+				"hello": [60, ""]
 				"argo-cd": [1000, ""]
 			}
 		}
