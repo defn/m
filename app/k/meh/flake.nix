@@ -1,7 +1,7 @@
 {
   inputs = {
-    argo-cd.url = github:defn/m/app-argo-cd-0.0.17?dir=app/k/argo-cd
-    argo-workflows.url = github:defn/m/app-argo-workflows-0.0.16?dir=app/k/argo-workflows
+    argo-cd.url = github:defn/m/?dir=app/k/argo-cd
+    argo-workflows.url = github:defn/m/?dir=app/k/argo-workflows
   };
 
   outputs = inputs: inputs.argo-cd.inputs.app.pkg.main rec {
