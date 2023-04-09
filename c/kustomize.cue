@@ -252,6 +252,7 @@ kustomize: "external-dns": #KustomizeHelm & {
 		version: "6.17.0"
 		repo:    "https://charts.bitnami.com/bitnami"
 		values: {
+			logLevel: "debug"
 			sources: [
 				"service",
 				"ingress",

@@ -10,6 +10,7 @@ helmCharts:
       proxied: false
     domainFilters:
     - defn.run
+    logLevel: debug
     provider: cloudflare
     sources:
     - service

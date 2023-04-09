@@ -11,6 +11,7 @@ helmCharts:
     repo: https://charts.bitnami.com/bitnami
     namespace: external-dns
     valuesInline:
+      logLevel: debug
       sources:
         - service
         - ingress

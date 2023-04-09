@@ -1,0 +1,150 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: caddy
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/instance: caddy
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: caddy
+    app.kubernetes.io/version: 2.6.4
+    helm.sh/chart: caddy-0.2.4
+  name: caddy
+  namespace: caddy
+---
+apiVersion: v1
+data:
+  Caddyfile: "{\n  http_port 80\n  \n  local_certs\n  log {\n  \toutput stdout\n  }\n}\n\n:9999
+    {\n  handle / {\n    respond \"OK\"\n  }\n}\n\n\nhttps://argocd.defn.run {\n\ttls
+    /certs/tls.crt /certs/tls.key\n\treverse_proxy https://argocd-server.argocd.svc.cluster.local
+    {\n\t\ttransport http {\n\t\t\ttls\n\t\t\ttls_insecure_skip_verify\n\t\t}\n\t}\n}\n"
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/instance: caddy
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: caddy
+    app.kubernetes.io/version: 2.6.4
+    helm.sh/chart: caddy-0.2.4
+  name: caddy
+  namespace: caddy
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: argocd.defn.run
+  labels:
+    app.kubernetes.io/instance: caddy
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: caddy
+    app.kubernetes.io/version: 2.6.4
+    helm.sh/chart: caddy-0.2.4
+  name: caddy
+  namespace: caddy
+spec:
+  loadBalancerClass: tailscale
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: http
+  - name: https
+    port: 443
+    protocol: TCP
+    targetPort: https
+  selector:
+    app.kubernetes.io/instance: caddy
+    app.kubernetes.io/name: caddy
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/instance: caddy
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: caddy
+    app.kubernetes.io/version: 2.6.4
+    helm.sh/chart: caddy-0.2.4
+  name: caddy
+  namespace: caddy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: caddy
+      app.kubernetes.io/name: caddy
+  template:
+    metadata:
+      annotations:
+        checksum/config: 6c5a13ef080b8c3808751e43a7bc3a566850a5a12c60b2a052d93afdaeea5be1
+      labels:
+        app.kubernetes.io/instance: caddy
+        app.kubernetes.io/name: caddy
+    spec:
+      containers:
+      - image: caddy:2.6.4-alpine
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          httpGet:
+            path: /
+            port: health
+        name: caddy
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+        - containerPort: 443
+          name: https
+          protocol: TCP
+        - containerPort: 9999
+          name: health
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 32m
+            memory: 64Mi
+        securityContext: {}
+        volumeMounts:
+        - mountPath: /etc/caddy/Caddyfile
+          name: config
+          subPath: Caddyfile
+        - mountPath: /certs
+          name: certs
+      securityContext: {}
+      serviceAccountName: caddy
+      volumes:
+      - configMap:
+          name: caddy
+        name: config
+      - name: certs
+        secret:
+          optional: false
+          secretName: defn-run-wildcard
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    helm.sh/hook: test
+  labels:
+    app.kubernetes.io/instance: caddy
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: caddy
+    app.kubernetes.io/version: 2.6.4
+    helm.sh/chart: caddy-0.2.4
+  name: caddy-test-connection
+  namespace: caddy
+spec:
+  containers:
+  - args:
+    - caddy:80
+    command:
+    - wget
+    image: busybox
+    name: wget
+  restartPolicy: Never
