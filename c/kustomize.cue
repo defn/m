@@ -815,7 +815,7 @@ kustomize: "bonchon": #Kustomize & {
 
 		spec: {
 			terraformVersion: "1.0.0"
-			terraformModule: source: "https://github.com/defn/m.git//tf/fried-chicken?ref=master"
+			terraformModule: source: "https://github.com/defn/m.git//tf/fried-chicken?ref=main"
 
 			serviceAccount: "default"
 			scmAuthMethods: []

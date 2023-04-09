@@ -119,7 +119,7 @@ import (
 
 			source: {
 				repoURL:        "https://github.com/defn/m"
-				targetRevision: "master"
+				targetRevision: "main"
 				path:           "k/\(app_name)"
 			}
 
@@ -165,7 +165,7 @@ import (
 		destination: name: string
 		source: {
 			repoURL:        "https://github.com/defn/m"
-			targetRevision: "master"
+			targetRevision: "main"
 			path:           string
 		}
 

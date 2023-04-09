@@ -215,7 +215,7 @@ kustomize: [NAME=string]: _name: NAME
 
 		spec: {
 			terraformVersion: "1.0.0"
-			terraformModule: source: "https://github.com/ppm.git//app/tf/m/egg?ref=master"
+			terraformModule: source: "https://github.com/ppm.git//app/tf/m/egg?ref=main"
 
 			taskOptions: [{
 				for: [ "*"]
@@ -279,7 +279,7 @@ kustomize: [NAME=string]: _name: NAME
 
 		spec: {
 			terraformVersion: "1.0.0"
-			terraformModule: source: "https://github.com/defn/m.git//tf/chicken?ref=master"
+			terraformModule: source: "https://github.com/defn/m.git//tf/chicken?ref=main"
 
 			taskOptions: [{
 				for: [ "*"]

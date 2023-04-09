@@ -11,7 +11,7 @@ spec:
     name: in-cluster
   source:
     repoURL: https://github.com/defn/m
-    targetRevision: master
+    targetRevision: main
     path: k/vcluster-global-vc0
   syncPolicy:
     automated:

@@ -23,7 +23,7 @@ helmCharts:
               name: k3d-control
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/cert-manager
             syncPolicy:
               automated:
@@ -44,7 +44,7 @@ helmCharts:
               name: k3d-control
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/pod-identity-webhook
             syncPolicy:
               automated:
@@ -65,7 +65,7 @@ helmCharts:
               name: k3d-control
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/external-secrets-operator
             syncPolicy:
               automated:
@@ -86,7 +86,7 @@ helmCharts:
               name: k3d-control
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/k3d-control-secrets-store
             syncPolicy:
               automated:

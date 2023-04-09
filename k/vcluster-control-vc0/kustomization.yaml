@@ -23,7 +23,7 @@ helmCharts:
               name: vcluster-control-vc0
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/cert-manager
             syncPolicy:
               automated:

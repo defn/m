@@ -23,7 +23,7 @@ helmCharts:
               name: k3d-global
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/kyverno
             syncPolicy:
               automated:
@@ -45,7 +45,7 @@ helmCharts:
               name: k3d-global
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/cert-manager
             syncPolicy:
               automated:
@@ -66,7 +66,7 @@ helmCharts:
               name: k3d-global
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/pod-identity-webhook
             syncPolicy:
               automated:
@@ -87,7 +87,7 @@ helmCharts:
               name: k3d-global
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/external-secrets-operator
             syncPolicy:
               automated:
@@ -108,7 +108,7 @@ helmCharts:
               name: k3d-global
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/k3d-global-secrets-store
             syncPolicy:
               automated:
@@ -129,7 +129,7 @@ helmCharts:
               name: k3d-global
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/defn-shared
             syncPolicy:
               automated:
@@ -150,7 +150,7 @@ helmCharts:
               name: k3d-global
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/external-dns
             syncPolicy:
               automated:
@@ -171,7 +171,7 @@ helmCharts:
               name: k3d-global
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/tfo
             syncPolicy:
               automated:
@@ -192,7 +192,7 @@ helmCharts:
               name: k3d-global
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/knative
             syncPolicy:
               automated:
@@ -213,7 +213,7 @@ helmCharts:
               name: k3d-global
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/kourier
             syncPolicy:
               automated:
@@ -234,7 +234,7 @@ helmCharts:
               name: k3d-global
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/defn
             syncPolicy:
               automated:
@@ -255,7 +255,7 @@ helmCharts:
               name: k3d-global
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/caddy
             syncPolicy:
               automated:
@@ -276,7 +276,7 @@ helmCharts:
               name: k3d-global
             source:
               repoURL: https://github.com/defn/m
-              targetRevision: master
+              targetRevision: main
               path: k/argo-cd
             syncPolicy:
               automated:
