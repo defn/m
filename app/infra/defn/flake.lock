@@ -503,17 +503,17 @@
       },
       "locked": {
         "dir": "app/cmd/infra",
-        "lastModified": 1681026102,
-        "narHash": "sha256-vzRfby4BF/IcgVfC0VErg1ktMlxbLfWZ03xKvQw8EuI=",
+        "lastModified": 1681028950,
+        "narHash": "sha256-bfWZY/ksi5gZuWWu5oQSQzHwteOWbsJnq2zcbTQaKTk=",
         "owner": "defn",
         "repo": "m",
-        "rev": "f2502260926c39f76018c5f77806413062e0c92a",
+        "rev": "6d75dc6e5f1c3d52128bcd94de38d9d4fa90a90c",
         "type": "github"
       },
       "original": {
         "dir": "app/cmd/infra",
         "owner": "defn",
-        "ref": "app-cmd-infra-0.0.24",
+        "ref": "app-cmd-infra-0.0.25",
         "repo": "m",
         "type": "github"
       }
