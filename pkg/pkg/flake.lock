@@ -6,19 +6,19 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "dir": "dev",
-        "lastModified": 1681014328,
-        "narHash": "sha256-HNixhXpusAENWTQhrKb5W++873EO0OJC4Z1qDMU5vJ4=",
+        "dir": "pkg/dev",
+        "lastModified": 1681020358,
+        "narHash": "sha256-Jq0i+f139MM+kcCjqTFcfXmc+2ghm9buxXDTJiiEkr0=",
         "owner": "defn",
-        "repo": "pkg",
-        "rev": "9f8e3c249065f2637c0f1f65ceff85a35106d838",
+        "repo": "m",
+        "rev": "bfea5efe38d3c198f5baf6da6f5f80f72517f230",
         "type": "github"
       },
       "original": {
-        "dir": "dev",
+        "dir": "pkg/dev",
         "owner": "defn",
-        "ref": "dev-0.0.42",
-        "repo": "pkg",
+        "ref": "pkg-dev-0.0.3",
+        "repo": "m",
         "type": "github"
       }
     },
