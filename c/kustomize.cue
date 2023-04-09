@@ -724,6 +724,10 @@ kustomize: "caddy": #KustomizeHelm & {
 				port:    443
 			}
 			config: caddyFile: """
+				map {http.request.host.labels.2} $upstream_scheme {
+					default http
+				}
+
 				https://argocd.defn.run {
 					tls /certs/tls.crt /certs/tls.key
 					reverse_proxy https://argocd-server.argocd.svc.cluster.local {
@@ -736,18 +740,11 @@ kustomize: "caddy": #KustomizeHelm & {
 
 				https://*.defn.run {
 					tls /certs/tls.crt /certs/tls.key
-					reverse_proxy {http.request.host.labels.2}.default.svc.cluster.local {
+					reverse_proxy {$upstream_scheme}://{http.request.host.labels.2}.default.svc.cluster.local {
 						header_up -Host
 						header_up X-defn-label0	"{http.request.host.labels.0}"
 						header_up X-defn-label1	"{http.request.host.labels.1}"
 						header_up X-defn-label2	"{http.request.host.labels.2}"
-
-						transport http {
-							http_reverse_proxy {
-								upstream_scheme http
-								upstream_port 80
-							}
-						}
 					}
 				}
 				"""
