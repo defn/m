@@ -1,0 +1,5 @@
+#ManagedBy: cue
+
+patches: []
+resources:
+  - resource-certificate-defn-run-wildcard.yaml

@@ -1,0 +1,29 @@
+helmCharts:
+- includeCRDs: true
+  name: caddy
+  namespace: caddy
+  releaseName: caddy
+  repo: https://charts.alekc.dev
+  valuesInline:
+    config:
+      caddyFile: "https://argocd.defn.run {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy
+        https://argocd-server.argocd.svc.cluster.local {\n\t\ttransport http {\n\t\t\ttls\n\t\t\ttls_insecure_skip_verify\n\t\t}\n\t}\n}"
+      global: "local_certs\nlog {\n\toutput stdout\n}"
+    https:
+      enabled: true
+      port: 443
+    listenPort: 80
+    volumeMounts:
+    - mountPath: /certs
+      name: certs
+    volumes:
+    - name: certs
+      secret:
+        optional: false
+        secretName: defn-run-wildcard
+  version: 0.2.4
+namespace: caddy
+patches:
+- path: patch-service-tailscale.yaml
+resources:
+- resource-namespace-caddy.yaml

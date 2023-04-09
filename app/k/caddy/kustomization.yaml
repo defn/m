@@ -1,0 +1,43 @@
+#ManagedBy: cue
+
+patches:
+  - path: patch-service-tailscale.yaml
+namespace: caddy
+resources:
+  - resource-namespace-caddy.yaml
+helmCharts:
+  - releaseName: caddy
+    namespace: caddy
+    valuesInline:
+      listenPort: 80
+      https:
+        enabled: true
+        port: 443
+      config:
+        caddyFile: |-
+          https://argocd.defn.run {
+          	tls /certs/tls.crt /certs/tls.key
+          	reverse_proxy https://argocd-server.argocd.svc.cluster.local {
+          		transport http {
+          			tls
+          			tls_insecure_skip_verify
+          		}
+          	}
+          }
+        global: |-
+          local_certs
+          log {
+          	output stdout
+          }
+      volumes:
+        - name: certs
+          secret:
+            secretName: defn-run-wildcard
+            optional: false
+      volumeMounts:
+        - name: certs
+          mountPath: /certs
+    name: caddy
+    version: 0.2.4
+    repo: https://charts.alekc.dev
+    includeCRDs: true

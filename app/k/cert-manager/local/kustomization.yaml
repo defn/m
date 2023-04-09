@@ -1,0 +1,14 @@
+helmCharts:
+- includeCRDs: true
+  name: cert-manager
+  namespace: cert-manager
+  releaseName: cert-manager
+  repo: https://charts.jetstack.io
+  valuesInline:
+    ingressShim:
+      defaultIssuerKind: ClusterIssuer
+      defaultIssuerName: zerossl-production
+  version: 1.11.0
+resources:
+- resource-namespace-cert-manager.yaml
+- localized-files/github.com/cert-manager/cert-manager/releases/download/v1.9.1/cert-manager.crds.yaml
