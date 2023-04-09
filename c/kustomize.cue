@@ -736,7 +736,7 @@ kustomize: "caddy": #KustomizeHelm & {
 
 				*.defn.run {
 					tls /certs/tls.crt /certs/tls.key
-					reverse_proxy http://{http.request.host.split(.).0}.default.svc.cluster.local {
+					reverse_proxy {http.request.host.split(.).0}.default.svc.cluster.local {
 						header_up -Host
 					}
 				}
