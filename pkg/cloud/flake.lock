@@ -1,0 +1,390 @@
+{
+  "nodes": {
+    "awscli": {
+      "inputs": {
+        "pkg": "pkg"
+      },
+      "locked": {
+        "dir": "awscli",
+        "lastModified": 1681016225,
+        "narHash": "sha256-BYZfa0ALlvv2TGedvP+zjNM3oTMIV5HUDqnOoAfMIKo=",
+        "owner": "defn",
+        "repo": "pkg",
+        "rev": "a2f1c6be56f1c7ad0a94cf244cb92e0986dbc6a0",
+        "type": "github"
+      },
+      "original": {
+        "dir": "awscli",
+        "owner": "defn",
+        "ref": "awscli-2.11.11-10",
+        "repo": "pkg",
+        "type": "github"
+      }
+    },
+    "dev": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "dir": "dev",
+        "lastModified": 1681014328,
+        "narHash": "sha256-HNixhXpusAENWTQhrKb5W++873EO0OJC4Z1qDMU5vJ4=",
+        "owner": "defn",
+        "repo": "pkg",
+        "rev": "9f8e3c249065f2637c0f1f65ceff85a35106d838",
+        "type": "github"
+      },
+      "original": {
+        "dir": "dev",
+        "owner": "defn",
+        "ref": "dev-0.0.42",
+        "repo": "pkg",
+        "type": "github"
+      }
+    },
+    "dev_2": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "dir": "dev",
+        "lastModified": 1681014328,
+        "narHash": "sha256-HNixhXpusAENWTQhrKb5W++873EO0OJC4Z1qDMU5vJ4=",
+        "owner": "defn",
+        "repo": "pkg",
+        "rev": "9f8e3c249065f2637c0f1f65ceff85a35106d838",
+        "type": "github"
+      },
+      "original": {
+        "dir": "dev",
+        "owner": "defn",
+        "ref": "dev-0.0.42",
+        "repo": "pkg",
+        "type": "github"
+      }
+    },
+    "dev_3": {
+      "inputs": {
+        "flake-utils": "flake-utils_3",
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "dir": "dev",
+        "lastModified": 1681014328,
+        "narHash": "sha256-HNixhXpusAENWTQhrKb5W++873EO0OJC4Z1qDMU5vJ4=",
+        "owner": "defn",
+        "repo": "pkg",
+        "rev": "9f8e3c249065f2637c0f1f65ceff85a35106d838",
+        "type": "github"
+      },
+      "original": {
+        "dir": "dev",
+        "owner": "defn",
+        "ref": "dev-0.0.42",
+        "repo": "pkg",
+        "type": "github"
+      }
+    },
+    "dev_4": {
+      "inputs": {
+        "flake-utils": "flake-utils_4",
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "dir": "dev",
+        "lastModified": 1681014328,
+        "narHash": "sha256-HNixhXpusAENWTQhrKb5W++873EO0OJC4Z1qDMU5vJ4=",
+        "owner": "defn",
+        "repo": "pkg",
+        "rev": "9f8e3c249065f2637c0f1f65ceff85a35106d838",
+        "type": "github"
+      },
+      "original": {
+        "dir": "dev",
+        "owner": "defn",
+        "ref": "dev-0.0.42",
+        "repo": "pkg",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1652776076,
+        "narHash": "sha256-gzTw/v1vj4dOVbpBSJX4J0DwUR6LIyXo7/SuuTJp1kM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "04c1b180862888302ddfb2e3ad9eaa63afc60cf8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "04c1b180862888302ddfb2e3ad9eaa63afc60cf8",
+        "type": "github"
+      }
+    },
+    "flake-utils_2": {
+      "locked": {
+        "lastModified": 1652776076,
+        "narHash": "sha256-gzTw/v1vj4dOVbpBSJX4J0DwUR6LIyXo7/SuuTJp1kM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "04c1b180862888302ddfb2e3ad9eaa63afc60cf8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "04c1b180862888302ddfb2e3ad9eaa63afc60cf8",
+        "type": "github"
+      }
+    },
+    "flake-utils_3": {
+      "locked": {
+        "lastModified": 1652776076,
+        "narHash": "sha256-gzTw/v1vj4dOVbpBSJX4J0DwUR6LIyXo7/SuuTJp1kM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "04c1b180862888302ddfb2e3ad9eaa63afc60cf8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "04c1b180862888302ddfb2e3ad9eaa63afc60cf8",
+        "type": "github"
+      }
+    },
+    "flake-utils_4": {
+      "locked": {
+        "lastModified": 1652776076,
+        "narHash": "sha256-gzTw/v1vj4dOVbpBSJX4J0DwUR6LIyXo7/SuuTJp1kM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "04c1b180862888302ddfb2e3ad9eaa63afc60cf8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "04c1b180862888302ddfb2e3ad9eaa63afc60cf8",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1669833724,
+        "narHash": "sha256-/HEZNyGbnQecrgJnfE8d0WC5c1xuPSD2LUpB6YXlg4c=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4d2b37a84fad1091b9de401eb450aae66f1a741e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4d2b37a84fad1091b9de401eb450aae66f1a741e",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1669833724,
+        "narHash": "sha256-/HEZNyGbnQecrgJnfE8d0WC5c1xuPSD2LUpB6YXlg4c=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4d2b37a84fad1091b9de401eb450aae66f1a741e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4d2b37a84fad1091b9de401eb450aae66f1a741e",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1669833724,
+        "narHash": "sha256-/HEZNyGbnQecrgJnfE8d0WC5c1xuPSD2LUpB6YXlg4c=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4d2b37a84fad1091b9de401eb450aae66f1a741e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4d2b37a84fad1091b9de401eb450aae66f1a741e",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1669833724,
+        "narHash": "sha256-/HEZNyGbnQecrgJnfE8d0WC5c1xuPSD2LUpB6YXlg4c=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4d2b37a84fad1091b9de401eb450aae66f1a741e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4d2b37a84fad1091b9de401eb450aae66f1a741e",
+        "type": "github"
+      }
+    },
+    "packer": {
+      "inputs": {
+        "pkg": "pkg_2"
+      },
+      "locked": {
+        "dir": "packer",
+        "lastModified": 1681016481,
+        "narHash": "sha256-Df6v9UeFslFSihr0ukQd0mNcE3aSu1Y/0mT3QgXgG/g=",
+        "owner": "defn",
+        "repo": "pkg",
+        "rev": "c1e45e08c519e8a0beec015733621703631d9e5c",
+        "type": "github"
+      },
+      "original": {
+        "dir": "packer",
+        "owner": "defn",
+        "ref": "packer-1.8.6-39",
+        "repo": "pkg",
+        "type": "github"
+      }
+    },
+    "pkg": {
+      "inputs": {
+        "dev": "dev"
+      },
+      "locked": {
+        "lastModified": 1681015850,
+        "narHash": "sha256-cNTzjesdRH32fDSK4i70vCBmMxvAnsHXRjojQXaPinE=",
+        "owner": "defn",
+        "repo": "pkg",
+        "rev": "c46b121de315d4c9cd17f0d333e20b74b9300409",
+        "type": "github"
+      },
+      "original": {
+        "owner": "defn",
+        "ref": "0.0.210",
+        "repo": "pkg",
+        "type": "github"
+      }
+    },
+    "pkg_2": {
+      "inputs": {
+        "dev": "dev_2"
+      },
+      "locked": {
+        "lastModified": 1681015850,
+        "narHash": "sha256-cNTzjesdRH32fDSK4i70vCBmMxvAnsHXRjojQXaPinE=",
+        "owner": "defn",
+        "repo": "pkg",
+        "rev": "c46b121de315d4c9cd17f0d333e20b74b9300409",
+        "type": "github"
+      },
+      "original": {
+        "owner": "defn",
+        "ref": "0.0.210",
+        "repo": "pkg",
+        "type": "github"
+      }
+    },
+    "pkg_3": {
+      "inputs": {
+        "dev": "dev_3"
+      },
+      "locked": {
+        "lastModified": 1681015850,
+        "narHash": "sha256-cNTzjesdRH32fDSK4i70vCBmMxvAnsHXRjojQXaPinE=",
+        "owner": "defn",
+        "repo": "pkg",
+        "rev": "c46b121de315d4c9cd17f0d333e20b74b9300409",
+        "type": "github"
+      },
+      "original": {
+        "owner": "defn",
+        "ref": "0.0.210",
+        "repo": "pkg",
+        "type": "github"
+      }
+    },
+    "pkg_4": {
+      "inputs": {
+        "dev": "dev_4"
+      },
+      "locked": {
+        "lastModified": 1681015850,
+        "narHash": "sha256-cNTzjesdRH32fDSK4i70vCBmMxvAnsHXRjojQXaPinE=",
+        "owner": "defn",
+        "repo": "pkg",
+        "rev": "c46b121de315d4c9cd17f0d333e20b74b9300409",
+        "type": "github"
+      },
+      "original": {
+        "owner": "defn",
+        "ref": "0.0.210",
+        "repo": "pkg",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "awscli": "awscli",
+        "packer": "packer",
+        "step": "step",
+        "terraform": "terraform"
+      }
+    },
+    "step": {
+      "inputs": {
+        "pkg": "pkg_3"
+      },
+      "locked": {
+        "dir": "step",
+        "lastModified": 1681016501,
+        "narHash": "sha256-ePknjpHk4NzLzjDLs/otM/Y/FXNsXYVKc8imdY9DzCQ=",
+        "owner": "defn",
+        "repo": "pkg",
+        "rev": "dd972f1588b6dbe39153e1280c5eabb5ccd18912",
+        "type": "github"
+      },
+      "original": {
+        "dir": "step",
+        "owner": "defn",
+        "ref": "step-0.23.4-39",
+        "repo": "pkg",
+        "type": "github"
+      }
+    },
+    "terraform": {
+      "inputs": {
+        "pkg": "pkg_4"
+      },
+      "locked": {
+        "dir": "terraform",
+        "lastModified": 1681016522,
+        "narHash": "sha256-WEEBy46sZEB2D5XNe4MOLIFKQkZr5swMr3EtN/bi9dc=",
+        "owner": "defn",
+        "repo": "pkg",
+        "rev": "704241b86185ff7276cf5af81f231edaafe35629",
+        "type": "github"
+      },
+      "original": {
+        "dir": "terraform",
+        "owner": "defn",
+        "ref": "terraform-1.4.4-36",
+        "repo": "pkg",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
