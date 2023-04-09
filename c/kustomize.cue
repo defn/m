@@ -169,8 +169,6 @@ kustomize: "argo-events": #KustomizeHelm & {
 
 // https://artifacthub.io/packages/helm/argo/argo-workflows
 kustomize: "argo-workflows": #KustomizeHelm & {
-	namespace: "argo-workflows"
-
 	helm: {
 		release:   "argo-workflows"
 		name:      "argo-workflows"
@@ -178,7 +176,10 @@ kustomize: "argo-workflows": #KustomizeHelm & {
 		namespace: "argo-workflows"
 		repo:      "https://argoproj.github.io/argo-helm"
 		values: {
-			controller: workflowNamespaces: [ "argo-workflows"]
+			controller: workflowNamespaces: [
+				"argo-workflows",
+				"defn",
+			]
 		}
 	}
 
@@ -994,6 +995,14 @@ kustomize: "defn-shared": #Kustomize & {
 }
 
 kustomize: "defn": #Kustomize & {
+	resource: "namespace-defn": core.#Namespace & {
+		apiVersion: "v1"
+		kind:       "Namespace"
+		metadata: {
+			name: "defn"
+		}
+	}
+
 	resource: "certificate-defn-run-wildcard": {
 		apiVersion: "cert-manager.io/v1"
 		kind:       "Certificate"
@@ -1011,6 +1020,33 @@ kustomize: "defn": #Kustomize & {
 				kind:  "ClusterIssuer"
 				group: "cert-manager.io"
 			}
+		}
+	}
+
+	resource: "workflow-hello": {
+		apiVersion: "argoproj.io/v1alpha1"
+		kind:       "Workflow"
+		metadata: {
+			name:      "hello"
+			namespace: "defn"
+		}
+		spec: {
+			entrypoint: "whalesay"
+			arguments: parameters: [{
+				name:  "message"
+				value: "world"
+			}]
+			templates: [{
+				name: "whalesay"
+				inputs: parameters: [{
+					name: "message"
+				}]
+				container: {
+					image: "docker/whalesay"
+					command: ["cowsay"]
+					args: ["{{inputs.parameters.message}}"]
+				}
+			}]
 		}
 	}
 }

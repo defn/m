@@ -2,4 +2,6 @@
 
 patches: []
 resources:
+  - resource-namespace-defn.yaml
   - resource-certificate-defn-run-wildcard.yaml
+  - resource-workflow-hello.yaml
