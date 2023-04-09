@@ -136,14 +136,14 @@ helmCharts:
                 prune: true
                 selfHeal: true
               syncOptions: []
-        defn: |
+        external-dns: |
           apiVersion: argoproj.io/v1alpha1
           kind: Application
           metadata:
             namespace: argocd
-            name: k3d-global-defn
+            name: k3d-global-external-dns
             annotations:
-              argocd.argoproj.io/sync-wave: "31"
+              argocd.argoproj.io/sync-wave: "40"
           spec:
             project: default
             destination:
@@ -151,7 +151,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: master
-              path: k/defn
+              path: k/external-dns
             syncPolicy:
               automated:
                 prune: true
@@ -164,7 +164,7 @@ helmCharts:
             namespace: argocd
             name: k3d-global-tfo
             annotations:
-              argocd.argoproj.io/sync-wave: "30"
+              argocd.argoproj.io/sync-wave: "40"
           spec:
             project: default
             destination:
@@ -185,7 +185,7 @@ helmCharts:
             namespace: argocd
             name: k3d-global-knative
             annotations:
-              argocd.argoproj.io/sync-wave: "30"
+              argocd.argoproj.io/sync-wave: "40"
           spec:
             project: default
             destination:
@@ -206,7 +206,7 @@ helmCharts:
             namespace: argocd
             name: k3d-global-kourier
             annotations:
-              argocd.argoproj.io/sync-wave: "30"
+              argocd.argoproj.io/sync-wave: "40"
           spec:
             project: default
             destination:
@@ -215,6 +215,27 @@ helmCharts:
               repoURL: https://github.com/defn/m
               targetRevision: master
               path: k/kourier
+            syncPolicy:
+              automated:
+                prune: true
+                selfHeal: true
+              syncOptions: []
+        defn: |
+          apiVersion: argoproj.io/v1alpha1
+          kind: Application
+          metadata:
+            namespace: argocd
+            name: k3d-global-defn
+            annotations:
+              argocd.argoproj.io/sync-wave: "40"
+          spec:
+            project: default
+            destination:
+              name: k3d-global
+            source:
+              repoURL: https://github.com/defn/m
+              targetRevision: master
+              path: k/defn
             syncPolicy:
               automated:
                 prune: true

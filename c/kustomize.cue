@@ -242,20 +242,24 @@ kustomize: "keda": #KustomizeHelm & {
 	}
 }
 
+// https://artifacthub.io/packages/helm/external-dns/external-dns
 kustomize: "external-dns": #KustomizeHelm & {
 	namespace: "external-dns"
 
 	helm: {
 		release: "external-dns"
 		name:    "external-dns"
-		version: "6.7.2"
-		repo:    "https://charts.bitnami.com/bitnami"
+		version: "1.12.2"
+		repo:    "https://kubernetes-sigs.github.io/external-dns"
 		values: {
 			sources: [
 				"service",
 				"ingress",
 			]
 			provider: "cloudflare"
+			domainFilters: [
+				"defn.run",
+			]
 		}
 	}
 
@@ -874,6 +878,29 @@ kustomize: "defn-shared": #Kustomize & {
 			}]
 			target: {
 				name:           _issuer
+				creationPolicy: "Owner"
+			}
+		}
+	}
+
+	resource: "externalsecret-external-dns": {
+		apiVersion: "external-secrets.io/v1beta1"
+		kind:       "ExternalSecret"
+		metadata: {
+			name:      "external-dns"
+			namespace: "external-dns"
+		}
+		spec: {
+			refreshInterval: "1h"
+			secretStoreRef: {
+				kind: "ClusterSecretStore"
+				name: "dev"
+			}
+			dataFrom: [{
+				extract: key: "dev/amanibhavam-global-external-dns"
+			}]
+			target: {
+				name:           "external-dns"
 				creationPolicy: "Owner"
 			}
 		}

@@ -3,13 +3,15 @@ helmCharts:
   name: external-dns
   namespace: external-dns
   releaseName: external-dns
-  repo: https://charts.bitnami.com/bitnami
+  repo: https://kubernetes-sigs.github.io/external-dns
   valuesInline:
+    domainFilters:
+    - defn.run
     provider: cloudflare
     sources:
     - service
     - ingress
-  version: 6.7.2
+  version: 1.12.2
 namespace: external-dns
 resources:
 - resource-namespace-external-dns.yaml
