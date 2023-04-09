@@ -29,6 +29,8 @@ metadata:
 spec:
   destination:
     name: k3d-global
+    namespace: argo-workflows
+    createNamespace: true
   project: default
   source:
     path: r/argo-workflows
