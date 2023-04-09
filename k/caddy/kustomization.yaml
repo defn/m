@@ -17,13 +17,21 @@ helmCharts:
         enabled: true
         port: 443
       config:
-        caddyFile: |-
+        global: |-
           {
+          	auto_https on
+
+          	local_certs
+
+          	log {
+          		output stdout
+          	}
+
           	map {http.request.host.labels.2} $upstream_scheme {
           		default http
           	}
           }
-
+        caddyFile: |-
           https://argocd.defn.run {
           	tls /certs/tls.crt /certs/tls.key
           	reverse_proxy https://argocd-server.argocd.svc.cluster.local {
@@ -42,11 +50,6 @@ helmCharts:
           		header_up X-defn-label1	"{http.request.host.labels.1}"
           		header_up X-defn-label2	"{http.request.host.labels.2}"
           	}
-          }
-        global: |-
-          local_certs
-          log {
-          	output stdout
           }
       volumes:
         - name: certs

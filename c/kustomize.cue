@@ -727,6 +727,8 @@ kustomize: "caddy": #KustomizeHelm & {
 				{
 					auto_https on
 
+					local_certs
+
 					log {
 						output stdout
 					}
@@ -756,13 +758,6 @@ kustomize: "caddy": #KustomizeHelm & {
 						header_up X-defn-label1	"{http.request.host.labels.1}"
 						header_up X-defn-label2	"{http.request.host.labels.2}"
 					}
-				}
-				"""
-
-			config: global: """
-				local_certs
-				log {
-					output stdout
 				}
 				"""
 
