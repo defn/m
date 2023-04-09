@@ -24,7 +24,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/kyverno/release
+              path: r/kyverno
             syncPolicy:
               automated:
                 prune: true
@@ -46,7 +46,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/cert-manager/release
+              path: r/cert-manager
             syncPolicy:
               automated:
                 prune: true
@@ -67,7 +67,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/pod-identity-webhook/release
+              path: r/pod-identity-webhook
             syncPolicy:
               automated:
                 prune: true
@@ -88,7 +88,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/external-secrets-operator/release
+              path: r/external-secrets-operator
             syncPolicy:
               automated:
                 prune: true
@@ -109,7 +109,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/k3d-global-secrets-store/release
+              path: r/k3d-global-secrets-store
             syncPolicy:
               automated:
                 prune: true
@@ -130,7 +130,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/defn-shared/release
+              path: r/defn-shared
             syncPolicy:
               automated:
                 prune: true
@@ -151,7 +151,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/external-dns/release
+              path: r/external-dns
             syncPolicy:
               automated:
                 prune: true
@@ -172,7 +172,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/tfo/release
+              path: r/tfo
             syncPolicy:
               automated:
                 prune: true
@@ -193,7 +193,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/knative/release
+              path: r/knative
             syncPolicy:
               automated:
                 prune: true
@@ -214,7 +214,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/kourier/release
+              path: r/kourier
             syncPolicy:
               automated:
                 prune: true
@@ -235,7 +235,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/defn/release
+              path: r/defn
             syncPolicy:
               automated:
                 prune: true
@@ -256,7 +256,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/caddy/release
+              path: r/caddy
             syncPolicy:
               automated:
                 prune: true
@@ -277,7 +277,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: k/argo-cd/release
+              path: r/argo-cd
             syncPolicy:
               automated:
                 prune: true
