@@ -724,8 +724,10 @@ kustomize: "caddy": #KustomizeHelm & {
 				port:    443
 			}
 			config: caddyFile: """
-				map {http.request.host.labels.2} $upstream_scheme {
-					"default" "http"
+				{
+					map {http.request.host.labels.2} $upstream_scheme {
+						default http
+					}
 				}
 
 				https://argocd.defn.run {

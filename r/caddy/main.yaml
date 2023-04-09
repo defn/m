@@ -18,8 +18,8 @@ metadata:
 apiVersion: v1
 data:
   Caddyfile: "{\n  http_port 80\n  \n  local_certs\n  log {\n  \toutput stdout\n  }\n}\n\n:9999
-    {\n  handle / {\n    respond \"OK\"\n  }\n}\n\n\nmap {http.request.host.labels.2}
-    $upstream_scheme {\n\t\"default\" \"http\"\n}\n\nhttps://argocd.defn.run {\n\ttls
+    {\n  handle / {\n    respond \"OK\"\n  }\n}\n\n\n{\n\tmap {http.request.host.labels.2}
+    $upstream_scheme {\n\t\tdefault http\n\t}\n}\n\nhttps://argocd.defn.run {\n\ttls
     /certs/tls.crt /certs/tls.key\n\treverse_proxy https://argocd-server.argocd.svc.cluster.local
     {\n\t\ttransport http {\n\t\t\ttls\n\t\t\ttls_insecure_skip_verify\n\t\t}\n\t}\n}\n\nhttps://*.defn.run
     {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy {$upstream_scheme}://{http.request.host.labels.2}.default.svc.cluster.local
@@ -85,7 +85,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: b68554a0447e7c5e976b2156e5d49c2e4b6928e43919f89e2214022429c2457c
+        checksum/config: 8222fbacc28ea0bd4ecd07825f2505583cf2a30c8a57fd2455d14dd7f4a39089
       labels:
         app.kubernetes.io/instance: caddy
         app.kubernetes.io/name: caddy
