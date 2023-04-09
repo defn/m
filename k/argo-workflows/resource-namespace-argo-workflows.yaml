@@ -1,6 +1,6 @@
 #ManagedBy: cue
 
 metadata:
-  name: argo-work-flows
+  name: argo-workflows
 kind: Namespace
 apiVersion: v1

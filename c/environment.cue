@@ -58,6 +58,7 @@ env: (#Transform & {
 				"k3d-global-secrets-store": [20]
 				"defn-shared": [30]
 				"external-dns": [40]
+				"argo-workflows": [40]
 				"tfo": [40]
 				"knative": [40]
 				"kourier": [40]
