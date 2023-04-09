@@ -172,17 +172,9 @@ kustomize: "argo-workflows": #KustomizeHelm & {
 	helm: {
 		release:   "argo-workflows"
 		name:      "argo-workflows"
-		namespace: "argo-workflows"
 		version:   "0.23.0"
+		namespace: "default"
 		repo:      "https://argoproj.github.io/argo-helm"
-	}
-
-	resource: "namespace-argo-workflows": core.#Namespace & {
-		apiVersion: "v1"
-		kind:       "Namespace"
-		metadata: {
-			name: "argo-workflows"
-		}
 	}
 }
 
