@@ -22,8 +22,9 @@ data:
     /certs/tls.crt /certs/tls.key\n\treverse_proxy https://argocd-server.argocd.svc.cluster.local
     {\n\t\ttransport http {\n\t\t\ttls\n\t\t\ttls_insecure_skip_verify\n\t\t}\n\t}\n}\n\nhttps://hello.defn.run
     {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy http://hello.default.svc.cluster.local
-    {\n\t}\n}\n\nhttps://bye.defn.run {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy
-    http://bye.default.svc.cluster.local {\n\t}\n}\n"
+    {\n\t\theader_up -Host\n\t}\n}\n\nhttps://bye.defn.run {\n\ttls /certs/tls.crt
+    /certs/tls.key\n\treverse_proxy http://bye.default.svc.cluster.local {\n\t\theader_up
+    -Host\n\t}\n}\n"
 kind: ConfigMap
 metadata:
   labels:
@@ -84,7 +85,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: 93850e6fedf336bdea35bed462fef7bef3fe6682e3a7e840d4acc3b65f492be1
+        checksum/config: 15569259c34c5e03aa5c6bfb0a7be6aa81a8f4af4fc2a0c21186d6057fb12d42
       labels:
         app.kubernetes.io/instance: caddy
         app.kubernetes.io/name: caddy

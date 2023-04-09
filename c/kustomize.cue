@@ -737,12 +737,14 @@ kustomize: "caddy": #KustomizeHelm & {
 				https://hello.defn.run {
 					tls /certs/tls.crt /certs/tls.key
 					reverse_proxy http://hello.default.svc.cluster.local {
+						header_up -Host
 					}
 				}
 
 				https://bye.defn.run {
 					tls /certs/tls.crt /certs/tls.key
 					reverse_proxy http://bye.default.svc.cluster.local {
+						header_up -Host
 					}
 				}
 				"""
