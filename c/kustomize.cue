@@ -733,6 +733,18 @@ kustomize: "caddy": #KustomizeHelm & {
 						}
 					}
 				}
+
+				https://hello.defn.run {
+					tls /certs/tls.crt /certs/tls.key
+					reverse_proxy http://hello.default.svc.cluster.local {
+					}
+				}
+
+				https://bye.defn.run {
+					tls /certs/tls.crt /certs/tls.key
+					reverse_proxy http://bye.default.svc.cluster.local {
+					}
+				}
 				"""
 
 			config: global: """
