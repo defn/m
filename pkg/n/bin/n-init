@@ -17,7 +17,7 @@ function main {
 	url="$(echo "$url" | perl -pe 's{arm64|amd64|x86_64|aarch64}{\${input.arch}}ig')"
 	url="$(echo "$url" | perl -pe 's{\d+\.\d+\.\d+}{\${input.vendor}}ig')"
 
-	sed "s#url_template = input:.*#url_template = input: \"$url\";#" -i flake.nix	
+	sed "s#url_template = input:.*#url_template = input: \"$url\";#" -i flake.nix
 
 	n reset
 	n sha

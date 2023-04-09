@@ -2,7 +2,7 @@
 
 function main {
 	set -efu
-  
+
   local repo="$(cat flake.json | jq -r '.ghrepo')"
 
   if [[ "${repo}" == "null" ]]; then

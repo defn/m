@@ -6,8 +6,7 @@
       "stackName": "curl",
       "version": "0.15.5"
     },
-    "outputs": {
-    }
+    "outputs": {}
   },
   "data": {
     "aws_ssoadmin_instances": {
@@ -202,10 +201,7 @@
           "sso.amazonaws.com",
           "tagpolicies.tag.amazonaws.com"
         ],
-        "enabled_policy_types": [
-          "SERVICE_CONTROL_POLICY",
-          "TAG_POLICY"
-        ],
+        "enabled_policy_types": ["SERVICE_CONTROL_POLICY", "TAG_POLICY"],
         "feature_set": "ALL"
       }
     },

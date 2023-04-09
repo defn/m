@@ -10,7 +10,7 @@ function main {
         if [[ "$(uname -s)" == "Linux" ]] ; then
             nix-store --query --requisites --include-outputs $(nix path-info --derivation)
         fi
-    ) | sort -u 
+    ) | sort -u
 }
 
 source sub "$0" "$@"

@@ -6,7 +6,7 @@ function main {
 		echo
 	fi
 
-	git diff "$(n from)" .	
+	git diff "$(n from)" .
 }
 
 source sub "$0" "$@"

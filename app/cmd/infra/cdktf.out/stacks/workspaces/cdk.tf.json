@@ -6,8 +6,7 @@
       "stackName": "workspaces",
       "version": "0.15.5"
     },
-    "outputs": {
-    }
+    "outputs": {}
   },
   "provider": {
     "tfe": [

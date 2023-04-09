@@ -72,8 +72,8 @@ Create the name of the service account to use
 {{- end }}
 {{- end }}
 
-{{/* 
-Get PodDisruptionBudget API Version 
+{{/*
+Get PodDisruptionBudget API Version
 */}}
 {{- define "amazon-eks-pod-identity-webhook.pdb.apiVersion" -}}
   {{- if and (.Capabilities.APIVersions.Has "policy/v1") (semverCompare ">= 1.21-0" .Capabilities.KubeVersion.Version) -}}

@@ -11,7 +11,7 @@
     '';
 
     downloads = {
-      
+
 
       "x86_64-linux" = {
         os = "Linux";
