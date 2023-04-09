@@ -144,7 +144,7 @@ import (
 	env: {
 		// ex: k/k3d-control
 		// ex: k/vcluster-vc1
-		spec: source: path: "k/\(type)-\(name)"
+		spec: source: path: "r/\(type)-\(name)"
 
 		spec: destination: name: "in-cluster"
 	}

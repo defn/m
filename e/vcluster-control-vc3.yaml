@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/defn/m
     targetRevision: main
-    path: k/vcluster-control-vc3
+    path: r/vcluster-control-vc3
   syncPolicy:
     automated:
       prune: true
