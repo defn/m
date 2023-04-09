@@ -723,13 +723,21 @@ kustomize: "caddy": #KustomizeHelm & {
 				enabled: true
 				port:    443
 			}
-			config: caddyFile: """
+			config: global: """
 				{
+					auto_https on
+
+					log {
+						output stdout
+					}
+
 					map {http.request.host.labels.2} $upstream_scheme {
 						default http
 					}
 				}
+				"""
 
+			config: caddyFile: """
 				https://argocd.defn.run {
 					tls /certs/tls.crt /certs/tls.key
 					reverse_proxy https://argocd-server.argocd.svc.cluster.local {
