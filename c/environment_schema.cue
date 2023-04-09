@@ -120,7 +120,7 @@ import (
 			source: {
 				repoURL:        "https://github.com/defn/m"
 				targetRevision: "master"
-				path:           "app/k/\(app_name)"
+				path:           "k/\(app_name)"
 			}
 
 			syncPolicy: {

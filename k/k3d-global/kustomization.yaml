@@ -24,7 +24,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: master
-              path: app/k/kyverno
+              path: k/kyverno
             syncPolicy:
               automated:
                 prune: true
@@ -46,7 +46,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: master
-              path: app/k/cert-manager
+              path: k/cert-manager
             syncPolicy:
               automated:
                 prune: true
@@ -67,7 +67,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: master
-              path: app/k/pod-identity-webhook
+              path: k/pod-identity-webhook
             syncPolicy:
               automated:
                 prune: true
@@ -88,7 +88,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: master
-              path: app/k/external-secrets-operator
+              path: k/external-secrets-operator
             syncPolicy:
               automated:
                 prune: true
@@ -109,7 +109,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: master
-              path: app/k/k3d-global-secrets-store
+              path: k/k3d-global-secrets-store
             syncPolicy:
               automated:
                 prune: true
@@ -130,7 +130,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: master
-              path: app/k/defn-shared
+              path: k/defn-shared
             syncPolicy:
               automated:
                 prune: true
@@ -151,7 +151,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: master
-              path: app/k/defn
+              path: k/defn
             syncPolicy:
               automated:
                 prune: true
@@ -172,7 +172,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: master
-              path: app/k/tfo
+              path: k/tfo
             syncPolicy:
               automated:
                 prune: true
@@ -193,7 +193,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: master
-              path: app/k/knative
+              path: k/knative
             syncPolicy:
               automated:
                 prune: true
@@ -214,7 +214,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: master
-              path: app/k/kourier
+              path: k/kourier
             syncPolicy:
               automated:
                 prune: true
@@ -235,7 +235,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: master
-              path: app/k/caddy
+              path: k/caddy
             syncPolicy:
               automated:
                 prune: true
@@ -256,7 +256,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: master
-              path: app/k/argo-cd
+              path: k/argo-cd
             syncPolicy:
               automated:
                 prune: true

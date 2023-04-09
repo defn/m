@@ -24,7 +24,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: master
-              path: app/k/cert-manager
+              path: k/cert-manager
             syncPolicy:
               automated:
                 prune: true
