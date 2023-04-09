@@ -1,4 +1,4 @@
-module github.com/defn/app
+module github.com/defn/m/app
 
 go 1.19
 

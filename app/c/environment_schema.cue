@@ -118,9 +118,9 @@ import (
 			}
 
 			source: {
-				repoURL:        "https://github.com/defn/app"
+				repoURL:        "https://github.com/defn/m"
 				targetRevision: "master"
-				path:           "k/\(app_name)"
+				path:           "app/k/\(app_name)"
 			}
 
 			syncPolicy: {
@@ -164,7 +164,7 @@ import (
 
 		destination: name: string
 		source: {
-			repoURL:        "https://github.com/defn/app"
+			repoURL:        "https://github.com/defn/m"
 			targetRevision: "master"
 			path:           string
 		}

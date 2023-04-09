@@ -22,9 +22,9 @@ helmCharts:
             destination:
               name: k3d-global
             source:
-              repoURL: https://github.com/defn/app
+              repoURL: https://github.com/defn/m
               targetRevision: master
-              path: k/kyverno
+              path: app/k/kyverno
             syncPolicy:
               automated:
                 prune: true
@@ -44,9 +44,9 @@ helmCharts:
             destination:
               name: k3d-global
             source:
-              repoURL: https://github.com/defn/app
+              repoURL: https://github.com/defn/m
               targetRevision: master
-              path: k/cert-manager
+              path: app/k/cert-manager
             syncPolicy:
               automated:
                 prune: true
@@ -65,9 +65,9 @@ helmCharts:
             destination:
               name: k3d-global
             source:
-              repoURL: https://github.com/defn/app
+              repoURL: https://github.com/defn/m
               targetRevision: master
-              path: k/pod-identity-webhook
+              path: app/k/pod-identity-webhook
             syncPolicy:
               automated:
                 prune: true
@@ -86,9 +86,9 @@ helmCharts:
             destination:
               name: k3d-global
             source:
-              repoURL: https://github.com/defn/app
+              repoURL: https://github.com/defn/m
               targetRevision: master
-              path: k/external-secrets-operator
+              path: app/k/external-secrets-operator
             syncPolicy:
               automated:
                 prune: true
@@ -107,9 +107,9 @@ helmCharts:
             destination:
               name: k3d-global
             source:
-              repoURL: https://github.com/defn/app
+              repoURL: https://github.com/defn/m
               targetRevision: master
-              path: k/k3d-global-secrets-store
+              path: app/k/k3d-global-secrets-store
             syncPolicy:
               automated:
                 prune: true
@@ -128,9 +128,9 @@ helmCharts:
             destination:
               name: k3d-global
             source:
-              repoURL: https://github.com/defn/app
+              repoURL: https://github.com/defn/m
               targetRevision: master
-              path: k/defn-shared
+              path: app/k/defn-shared
             syncPolicy:
               automated:
                 prune: true
@@ -149,9 +149,9 @@ helmCharts:
             destination:
               name: k3d-global
             source:
-              repoURL: https://github.com/defn/app
+              repoURL: https://github.com/defn/m
               targetRevision: master
-              path: k/defn
+              path: app/k/defn
             syncPolicy:
               automated:
                 prune: true
@@ -170,9 +170,9 @@ helmCharts:
             destination:
               name: k3d-global
             source:
-              repoURL: https://github.com/defn/app
+              repoURL: https://github.com/defn/m
               targetRevision: master
-              path: k/tfo
+              path: app/k/tfo
             syncPolicy:
               automated:
                 prune: true
@@ -191,9 +191,9 @@ helmCharts:
             destination:
               name: k3d-global
             source:
-              repoURL: https://github.com/defn/app
+              repoURL: https://github.com/defn/m
               targetRevision: master
-              path: k/knative
+              path: app/k/knative
             syncPolicy:
               automated:
                 prune: true
@@ -212,9 +212,9 @@ helmCharts:
             destination:
               name: k3d-global
             source:
-              repoURL: https://github.com/defn/app
+              repoURL: https://github.com/defn/m
               targetRevision: master
-              path: k/kourier
+              path: app/k/kourier
             syncPolicy:
               automated:
                 prune: true
@@ -233,9 +233,9 @@ helmCharts:
             destination:
               name: k3d-global
             source:
-              repoURL: https://github.com/defn/app
+              repoURL: https://github.com/defn/m
               targetRevision: master
-              path: k/caddy
+              path: app/k/caddy
             syncPolicy:
               automated:
                 prune: true
@@ -254,9 +254,9 @@ helmCharts:
             destination:
               name: k3d-global
             source:
-              repoURL: https://github.com/defn/app
+              repoURL: https://github.com/defn/m
               targetRevision: master
-              path: k/argo-cd
+              path: app/k/argo-cd
             syncPolicy:
               automated:
                 prune: true

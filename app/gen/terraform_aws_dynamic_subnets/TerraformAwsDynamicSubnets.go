@@ -3,10 +3,10 @@ package terraform_aws_dynamic_subnets
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/defn/app/gen/terraform_aws_dynamic_subnets/jsii"
+	_init_ "github.com/defn/m/app/gen/terraform_aws_dynamic_subnets/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/defn/app/gen/terraform_aws_dynamic_subnets/internal"
+	"github.com/defn/m/app/gen/terraform_aws_dynamic_subnets/internal"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 

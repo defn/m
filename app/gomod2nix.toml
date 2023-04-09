@@ -1,0 +1,15 @@
+schema = 3
+
+[mod]
+  [mod."github.com/Masterminds/semver/v3"]
+    version = "v3.2.0"
+    hash = "sha256-JaGYNQwDxFCsLwzYVoJY4RUpP4dtiRlV14t2dVAg4oQ="
+  [mod."github.com/aws/constructs-go/constructs/v10"]
+    version = "v10.1.299"
+    hash = "sha256-f4WXQULhCEnrwW5AbRta4p2CTr+CaAbLVkiIJIc/z9M="
+  [mod."github.com/aws/jsii-runtime-go"]
+    version = "v1.79.0"
+    hash = "sha256-QjctI9rjVZaAXrsuG9IWwG0yjVMikYqWTg/jdI851S0="
+  [mod."github.com/hashicorp/terraform-cdk-go/cdktf"]
+    version = "v0.15.5"
+    hash = "sha256-euFKA7yKjWy6kZpVokCWCJvc6a5BdwFsZ8hkbcgewmA="

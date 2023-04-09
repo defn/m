@@ -22,9 +22,9 @@ helmCharts:
             destination:
               name: vcluster-control-vc2
             source:
-              repoURL: https://github.com/defn/app
+              repoURL: https://github.com/defn/m
               targetRevision: master
-              path: k/cert-manager
+              path: app/k/cert-manager
             syncPolicy:
               automated:
                 prune: true

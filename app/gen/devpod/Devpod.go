@@ -3,10 +3,10 @@ package devpod
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/defn/app/gen/devpod/jsii"
+	_init_ "github.com/defn/m/app/gen/devpod/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/defn/app/gen/devpod/internal"
+	"github.com/defn/m/app/gen/devpod/internal"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 

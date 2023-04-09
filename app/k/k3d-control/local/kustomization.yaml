@@ -18,9 +18,9 @@ helmCharts:
           destination:
             name: k3d-control
           source:
-            repoURL: https://github.com/defn/app
+            repoURL: https://github.com/defn/m
             targetRevision: master
-            path: k/cert-manager
+            path: app/k/cert-manager
           syncPolicy:
             automated:
               prune: true
@@ -39,9 +39,9 @@ helmCharts:
           destination:
             name: k3d-control
           source:
-            repoURL: https://github.com/defn/app
+            repoURL: https://github.com/defn/m
             targetRevision: master
-            path: k/external-secrets-operator
+            path: app/k/external-secrets-operator
           syncPolicy:
             automated:
               prune: true
@@ -60,9 +60,9 @@ helmCharts:
           destination:
             name: k3d-control
           source:
-            repoURL: https://github.com/defn/app
+            repoURL: https://github.com/defn/m
             targetRevision: master
-            path: k/k3d-control-secrets-store
+            path: app/k/k3d-control-secrets-store
           syncPolicy:
             automated:
               prune: true
@@ -81,9 +81,9 @@ helmCharts:
           destination:
             name: k3d-control
           source:
-            repoURL: https://github.com/defn/app
+            repoURL: https://github.com/defn/m
             targetRevision: master
-            path: k/pod-identity-webhook
+            path: app/k/pod-identity-webhook
           syncPolicy:
             automated:
               prune: true
