@@ -18,11 +18,11 @@ metadata:
 apiVersion: v1
 data:
   Caddyfile: "{\n  http_port 80\n  \n  auto_https disable_certs\n  \n  local_certs\n
-    \ \n  log {\n  \toutput stdout\n  }\n  \n  map {http.request.host.labels.2} $upstream_scheme
-    {\n  \tdefault http\n  }\n}\n\n:9999 {\n  handle / {\n    respond \"OK\"\n  }\n}\n\n\nhttps://argocd.defn.run
-    {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy https://argocd-server.argocd.svc.cluster.local
-    {\n\t\ttransport http {\n\t\t\ttls\n\t\t\ttls_insecure_skip_verify\n\t\t}\n\t}\n}\n\nhttps://*.defn.run
-    {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy {$upstream_scheme}://{http.request.host.labels.2}.default.svc.cluster.local
+    \ \n  log {\n  \toutput stdout\n  }\n}\n\n:9999 {\n  handle / {\n    respond \"OK\"\n
+    \ }\n}\n\n\nhttps://argocd.defn.run {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy
+    https://argocd-server.argocd.svc.cluster.local {\n\t\ttransport http {\n\t\t\ttls\n\t\t\ttls_insecure_skip_verify\n\t\t}\n\t}\n}\n\nhttps://*.defn.run
+    {\n\tmap {http.request.host.labels.2} $upstream_scheme {\n\t\tdefault http\n\t}\n\t\n\ttls
+    /certs/tls.crt /certs/tls.key\n\treverse_proxy {$upstream_scheme}://{http.request.host.labels.2}.default.svc.cluster.local
     {\n\t\theader_up -Host\n\t\theader_up X-defn-label0\t\"{http.request.host.labels.0}\"\n\t\theader_up
     X-defn-label1\t\"{http.request.host.labels.1}\"\n\t\theader_up X-defn-label2\t\"{http.request.host.labels.2}\"\n\t}\n}\n"
 kind: ConfigMap
@@ -85,7 +85,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: b3b14302db7b09cedb00ca71024bf3fe3366fa534b51fc49b2193a757ae0b8a9
+        checksum/config: 2202d8a1926987b4357f96b216b7ce68b1cb77a79af48bc29398a39106efa965
       labels:
         app.kubernetes.io/instance: caddy
         app.kubernetes.io/name: caddy
