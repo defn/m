@@ -7,11 +7,10 @@ helmCharts:
   valuesInline:
     config:
       caddyFile: "https://argocd.defn.run {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy
-        https://argocd-server.argocd.svc.cluster.local {\n\t\ttransport http {\n\t\t\ttls\n\t\t\ttls_insecure_skip_verify\n\t\t}\n\t}\n}\n\nhttps://{api}.defn.run
+        https://argocd-server.argocd.svc.cluster.local {\n\t\ttransport http {\n\t\t\ttls\n\t\t\ttls_insecure_skip_verify\n\t\t}\n\t}\n}\n\nhttps://*.defn.run
         {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy {http.request.host.labels.2}.default.svc.cluster.local:80
-        {\n\t\theader_up -Host\n\t\theader_up X-defn-app\t\"{api}\"\n\t\theader_up
-        X-defn-label0\t\"{http.request.host.labels.0}\"\n\t\theader_up X-defn-label1\t\"{http.request.host.labels.1}\"\n\t\theader_up
-        X-defn-label2\t\"{http.request.host.labels.2}\"\n\t}\n}"
+        {\n\t\theader_up -Host\n\t\theader_up X-defn-label0\t\"{http.request.host.labels.0}\"\n\t\theader_up
+        X-defn-label1\t\"{http.request.host.labels.1}\"\n\t\theader_up X-defn-label2\t\"{http.request.host.labels.2}\"\n\t}\n}"
       global: "auto_https disable_certs\n\nlocal_certs\n\nlog {\n\toutput stdout\n}"
     https:
       enabled: true
