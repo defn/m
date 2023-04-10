@@ -40,7 +40,7 @@ helmCharts:
           	tls /certs/tls.crt /certs/tls.key
           	reverse_proxy {api}.default.svc.cluster.local:80 {
           		header_up -Host
-          		header_up X-defn-app	"{app}"
+          		header_up X-defn-app	"{api}"
           		header_up X-defn-label0	"{http.request.host.labels.0}"
           		header_up X-defn-label1	"{http.request.host.labels.1}"
           		header_up X-defn-label2	"{http.request.host.labels.2}"
