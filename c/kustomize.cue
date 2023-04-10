@@ -785,7 +785,7 @@ kustomize: "caddy": #KustomizeHelm & {
 		metadata: {
 			name: "caddy"
 			annotations: {
-				"external-dns.alpha.kubernetes.io/hostname": "argocd.defn.run"
+				"external-dns.alpha.kubernetes.io/hostname": "caddy.defn.run"
 			}
 		}
 
