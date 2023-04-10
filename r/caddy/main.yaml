@@ -21,7 +21,7 @@ data:
     \ \n  log {\n  \toutput stdout\n  }\n}\n\n:9999 {\n  handle / {\n    respond \"OK\"\n
     \ }\n}\n\n\nhttps://argocd.defn.run {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy
     https://argocd-server.argocd.svc.cluster.local {\n\t\ttransport http {\n\t\t\ttls\n\t\t\ttls_insecure_skip_verify\n\t\t}\n\t}\n}\n\nhttps://{api}.defn.run
-    {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy {api}.default.svc.cluster.local:80
+    {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy {http.request.host.labels.2}.default.svc.cluster.local:80
     {\n\t\theader_up -Host\n\t\theader_up X-defn-app\t\"{api}\"\n\t\theader_up X-defn-label0\t\"{http.request.host.labels.0}\"\n\t\theader_up
     X-defn-label1\t\"{http.request.host.labels.1}\"\n\t\theader_up X-defn-label2\t\"{http.request.host.labels.2}\"\n\t}\n}\n"
 kind: ConfigMap
@@ -84,7 +84,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: 4daa1e881dcdf3fe0bcc572c1324122a4cbbf6b7d448fe950abd910b2185a3f2
+        checksum/config: dac651a35838a2f7c6d05dc1ce0f35195da67da1235ebfd768a1fc525a4c730a
       labels:
         app.kubernetes.io/instance: caddy
         app.kubernetes.io/name: caddy
