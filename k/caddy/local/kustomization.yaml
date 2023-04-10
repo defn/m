@@ -11,8 +11,8 @@ helmCharts:
         {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy {$upstream_scheme}://{http.request.host.labels.2}.default.svc.cluster.local
         {\n\t\theader_up -Host\n\t\theader_up X-defn-label0\t\"{http.request.host.labels.0}\"\n\t\theader_up
         X-defn-label1\t\"{http.request.host.labels.1}\"\n\t\theader_up X-defn-label2\t\"{http.request.host.labels.2}\"\n\t}\n}"
-      global: "auto_https on\n\nlocal_certs\n\nlog {\n\toutput stdout\n}\n\nmap {http.request.host.labels.2}
-        $upstream_scheme {\n\tdefault http\n}"
+      global: "auto_https disable_certs\n\nlocal_certs\n\nlog {\n\toutput stdout\n}\n\nmap
+        {http.request.host.labels.2} $upstream_scheme {\n\tdefault http\n}"
     https:
       enabled: true
       port: 443

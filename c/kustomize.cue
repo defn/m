@@ -724,7 +724,7 @@ kustomize: "caddy": #KustomizeHelm & {
 				port:    443
 			}
 			config: global: """
-				auto_https on
+				auto_https disable_certs
 
 				local_certs
 
