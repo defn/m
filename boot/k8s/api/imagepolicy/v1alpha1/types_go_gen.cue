@@ -4,7 +4,7 @@
 
 package v1alpha1
 
-import metav1 "github.com/defn/m/k8s/apimachinery/pkg/apis/meta/v1"
+import metav1 "github.com/defn/m/boot/k8s/apimachinery/pkg/apis/meta/v1"
 
 // ImageReview checks if the set of images in a pod are allowed.
 #ImageReview: {

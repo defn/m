@@ -1,4 +1,1 @@
-.pants.d
-.pids
-.cache
-.direnv
+cue.mod/pkg
