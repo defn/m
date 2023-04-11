@@ -15,4 +15,4 @@ get: # Generate cue schemas for k8s libraries
 	rm -rf cue.mod/gen/k8s.io
 
 rewrite: # Rewrite k8s.io module name to this repo
-	cd .. && git grep '"k8s.io/' k8s.io | cut -d: -f1 | uniq | while read -r f; do perl -pe 's{"k8s.io/}{"github.com/defn/m/k8s/}' -i $$f; done
+	git grep '"k8s.io/' k8s | cut -d: -f1 | uniq | while read -r f; do perl -pe 's{"k8s.io/}{"github.com/defn/m/k8s/}' -i $$f; done
