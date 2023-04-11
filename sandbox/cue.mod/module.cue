@@ -1,7 +1,6 @@
-module: "github.com/defn/m/boot"
+module: "github.com/defn/m/sandbox"
 cue: "v0.4.0"
 
 require: {
-	"github.com/defn/m/boot": "boot-0.0.6"
-	"github.com/defn/m/k8s": "k8s-0.0.4"
+	"github.com/defn/m": "boot-0.0.9"
 }

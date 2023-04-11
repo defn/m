@@ -1,9 +1,9 @@
 package sandbox
 
 import (
-	core "github.com/defn/m/k8s/api/core/v1"
+	core "github.com/defn/m/boot/k8s/api/core/v1"
 )
 
-#MyService: {
-	core.#Service
+#MyService: core.#Service & {
+	metadata: name: "mine"
 }
