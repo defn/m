@@ -10,7 +10,8 @@ get: # Generate cue schemas for k8s libraries
 		go get $$a; \
 		cue get go $$a; \
 	done
-	rsync -ia cue.mod/gen/k8s.io ..
+	mkdir -p ../k8s
+	rsync -ia cue.mod/gen/k8s.io/. ../k8s/.
 	rm -rf cue.mod/gen/k8s.io
 
 rewrite: # Rewrite k8s.io module name to this repo
