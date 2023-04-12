@@ -3,6 +3,7 @@
 patches: []
 resources:
   - resource-namespace-coder.yaml
+  - resource-externalsecret-coder.yaml
 namespace: coder
 helmCharts:
   - releaseName: coder
@@ -10,5 +11,14 @@ helmCharts:
     version: 0.22.0
     repo: https://helm.coder.com/v2
     namespace: coder
-    valuesInline: {}
+    valuesInline:
+      coder:
+        service:
+          type: ClusterIP
+      env:
+        - name: CODER_ACCESS_URL
+          valueFrom:
+            secretKeyRef:
+              name: coder
+              key: CODER_ACCESS_URL
     includeCRDs: true

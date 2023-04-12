@@ -203,6 +203,15 @@ kustomize: "coder": #KustomizeHelm & {
 		version:   "0.22.0"
 		repo:      "https://helm.coder.com/v2"
 		values: {
+			coder: service: type: "ClusterIP"
+
+			env: [{
+				name: "CODER_ACCESS_URL"
+				valueFrom: secretKeyRef: {
+					name: "coder"
+					key:  "CODER_ACCESS_URL"
+				}
+			}]
 		}
 	}
 
@@ -213,6 +222,30 @@ kustomize: "coder": #KustomizeHelm & {
 			name: "coder"
 		}
 	}
+
+	resource: "externalsecret-coder": {
+		apiVersion: "external-secrets.io/v1beta1"
+		kind:       "ExternalSecret"
+		metadata: {
+			name:      "coder"
+			namespace: "coder"
+		}
+		spec: {
+			refreshInterval: "1h"
+			secretStoreRef: {
+				kind: "ClusterSecretStore"
+				name: "dev"
+			}
+			dataFrom: [{
+				extract: key: "dev/amanibhavam-global-coder"
+			}]
+			target: {
+				name:           "coder"
+				creationPolicy: "Owner"
+			}
+		}
+	}
+
 }
 
 // https://artifacthub.io/packages/helm/kyverno/kyverno

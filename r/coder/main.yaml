@@ -62,7 +62,6 @@ metadata:
   name: coder
   namespace: coder
 spec:
-  externalTrafficPolicy: Cluster
   ports:
   - name: http
     port: 80
@@ -72,7 +71,7 @@ spec:
     app.kubernetes.io/instance: coder
     app.kubernetes.io/name: coder
   sessionAffinity: ClientIP
-  type: LoadBalancer
+  type: ClusterIP
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -160,3 +159,20 @@ spec:
       serviceAccountName: coder
       terminationGracePeriodSeconds: 60
       volumes: []
+---
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: coder
+  namespace: coder
+spec:
+  dataFrom:
+  - extract:
+      key: dev/amanibhavam-global-coder
+  refreshInterval: 1h
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: dev
+  target:
+    creationPolicy: Owner
+    name: coder
