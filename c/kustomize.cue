@@ -203,15 +203,17 @@ kustomize: "coder": #KustomizeHelm & {
 		version:   "0.22.0"
 		repo:      "https://helm.coder.com/v2"
 		values: {
-			coder: service: type: "ClusterIP"
+			coder: {
+				service: type: "ClusterIP"
 
-			env: [{
-				name: "CODER_ACCESS_URL"
-				valueFrom: secretKeyRef: {
-					name: "coder"
-					key:  "CODER_ACCESS_URL"
-				}
-			}]
+				env: [{
+					name: "CODER_ACCESS_URL"
+					valueFrom: secretKeyRef: {
+						name: "coder"
+						key:  "CODER_ACCESS_URL"
+					}
+				}]
+			}
 		}
 	}
 
