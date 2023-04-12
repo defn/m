@@ -192,6 +192,18 @@ kustomize: "argo-workflows": #KustomizeHelm & {
 	}
 }
 
+// https://artifacthub.io/packages/helm/coder-v2/coder
+kustomize: "coder": #KustomizeHelm & {
+	helm: {
+		release: "coder"
+		name:    "coder"
+		version: "0.22.0"
+		repo:    "https://helm.coder.com/v2"
+		values: {
+		}
+	}
+}
+
 // https://artifacthub.io/packages/helm/kyverno/kyverno
 kustomize: "kyverno": #KustomizeHelm & {
 	namespace: "kyverno"

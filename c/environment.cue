@@ -65,6 +65,7 @@ env: (#Transform & {
 				"defn": [40, ""]
 				"caddy": [50, ""]
 				"hello": [60, ""]
+				"coder": [60, ""]
 				"argo-cd": [1000, ""]
 			}
 		}
