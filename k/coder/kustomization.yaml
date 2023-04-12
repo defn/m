@@ -1,11 +1,13 @@
 #ManagedBy: cue
 
 patches: []
-resources: []
+resources:
+  - resource-namespace-coder.yaml
 helmCharts:
   - releaseName: coder
     name: coder
     version: 0.22.0
     repo: https://helm.coder.com/v2
     valuesInline: {}
+    namespace: coder
     includeCRDs: true

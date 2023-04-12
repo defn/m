@@ -1,6 +1,9 @@
 helmCharts:
 - includeCRDs: true
   name: coder
+  namespace: coder
   releaseName: coder
   repo: https://helm.coder.com/v2
   version: 0.22.0
+resources:
+- resource-namespace-coder.yaml
