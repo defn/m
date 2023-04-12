@@ -14,11 +14,13 @@ metadata:
     app.kubernetes.io/version: 0.22.0
     helm.sh/chart: coder-0.22.0
   name: coder
+  namespace: coder
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: coder-workspace-perms
+  namespace: coder
 rules:
 - apiGroups:
   - ""
@@ -37,6 +39,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: coder
+  namespace: coder
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -44,6 +47,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: coder
+  namespace: coder
 ---
 apiVersion: v1
 kind: Service
@@ -56,6 +60,7 @@ metadata:
     app.kubernetes.io/version: 0.22.0
     helm.sh/chart: coder-0.22.0
   name: coder
+  namespace: coder
 spec:
   externalTrafficPolicy: Cluster
   ports:
@@ -80,6 +85,7 @@ metadata:
     app.kubernetes.io/version: 0.22.0
     helm.sh/chart: coder-0.22.0
   name: coder
+  namespace: coder
 spec:
   replicas: 1
   selector:

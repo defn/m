@@ -172,8 +172,8 @@ kustomize: "argo-workflows": #KustomizeHelm & {
 	helm: {
 		release:   "argo-workflows"
 		name:      "argo-workflows"
-		version:   "0.23.0"
 		namespace: "argo-workflows"
+		version:   "0.23.0"
 		repo:      "https://argoproj.github.io/argo-helm"
 		values: {
 			controller: workflowNamespaces: [
@@ -194,6 +194,8 @@ kustomize: "argo-workflows": #KustomizeHelm & {
 
 // https://artifacthub.io/packages/helm/coder-v2/coder
 kustomize: "coder": #KustomizeHelm & {
+	namespace: "coder"
+
 	helm: {
 		release:   "coder"
 		name:      "coder"
