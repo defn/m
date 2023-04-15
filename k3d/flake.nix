@@ -1,6 +1,6 @@
 {
   inputs = {
-    kubernetes.url = github:defn/m/pkg-kubernetes-0.0.72?dir=pkg/kubernetes;
+    kubernetes.url = github:defn/m/pkg-kubernetes-0.0.73?dir=pkg/kubernetes;
     vault.url = github:defn/m/pkg-vault-1.13.1-3?dir=pkg/vault;
     tailscale.url = github:defn/m/pkg-tailscale-1.38.4-3?dir=pkg/tailscale;
   };
