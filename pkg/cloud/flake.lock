@@ -6,17 +6,17 @@
       },
       "locked": {
         "dir": "pkg/awscli",
-        "lastModified": 1681022320,
-        "narHash": "sha256-YQlPmc1C+CHF0s8giQm29+JPaDvY0jmqx//qlJQ6I0A=",
+        "lastModified": 1681518890,
+        "narHash": "sha256-WUqtzSojIPwYu0eHdRcm5J+TxzKdH7ycOagyewiAzis=",
         "owner": "defn",
         "repo": "m",
-        "rev": "d686a2844c64efc8ce7dd2cff2b8728483583a06",
+        "rev": "1f2eb9e836566815c6ed49de286666e0b7d70839",
         "type": "github"
       },
       "original": {
         "dir": "pkg/awscli",
         "owner": "defn",
-        "ref": "pkg-awscli-2.11.11-3",
+        "ref": "pkg-awscli-2.11.13-1",
         "repo": "m",
         "type": "github"
       }
@@ -356,17 +356,17 @@
       },
       "locked": {
         "dir": "pkg/step",
-        "lastModified": 1681022638,
-        "narHash": "sha256-0nvPYKMrmyYrAiVpojjgHegJRYLC8FzSyAlIRbkA57o=",
+        "lastModified": 1681519176,
+        "narHash": "sha256-qAcoDH443u4Izq/zFGL6eqHBWuX7MzLIm1Nfy7B1XjI=",
         "owner": "defn",
         "repo": "m",
-        "rev": "5ae22d2b8d152f9d306d51924ebd3e6cc839f9db",
+        "rev": "a3efb458ac0fe6faa0e0ae489e218a36c7031c6a",
         "type": "github"
       },
       "original": {
         "dir": "pkg/step",
         "owner": "defn",
-        "ref": "pkg-step-0.23.4-3",
+        "ref": "pkg-step-0.24.3-1",
         "repo": "m",
         "type": "github"
       }
@@ -377,17 +377,17 @@
       },
       "locked": {
         "dir": "pkg/terraform",
-        "lastModified": 1681022661,
-        "narHash": "sha256-dDpZo/syPNWtFDV0mkgFE4J/EeMlPMCL8nZFr64Ps0k=",
+        "lastModified": 1681519200,
+        "narHash": "sha256-m5N3NMVfCa/rIYzsM++0QdVqQEu0qHga/vUyvD2i0y0=",
         "owner": "defn",
         "repo": "m",
-        "rev": "1ec7af052c971ed612efcc340a0998b072dd900c",
+        "rev": "f8bd82d0d2dabbd06055ec7cddcdf0fdbdcb60ed",
         "type": "github"
       },
       "original": {
         "dir": "pkg/terraform",
         "owner": "defn",
-        "ref": "pkg-terraform-1.4.4-4",
+        "ref": "pkg-terraform-1.4.5-1",
         "repo": "m",
         "type": "github"
       }
