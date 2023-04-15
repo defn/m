@@ -25,7 +25,7 @@
 
             installPhase = ''
               mkdir -p $out
-              kustomize build --enable-helm local > $out/main.yaml
+              kustomize build > $out/main.yaml
             '';
           };
         in
