@@ -12,17 +12,17 @@
       },
       "locked": {
         "dir": "app/app",
-        "lastModified": 1681520681,
-        "narHash": "sha256-e3fIkFgekI1abXmAds8+jC7/5CEwXDRJ9GABVSC/JYs=",
+        "lastModified": 1681534153,
+        "narHash": "sha256-rzNOYosdXJ6sgZtv93kPQZN+ngvkJkwYxuD8+k4xjN4=",
         "owner": "defn",
         "repo": "m",
-        "rev": "9c2dfb9292471fedbe3b1e7dacfe940125922689",
+        "rev": "f948a495b30979828e2f3f4158bfb55f40ad0f6c",
         "type": "github"
       },
       "original": {
         "dir": "app/app",
         "owner": "defn",
-        "ref": "app-app-0.0.38",
+        "ref": "app-app-0.0.40",
         "repo": "m",
         "type": "github"
       }
@@ -503,17 +503,17 @@
       },
       "locked": {
         "dir": "cmd/infra",
-        "lastModified": 1681521276,
-        "narHash": "sha256-iek32s8At9KBcGGY7c/s2hu16cif7lqxmWuw9DmYf4o=",
+        "lastModified": 1681585685,
+        "narHash": "sha256-ROufnbpHMy34SK8It4LE3ZRI1w3sSKxYKlFX/henPng=",
         "owner": "defn",
         "repo": "m",
-        "rev": "4150885f70af91879f4d1d57d5d4c627c18591bf",
+        "rev": "5ef736c0c44a2b6964b08a8ae1465a049b311922",
         "type": "github"
       },
       "original": {
         "dir": "cmd/infra",
         "owner": "defn",
-        "ref": "cmd-infra-0.0.28",
+        "ref": "cmd-infra-0.0.29",
         "repo": "m",
         "type": "github"
       }
