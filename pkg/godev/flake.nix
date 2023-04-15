@@ -4,7 +4,7 @@
     buf.url = github:defn/m/pkg-buf-1.17.0-3?dir=pkg/buf;
     operatorsdk.url = github:defn/m/pkg-operatorsdk-1.28.0-3?dir=pkg/operatorsdk;
     cosign.url = github:defn/m/pkg-cosign-2.0.1-3?dir=pkg/cosign;
-    latest.url = github:NixOS/nixpkgs?rev=64c27498901f104a11df646278c4e5c9f4d642db; # nixos-unstable https://lazamar.co.uk/nix-versions/
+    latest.url = github:NixOS/nixpkgs?rev=e3b18e82da9ab82b572d70c162d4e13a058aeb7d;
   };
 
   outputs = inputs: inputs.goreleaser.inputs.pkg.main rec {
@@ -14,8 +14,6 @@
       propagatedBuildInputs =
         with (import inputs.latest { system = ctx.system; }); [
           gcc
-          go_1_20
-          bashInteractive
           gotools
           go-tools
           golangci-lint
@@ -23,10 +21,12 @@
           gopkgs
           delve
           gopls
+          go_1_20
           inputs.buf.defaultPackage.${ctx.system}
           inputs.operatorsdk.defaultPackage.${ctx.system}
           inputs.goreleaser.defaultPackage.${ctx.system}
           inputs.cosign.defaultPackage.${ctx.system}
+          bashInteractive
         ];
     };
   };
