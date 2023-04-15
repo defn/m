@@ -7,7 +7,7 @@ all:
 ignore:
 	echo tf > .bazelignore
 	echo node_modules >> .bazelignore
-	git ls-files | grep flake.nix | perl -pe 's{/?flake.nix}{/.direnv}' | sort >> .bazelignore
+	git ls-files | grep flake.nix | perl -pe 's{(/?)flake.nix}{\1.direnv}' | sort >> .bazelignore
 
 get:
 	npm install

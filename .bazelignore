@@ -1,6 +1,6 @@
 tf
 node_modules
-/.direnv
+.direnv
 app/app/.direnv
 boot/.direnv
 cmd/cli/.direnv
