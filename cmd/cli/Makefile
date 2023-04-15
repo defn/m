@@ -1,3 +1,6 @@
+ignore:
+	true
+
 build:
 	cd proto && buf mod update
 	cd proto && buf build	

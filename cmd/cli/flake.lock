@@ -12,17 +12,17 @@
       },
       "locked": {
         "dir": "app/app",
-        "lastModified": 1681520681,
-        "narHash": "sha256-e3fIkFgekI1abXmAds8+jC7/5CEwXDRJ9GABVSC/JYs=",
+        "lastModified": 1681534153,
+        "narHash": "sha256-rzNOYosdXJ6sgZtv93kPQZN+ngvkJkwYxuD8+k4xjN4=",
         "owner": "defn",
         "repo": "m",
-        "rev": "9c2dfb9292471fedbe3b1e7dacfe940125922689",
+        "rev": "f948a495b30979828e2f3f4158bfb55f40ad0f6c",
         "type": "github"
       },
       "original": {
         "dir": "app/app",
         "owner": "defn",
-        "ref": "app-app-0.0.38",
+        "ref": "app-app-0.0.40",
         "repo": "m",
         "type": "github"
       }
