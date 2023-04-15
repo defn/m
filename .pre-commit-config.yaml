@@ -21,4 +21,4 @@ repos:
     rev: v2.7.1
     hooks:
       - id: prettier
-        exclude: (provider|cdktf.out|.local|tf|k)/|local|main.tf.json|tf/terraform-|gen/
+        exclude: (provider|cdktf.out|.local|tf|k)/|local|main.tf.json|tf/terraform-|gen/|^r/
