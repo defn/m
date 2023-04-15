@@ -354,17 +354,17 @@
       },
       "locked": {
         "dir": "pkg/earthly",
-        "lastModified": 1681022451,
-        "narHash": "sha256-kh/K7Zp6c+1sfxHgklG5CCSPNleRY4DQ5pK0qTdtWwg=",
+        "lastModified": 1681519113,
+        "narHash": "sha256-YtY4hQkppK+Ntffe4W7ci920HN4DDhj9Kd5Gxd3HO4w=",
         "owner": "defn",
         "repo": "m",
-        "rev": "2a21f605c041192101885da24e3b4a937f57f58f",
+        "rev": "1daa090360c8057b6bc2e5864d65c22949b8d077",
         "type": "github"
       },
       "original": {
         "dir": "pkg/earthly",
         "owner": "defn",
-        "ref": "pkg-earthly-0.7.2-3",
+        "ref": "pkg-earthly-0.7.4-1",
         "repo": "m",
         "type": "github"
       }
@@ -609,17 +609,17 @@
       },
       "locked": {
         "dir": "pkg/honeytail",
-        "lastModified": 1681022503,
-        "narHash": "sha256-4T9IYJdhUbA5GJgyq8AnICpc/WFOlWpnRY4E6AFo4zk=",
+        "lastModified": 1681519161,
+        "narHash": "sha256-7ziLL/Gz7BVRFsLIMLZ6q+/0VYxtnf0/uDVLs0oCIRk=",
         "owner": "defn",
         "repo": "m",
-        "rev": "2a5b54f118aa2803bbc58c8b71f2e177a352bbac",
+        "rev": "7f0c01b201a727ec7f32f5b2ab44bbe8aa9d19c6",
         "type": "github"
       },
       "original": {
         "dir": "pkg/honeytail",
         "owner": "defn",
-        "ref": "pkg-honeytail-1.8.2-3",
+        "ref": "pkg-honeytail-1.8.3-1",
         "repo": "m",
         "type": "github"
       }
@@ -1132,17 +1132,17 @@
       },
       "locked": {
         "dir": "pkg/tilt",
-        "lastModified": 1681022681,
-        "narHash": "sha256-PFZnUrrG7Q1WNCitMRYm8MVafxkDA7ntGpqg4RGVebk=",
+        "lastModified": 1681519217,
+        "narHash": "sha256-R6/9JaX5p8zAnyjQ3o9X0z4wXq2Ak5IYoUMzezIW0WE=",
         "owner": "defn",
         "repo": "m",
-        "rev": "6b151e482a411eb5ca5bbab25c1973642f98bdc6",
+        "rev": "8d23e34cf964b6945ef615b14c51a21a411044e2",
         "type": "github"
       },
       "original": {
         "dir": "pkg/tilt",
         "owner": "defn",
-        "ref": "pkg-tilt-0.32.0-3",
+        "ref": "pkg-tilt-0.32.1-1",
         "repo": "m",
         "type": "github"
       }
