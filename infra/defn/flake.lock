@@ -12,17 +12,17 @@
       },
       "locked": {
         "dir": "app/app",
-        "lastModified": 1681025941,
-        "narHash": "sha256-EY3n6h4det34fka80HeXCzai8u36X0dvfGfUtBWLlKk=",
+        "lastModified": 1681189941,
+        "narHash": "sha256-AIYmv/KMSdmoR53g6MYB7nnljLGn2xsnmPK+FE9jf68=",
         "owner": "defn",
         "repo": "m",
-        "rev": "7651d2b89c2a3de6937b12daac78bec88c0d8158",
+        "rev": "2bb629c239aef0849d8c8425924e8ea79e980aad",
         "type": "github"
       },
       "original": {
         "dir": "app/app",
         "owner": "defn",
-        "ref": "app-app-0.0.36",
+        "ref": "app-app-0.0.37",
         "repo": "m",
         "type": "github"
       }
@@ -421,17 +421,17 @@
       },
       "locked": {
         "dir": "pkg/godev",
-        "lastModified": 1681023100,
-        "narHash": "sha256-qO32D0tFb1KKMSN3v4lcCyxNO6n+SuGfgH04EY5HELg=",
+        "lastModified": 1681189442,
+        "narHash": "sha256-XQmoFzqioRcKaNU0tE4QYZ/YJ4OYnTy6H6LlMCRgOJ8=",
         "owner": "defn",
         "repo": "m",
-        "rev": "d2c046accd5948c09eb4961402f750145dfde23a",
+        "rev": "474a147d9ac0098d46607bc28f91cfc8646d613e",
         "type": "github"
       },
       "original": {
         "dir": "pkg/godev",
         "owner": "defn",
-        "ref": "pkg-godev-0.0.65",
+        "ref": "pkg-godev-0.0.67",
         "repo": "m",
         "type": "github"
       }
@@ -461,17 +461,17 @@
       },
       "locked": {
         "dir": "pkg/goreleaser",
-        "lastModified": 1681022477,
-        "narHash": "sha256-hw9gyFhh/5nAjHblJ5CcvlWjEWZMsHvmt9tNn/A0hJk=",
+        "lastModified": 1681188993,
+        "narHash": "sha256-zqB28R1CWaDNF9+beIH73qTzmLvQZI5uBzYp4cPuUog=",
         "owner": "defn",
         "repo": "m",
-        "rev": "2adb2b883d721ab3d089901c99c798d3078ee4b1",
+        "rev": "771bf38dd2f2f2c562d3bcf777d9f1568f983056",
         "type": "github"
       },
       "original": {
         "dir": "pkg/goreleaser",
         "owner": "defn",
-        "ref": "pkg-goreleaser-1.16.2-3",
+        "ref": "pkg-goreleaser-1.17.0-1",
         "repo": "m",
         "type": "github"
       }
@@ -503,17 +503,17 @@
       },
       "locked": {
         "dir": "cmd/infra",
-        "lastModified": 1681029993,
-        "narHash": "sha256-Y3mvI8u6IFsGyDQb6HGV58i7V5valz/po62hVAcRGcw=",
+        "lastModified": 1681520904,
+        "narHash": "sha256-vcHjbEhJXd7MbaBhL+73e8Fj+FQSzJeibxzw/gSnrHM=",
         "owner": "defn",
         "repo": "m",
-        "rev": "33767a4fc303a4b344dac3fa1f87659517fb8cb7",
+        "rev": "bb484f3941de14dd3df8510bdd578573bf5ac7cb",
         "type": "github"
       },
       "original": {
         "dir": "cmd/infra",
         "owner": "defn",
-        "ref": "cmd-infra-0.0.26",
+        "ref": "cmd-infra-0.0.27",
         "repo": "m",
         "type": "github"
       }
