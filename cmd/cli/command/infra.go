@@ -1,4 +1,4 @@
-package cmd
+package command
 
 import (
 	_ "embed"
@@ -31,7 +31,7 @@ to quickly create a Cobra application.`,
 		example_props := LoadUserExampleProps()
 
 		if example_props == (ExampleProps{}) {
-			fmt.Printf("Error: for details, run: cue vet main.cue cmd/infra.cue\n")
+			fmt.Printf("Error: for details, run: cue vet main.cue command/infra.cue\n")
 			return
 		}
 

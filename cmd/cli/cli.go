@@ -1,7 +1,7 @@
 package main
 
-import "github.com/defn/m/cmd/cli"
+import "github.com/defn/m/cmd/cli/command"
 
 func main() {
-	cmd.Execute()
+	command.Execute()
 }

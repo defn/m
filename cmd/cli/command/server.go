@@ -1,4 +1,4 @@
-package cmd
+package command
 
 // buf curl --schema proto/pet/v1/pet.proto --data '{"pet_type": "PET_TYPE_SNAKE", "name": "Ekans"}' http://localhost:8080/pet.v1.PetStoreService/PutPet
 
@@ -14,8 +14,8 @@ import (
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
 
-	petv1 "github.com/defn/m/gen/pet/v1"
-	"github.com/defn/m/gen/pet/v1/petv1connect"
+	petv1 "github.com/defn/m/cmd/cli/gen/pet/v1"
+	"github.com/defn/m/cmd/cli/gen/pet/v1/petv1connect"
 )
 
 var serverCmd = &cobra.Command{

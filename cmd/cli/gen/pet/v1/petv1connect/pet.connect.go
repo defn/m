@@ -8,7 +8,7 @@ import (
 	context "context"
 	errors "errors"
 	connect_go "github.com/bufbuild/connect-go"
-	v1 "github.com/defn/template-go/gen/pet/v1"
+	v1 "github.com/defn/m/cmd/cli/gen/pet/v1"
 	http "net/http"
 	strings "strings"
 )
@@ -23,6 +23,23 @@ const _ = connect_go.IsAtLeastVersion0_1_0
 const (
 	// PetStoreServiceName is the fully-qualified name of the PetStoreService service.
 	PetStoreServiceName = "pet.v1.PetStoreService"
+)
+
+// These constants are the fully-qualified names of the RPCs defined in this package. They're
+// exposed at runtime as Spec.Procedure and as the final two segments of the HTTP route.
+//
+// Note that these are different from the fully-qualified method names used by
+// google.golang.org/protobuf/reflect/protoreflect. To convert from these constants to
+// reflection-formatted method names, remove the leading slash and convert the remaining slash to a
+// period.
+const (
+	// PetStoreServiceGetPetProcedure is the fully-qualified name of the PetStoreService's GetPet RPC.
+	PetStoreServiceGetPetProcedure = "/pet.v1.PetStoreService/GetPet"
+	// PetStoreServicePutPetProcedure is the fully-qualified name of the PetStoreService's PutPet RPC.
+	PetStoreServicePutPetProcedure = "/pet.v1.PetStoreService/PutPet"
+	// PetStoreServiceDeletePetProcedure is the fully-qualified name of the PetStoreService's DeletePet
+	// RPC.
+	PetStoreServiceDeletePetProcedure = "/pet.v1.PetStoreService/DeletePet"
 )
 
 // PetStoreServiceClient is a client for the pet.v1.PetStoreService service.
@@ -44,17 +61,17 @@ func NewPetStoreServiceClient(httpClient connect_go.HTTPClient, baseURL string, 
 	return &petStoreServiceClient{
 		getPet: connect_go.NewClient[v1.GetPetRequest, v1.GetPetResponse](
 			httpClient,
-			baseURL+"/pet.v1.PetStoreService/GetPet",
+			baseURL+PetStoreServiceGetPetProcedure,
 			opts...,
 		),
 		putPet: connect_go.NewClient[v1.PutPetRequest, v1.PutPetResponse](
 			httpClient,
-			baseURL+"/pet.v1.PetStoreService/PutPet",
+			baseURL+PetStoreServicePutPetProcedure,
 			opts...,
 		),
 		deletePet: connect_go.NewClient[v1.DeletePetRequest, v1.DeletePetResponse](
 			httpClient,
-			baseURL+"/pet.v1.PetStoreService/DeletePet",
+			baseURL+PetStoreServiceDeletePetProcedure,
 			opts...,
 		),
 	}
@@ -96,18 +113,18 @@ type PetStoreServiceHandler interface {
 // and JSON codecs. They also support gzip compression.
 func NewPetStoreServiceHandler(svc PetStoreServiceHandler, opts ...connect_go.HandlerOption) (string, http.Handler) {
 	mux := http.NewServeMux()
-	mux.Handle("/pet.v1.PetStoreService/GetPet", connect_go.NewUnaryHandler(
-		"/pet.v1.PetStoreService/GetPet",
+	mux.Handle(PetStoreServiceGetPetProcedure, connect_go.NewUnaryHandler(
+		PetStoreServiceGetPetProcedure,
 		svc.GetPet,
 		opts...,
 	))
-	mux.Handle("/pet.v1.PetStoreService/PutPet", connect_go.NewUnaryHandler(
-		"/pet.v1.PetStoreService/PutPet",
+	mux.Handle(PetStoreServicePutPetProcedure, connect_go.NewUnaryHandler(
+		PetStoreServicePutPetProcedure,
 		svc.PutPet,
 		opts...,
 	))
-	mux.Handle("/pet.v1.PetStoreService/DeletePet", connect_go.NewUnaryHandler(
-		"/pet.v1.PetStoreService/DeletePet",
+	mux.Handle(PetStoreServiceDeletePetProcedure, connect_go.NewUnaryHandler(
+		PetStoreServiceDeletePetProcedure,
 		svc.DeletePet,
 		opts...,
 	))

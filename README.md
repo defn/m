@@ -1,6 +1,6 @@
 ## Pre-requisites
 
-Install `nix` and finish `direnv` integration.
+Install `nix` and finish `direnv` integration.  Then `cd cmd/cli`.
 
 ## Using the CLI
 
@@ -39,9 +39,9 @@ Load and verify bash completion:
 ```
 go install
 source /etc/profile.d/bash_completion.sh
-eval "$(template-go completion bash)"
-complete -p template-go
-template-go <TAB>
+eval "$(cli completion bash)"
+complete -p cli
+cli <TAB>
 ```
 
 ## Adding sub-commands
