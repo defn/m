@@ -8,6 +8,8 @@ repos:
         exclude: (provider|cdktf.out|.local|tf|k)/|^gen|\.lock|local|main.tf.json|VERSION|VENDOR|REVISION|tf/terraform-
       - id: check-json
         exclude: (provider|cdktf.out|.local)/|tf/terraform-
+      - id: check-toml
+        exclude: (provider|cdktf.out|.local)/|tf/terraform-
       - id: check-yaml
         args: [--allow-multiple-documents, --unsafe]
         exclude: (provider|cdktf.out|.local)/|local|/charts/|tf/terraform-
@@ -20,3 +22,12 @@ repos:
     hooks:
       - id: prettier
         exclude: (provider|cdktf.out|.local|tf|k)/|local|main.tf.json|tf/terraform-
+  - repo: https://github.com/tekwizely/pre-commit-golang
+    rev: v1.0.0-rc.1
+    hooks:
+      - id: go-imports
+        exclude: ^gen
+      - id: go-mod-tidy
+        exclude: ^gen
+      - id: go-build-mod
+        exclude: ^gen
