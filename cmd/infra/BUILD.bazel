@@ -1,0 +1,35 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "infra_lib",
+    srcs = ["infra.go"],
+    embedsrcs = ["schema/infra.cue"],
+    importpath = "github.com/defn/m/cmd/infra",
+    visibility = ["//visibility:private"],
+    deps = [
+        "@com_github_aws_constructs_go_constructs_v10//:go_default_library",
+        "@com_github_aws_jsii_runtime_go//:go_default_library",
+        "@com_github_cdktf_cdktf_provider_aws_go_aws_v12//dataawsssoadmininstances:go_default_library",
+        "@com_github_cdktf_cdktf_provider_aws_go_aws_v12//identitystoregroup:go_default_library",
+        "@com_github_cdktf_cdktf_provider_aws_go_aws_v12//identitystoregroupmembership:go_default_library",
+        "@com_github_cdktf_cdktf_provider_aws_go_aws_v12//identitystoreuser:go_default_library",
+        "@com_github_cdktf_cdktf_provider_aws_go_aws_v12//organizationsaccount:go_default_library",
+        "@com_github_cdktf_cdktf_provider_aws_go_aws_v12//organizationsorganization:go_default_library",
+        "@com_github_cdktf_cdktf_provider_aws_go_aws_v12//provider:go_default_library",
+        "@com_github_cdktf_cdktf_provider_aws_go_aws_v12//ssoadminaccountassignment:go_default_library",
+        "@com_github_cdktf_cdktf_provider_aws_go_aws_v12//ssoadminmanagedpolicyattachment:go_default_library",
+        "@com_github_cdktf_cdktf_provider_aws_go_aws_v12//ssoadminpermissionset:go_default_library",
+        "@com_github_cdktf_cdktf_provider_tfe_go_tfe_v5//provider:go_default_library",
+        "@com_github_cdktf_cdktf_provider_tfe_go_tfe_v5//workspace:go_default_library",
+        "@com_github_hashicorp_terraform_cdk_go_cdktf//:go_default_library",
+        "@org_cuelang_go//cue:go_default_library",
+        "@org_cuelang_go//cue/cuecontext:go_default_library",
+        "@org_cuelang_go//cue/load:go_default_library",
+    ],
+)
+
+go_binary(
+    name = "infra",
+    embed = [":infra_lib"],
+    visibility = ["//visibility:public"],
+)
