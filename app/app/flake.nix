@@ -73,7 +73,7 @@
                   cp ${ctx.goCmd}/bin/${ctx.config.cli} $out/bin/
                   if [[ -n "${defaultCaller.generateCompletion}" ]]; then
                     mkdir -p $out/share/bash-completion/completions
-                    $out/bin/${ctx.config.slug} completion bash > $out/share/bash-completion/completions/_${ctx.config.slug}
+                    $out/bin/${ctx.config.cli} completion bash > $out/share/bash-completion/completions/_${ctx.config.cli}
                   fi
                 '';
               } // (defaultCaller.extendBuild ctx)
