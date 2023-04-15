@@ -12,17 +12,17 @@
       },
       "locked": {
         "dir": "app/app",
-        "lastModified": 1681025941,
-        "narHash": "sha256-EY3n6h4det34fka80HeXCzai8u36X0dvfGfUtBWLlKk=",
+        "lastModified": 1681520681,
+        "narHash": "sha256-e3fIkFgekI1abXmAds8+jC7/5CEwXDRJ9GABVSC/JYs=",
         "owner": "defn",
         "repo": "m",
-        "rev": "7651d2b89c2a3de6937b12daac78bec88c0d8158",
+        "rev": "9c2dfb9292471fedbe3b1e7dacfe940125922689",
         "type": "github"
       },
       "original": {
         "dir": "app/app",
         "owner": "defn",
-        "ref": "app-app-0.0.36",
+        "ref": "app-app-0.0.38",
         "repo": "m",
         "type": "github"
       }
@@ -60,17 +60,17 @@
       },
       "locked": {
         "dir": "k/argo-cd",
-        "lastModified": 1681030707,
-        "narHash": "sha256-BFMcRZevy5XBxwoBvvXJXVxBBw0jDY3WB8CadukBXKU=",
+        "lastModified": 1681532716,
+        "narHash": "sha256-GYj7UAoyLXlItz82NJLrHybuvlq11h4fOrHVEBxF8So=",
         "owner": "defn",
         "repo": "m",
-        "rev": "3e1236f190ac3757a50870fb9ae3bd7631cdf9d4",
+        "rev": "16c15e050fd2c3134a65e1e4142a69ba29457631",
         "type": "github"
       },
       "original": {
         "dir": "k/argo-cd",
         "owner": "defn",
-        "ref": "k-argo-cd-0.0.19",
+        "ref": "k-argo-cd-0.0.22",
         "repo": "m",
         "type": "github"
       }
@@ -874,17 +874,17 @@
       },
       "locked": {
         "dir": "pkg/godev",
-        "lastModified": 1681023100,
-        "narHash": "sha256-qO32D0tFb1KKMSN3v4lcCyxNO6n+SuGfgH04EY5HELg=",
+        "lastModified": 1681520515,
+        "narHash": "sha256-nAxh1Gnsowqrjwmj5O4B/nLugoB0wb++LalLnMzHzyc=",
         "owner": "defn",
         "repo": "m",
-        "rev": "d2c046accd5948c09eb4961402f750145dfde23a",
+        "rev": "b765e72836f5156757e54ef0dce53dc91e978785",
         "type": "github"
       },
       "original": {
         "dir": "pkg/godev",
         "owner": "defn",
-        "ref": "pkg-godev-0.0.65",
+        "ref": "pkg-godev-0.0.69",
         "repo": "m",
         "type": "github"
       }
@@ -958,17 +958,17 @@
       },
       "locked": {
         "dir": "pkg/goreleaser",
-        "lastModified": 1681022477,
-        "narHash": "sha256-hw9gyFhh/5nAjHblJ5CcvlWjEWZMsHvmt9tNn/A0hJk=",
+        "lastModified": 1681519129,
+        "narHash": "sha256-BQAEpb/fMpFDEvQ7feFQnUvRAP/Ng+h/Q1bBCfweK60=",
         "owner": "defn",
         "repo": "m",
-        "rev": "2adb2b883d721ab3d089901c99c798d3078ee4b1",
+        "rev": "a48697af7e0c94bfcb220b9abf3d7df19eeb723d",
         "type": "github"
       },
       "original": {
         "dir": "pkg/goreleaser",
         "owner": "defn",
-        "ref": "pkg-goreleaser-1.16.2-3",
+        "ref": "pkg-goreleaser-1.17.1-1",
         "repo": "m",
         "type": "github"
       }
@@ -1000,17 +1000,17 @@
       },
       "locked": {
         "dir": "pkg/helm",
-        "lastModified": 1681022488,
-        "narHash": "sha256-jSv7QrbelJTr8taj9TC1NPi6VKEfXRt2hOgpgConV5g=",
+        "lastModified": 1681519143,
+        "narHash": "sha256-C8rYILMqaI6237/MFzud6FpQ/NDf3hjEXlm7ix5a+Kc=",
         "owner": "defn",
         "repo": "m",
-        "rev": "c9b031a92137318dcaf8ab3b94298396514ee3db",
+        "rev": "744e1d531929a925ab4f38f265694fc17180fd7d",
         "type": "github"
       },
       "original": {
         "dir": "pkg/helm",
         "owner": "defn",
-        "ref": "pkg-helm-3.11.2-3",
+        "ref": "pkg-helm-3.11.3-1",
         "repo": "m",
         "type": "github"
       }
@@ -1080,17 +1080,17 @@
     },
     "latest": {
       "locked": {
-        "lastModified": 1678453159,
-        "narHash": "sha256-mU4mJeb1fRSvCDALe57vIKfhECvYroB4J4s0L2TR/iE=",
+        "lastModified": 1681520089,
+        "narHash": "sha256-nRb1ST3MJ10svRirTOelkDw75Y3PNLdZSGYFJZ99H+8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "64c27498901f104a11df646278c4e5c9f4d642db",
+        "rev": "e3b18e82da9ab82b572d70c162d4e13a058aeb7d",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "64c27498901f104a11df646278c4e5c9f4d642db",
+        "rev": "e3b18e82da9ab82b572d70c162d4e13a058aeb7d",
         "type": "github"
       }
     },
@@ -1934,17 +1934,17 @@
       },
       "locked": {
         "dir": "pkg/terraform",
-        "lastModified": 1681022661,
-        "narHash": "sha256-dDpZo/syPNWtFDV0mkgFE4J/EeMlPMCL8nZFr64Ps0k=",
+        "lastModified": 1681519200,
+        "narHash": "sha256-m5N3NMVfCa/rIYzsM++0QdVqQEu0qHga/vUyvD2i0y0=",
         "owner": "defn",
         "repo": "m",
-        "rev": "1ec7af052c971ed612efcc340a0998b072dd900c",
+        "rev": "f8bd82d0d2dabbd06055ec7cddcdf0fdbdcb60ed",
         "type": "github"
       },
       "original": {
         "dir": "pkg/terraform",
         "owner": "defn",
-        "ref": "pkg-terraform-1.4.4-4",
+        "ref": "pkg-terraform-1.4.5-1",
         "repo": "m",
         "type": "github"
       }
