@@ -1,4 +1,4 @@
 {
-  "slug": "ibazel",
+  "slug": "pkg-ibazel",
   "ghrepo": "bazelbuild/bazel-watcher"
 }
