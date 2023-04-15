@@ -19,7 +19,7 @@
   "terraform": {
     "cloud": {
       "hostname": "app.terraform.io",
-      "organization": "template-go",
+      "organization": "cli",
       "workspaces": {
         "name": "example"
       }

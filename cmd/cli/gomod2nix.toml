@@ -46,9 +46,6 @@ schema = 3
   [mod."github.com/containerd/console"]
     version = "v1.0.3"
     hash = "sha256-4p4u/rS7G4KKbIcZaVMqE1OtSoNlOpmcYFwO0ZEH/V0="
-  [mod."github.com/defn/template-go"]
-    version = "v0.0.0-20230415014747-611c267686d2"
-    hash = "sha256-vY4t1fIHGhfidkM/zthABU8ep+EEFl7K6MY+F+xViNU="
   [mod."github.com/emicklei/proto"]
     version = "v1.11.1"
     hash = "sha256-/Zp1CBrQkjQB6XR7yJ+jId6ZRYl97SSwJ3Ew9zHjxRU="
@@ -91,6 +88,9 @@ schema = 3
   [mod."github.com/klauspost/cpuid/v2"]
     version = "v2.2.4"
     hash = "sha256-EjWkW6py3nYOut+YY9waTI2OegIFQWuJRS1hZ+F+obU="
+  [mod."github.com/kr/pretty"]
+    version = "v0.3.1"
+    hash = "sha256-DlER7XM+xiaLjvebcIPiB12oVNjyZHuJHoRGITzzpKU="
   [mod."github.com/leodido/go-urn"]
     version = "v1.2.3"
     hash = "sha256-SbhLPCXQbK+K816uMEL4hfqfnujzMNEH9uL1lYopYTw="
@@ -148,6 +148,9 @@ schema = 3
   [mod."github.com/rivo/uniseg"]
     version = "v0.4.4"
     hash = "sha256-B8tbL9K6ICLdm0lEhs9+h4cpjAfvFtNiFMGvQZmw0bM="
+  [mod."github.com/rogpeppe/go-internal"]
+    version = "v1.10.0"
+    hash = "sha256-vR7+d0aoKTuKeTYSgZxsGhH9e5Zvxix3Zrq9SPm5+NQ="
   [mod."github.com/sahilm/fuzzy"]
     version = "v0.1.0"
     hash = "sha256-69GT+9rw7Wzdn1QDUoC5oFsEjf378N14yHDKhxfN3PQ="
@@ -214,6 +217,9 @@ schema = 3
   [mod."google.golang.org/protobuf"]
     version = "v1.30.0"
     hash = "sha256-Y07NKhSuJQ2w7F7MAINQyBf+/hdMHOrxwA3B4ljQQKs="
+  [mod."gopkg.in/check.v1"]
+    version = "v1.0.0-20201130134442-10cb98267c6c"
+    hash = "sha256-VlIpM2r/OD+kkyItn6vW35dyc0rtkJufA93rjFyzncs="
   [mod."gopkg.in/ini.v1"]
     version = "v1.67.0"
     hash = "sha256-V10ahGNGT+NLRdKUyRg1dos5RxLBXBk1xutcnquc/+4="
