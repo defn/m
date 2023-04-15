@@ -17,6 +17,7 @@ pkg/bk/.direnv
 pkg/boundary/.direnv
 pkg/buf/.direnv
 pkg/buildevents/.direnv
+pkg/buildifier/.direnv
 pkg/buildkite/.direnv
 pkg/c/.direnv
 pkg/caddy/.direnv
@@ -93,6 +94,7 @@ pkg/bk/result
 pkg/boundary/result
 pkg/buf/result
 pkg/buildevents/result
+pkg/buildifier/result
 pkg/buildkite/result
 pkg/c/result
 pkg/caddy/result
