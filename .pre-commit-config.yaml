@@ -21,13 +21,4 @@ repos:
     rev: v2.7.1
     hooks:
       - id: prettier
-        exclude: (provider|cdktf.out|.local|tf|k)/|local|main.tf.json|tf/terraform-
-  - repo: https://github.com/tekwizely/pre-commit-golang
-    rev: v1.0.0-rc.1
-    hooks:
-      - id: go-imports
-        exclude: ^gen
-      - id: go-mod-tidy
-        exclude: ^gen
-      - id: go-build-mod
-        exclude: ^gen
+        exclude: (provider|cdktf.out|.local|tf|k)/|local|main.tf.json|tf/terraform-|gen/

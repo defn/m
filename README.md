@@ -1,6 +1,6 @@
 ## Pre-requisites
 
-Install `nix` and finish `direnv` integration.  Then `cd cmd/cli`.
+Install `nix` and finish `direnv` integration. Then `cd cmd/cli`.
 
 ## Using the CLI
 
@@ -46,7 +46,7 @@ cli <TAB>
 
 ## Adding sub-commands
 
-Use `cobra-cli` to add a command to the CLI.  For example, to add a `start` command:
+Use `cobra-cli` to add a command to the CLI. For example, to add a `start` command:
 
 ```
 cobra-cli add start

@@ -6,7 +6,7 @@ update:
 	$(MAKE) update-repos
 
 build:
-	bazel build //...	
+	bazel build //...
 
 bazel-ignore:
 	echo tf > .bazelignore

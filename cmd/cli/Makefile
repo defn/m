@@ -3,7 +3,7 @@ ignore:
 
 build:
 	cd proto && buf mod update
-	cd proto && buf build	
+	cd proto && buf build
 	cd proto && buf lint
 	cd proto && buf generate
 	go install
