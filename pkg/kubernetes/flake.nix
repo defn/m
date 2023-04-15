@@ -20,16 +20,17 @@
       propagatedBuildInputs =
         let
           flakeInputs = [
-            inputs.k3d.defaultPackage.${ctx.system}
             inputs.kubectl.defaultPackage.${ctx.system}
+            inputs.k3d.defaultPackage.${ctx.system}
             inputs.k9s.defaultPackage.${ctx.system}
             inputs.helm.defaultPackage.${ctx.system}
             inputs.kustomize.defaultPackage.${ctx.system}
+            inputs.stern.defaultPackage.${ctx.system}
+            inputs.argoworkflows.defaultPackage.${ctx.system}
             inputs.argocd.defaultPackage.${ctx.system}
-            inputs.argo.defaultPackage.${ctx.system}
-            inputs.tkn.defaultPackage.${ctx.system}
             inputs.kn.defaultPackage.${ctx.system}
             inputs.vcluster.defaultPackage.${ctx.system}
+            inputs.kubevirt.defaultPackage.${ctx.system}
           ];
         in
         flakeInputs;
