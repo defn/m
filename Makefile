@@ -1,8 +1,12 @@
 ignore:
 	@true
 
-all:
-	git ls-files | grep flake.nix | perl -pe 's{/?flake.nix}{}' | runmany 'mark $$1; cd ./$$1 && nix build'
+update:
+	$(MAKE) bazel-ignore
+	$(MAKE) update-repos
+
+build:
+	bazel build //...	
 
 bazel-ignore:
 	echo tf > .bazelignore
@@ -14,13 +18,9 @@ bazel-ignore:
 update-repos:
 	bazel run //:gazelle -- update-repos $$(git ls-files | grep -v tf/terraform | grep 'go.mod' | runmany 'echo -from_file=$$1')
 
-gazelle:
-	$(MAKE) bazel-ignore
-	$(MAKE) update-repos
+nix-build-all:
+	git ls-files | grep flake.nix | perl -pe 's{/?flake.nix}{}' | runmany 'mark $$1; cd ./$$1 && nix build'
 
-build:
-	bazel build //...	
-
-get:
+cdktf-get:
 	npm install
 	npx cdktf get

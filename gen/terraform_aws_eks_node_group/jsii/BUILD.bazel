@@ -7,8 +7,8 @@ go_library(
     importpath = "github.com/defn/m/gen/terraform_aws_eks_node_group/jsii",
     visibility = ["//visibility:public"],
     deps = [
-        "@com_github_aws_constructs_go_constructs_v10//jsii:go_default_library",
-        "@com_github_aws_jsii_runtime_go//runtime:go_default_library",
-        "@com_github_hashicorp_terraform_cdk_go_cdktf//jsii:go_default_library",
+        "@com_github_aws_constructs_go_constructs_v10//jsii",
+        "@com_github_aws_jsii_runtime_go//runtime",
+        "@com_github_hashicorp_terraform_cdk_go_cdktf//jsii",
     ],
 )
