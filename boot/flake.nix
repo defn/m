@@ -1,6 +1,6 @@
 {
   inputs = {
-    godev.url = github:defn/m/pkg-godev-0.0.67?dir=pkg/godev;
+    godev.url = github:defn/m/pkg-godev-0.0.69?dir=pkg/godev;
   };
 
   outputs = inputs:
