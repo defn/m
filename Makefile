@@ -5,6 +5,9 @@ update:
 	$(MAKE) bazel-ignore
 	$(MAKE) update-repos
 
+watch:
+	ibazel build //...
+
 build:
 	bazel build //...
 
