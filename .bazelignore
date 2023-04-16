@@ -156,4 +156,6 @@ r/meh/result
 result
 sandbox/result
 web/defn.nghiem.io/result
+boot/cue.mod
+sandbox/cue.mod
 cmd/cli/proto
