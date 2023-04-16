@@ -1,6 +1,6 @@
 {
   inputs = {
-    nodedev.url = github:defn/m/pkg-nodedev-0.0.43?dir=pkg/nodedev;
+    nodedev.url = github:defn/m/pkg-nodedev-0.0.47?dir=pkg/nodedev;
   };
 
   outputs = inputs: inputs.nodedev.inputs.pkg.main rec {
