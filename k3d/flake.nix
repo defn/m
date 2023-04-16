@@ -1,8 +1,8 @@
 {
   inputs = {
-    kubernetes.url = github:defn/m/pkg-kubernetes-0.0.74?dir=pkg/kubernetes;
-    vault.url = github:defn/m/pkg-vault-1.13.1-3?dir=pkg/vault;
-    tailscale.url = github:defn/m/pkg-tailscale-1.38.4-3?dir=pkg/tailscale;
+    kubernetes.url = github:defn/m/pkg-kubernetes-0.0.80?dir=pkg/kubernetes;
+    vault.url = github:defn/m/pkg-vault-1.13.1-7?dir=pkg/vault;
+    tailscale.url = github:defn/m/pkg-tailscale-1.38.4-7?dir=pkg/tailscale;
   };
 
   outputs = inputs: inputs.kubernetes.inputs.kubectl.inputs.pkg.main rec {
