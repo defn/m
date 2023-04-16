@@ -7,7 +7,7 @@
       "locked": {
         "dir": "pkg/buildifier",
         "lastModified": 1681586811,
-        "narHash": "sha256-LXpvvivhjmAUYEpmcmlj+uCXew+rv2wLvsY/PcnJ8QQ=",
+        "narHash": "sha256-waF5i9QGv6RXxmH4S0RdmvjaHm/ptQhhVtEbWzmmZOQ=",
         "owner": "defn",
         "repo": "m",
         "rev": "7dc88fb6a74c838665db4cf0b27321ec846fa188",
@@ -104,7 +104,7 @@
       "locked": {
         "dir": "pkg/ibazel",
         "lastModified": 1681584939,
-        "narHash": "sha256-KiYft5UDP/h6segxWK1myEPFmUuuJLh/mcyVWkyAUiM=",
+        "narHash": "sha256-oI6pzOQn08pRuxVbXW3BxTky6C6p3LqhzZxj/2xqJUI=",
         "owner": "defn",
         "repo": "m",
         "rev": "5e152648d877602aea78f053ec2cd8419caae971",
