@@ -1,4 +1,5 @@
 <script>
+  import "../src/app.postcss";
   import {
     Navbar,
     NavBrand,
