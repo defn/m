@@ -28,7 +28,7 @@
       "locked": {
         "dir": "pkg/argoworkflows",
         "lastModified": 1681518650,
-        "narHash": "sha256-QXh9FyeTu4yo49pA8vgi+slm3tQY8KWLN1DkML2gJDs=",
+        "narHash": "sha256-BC/1YjJYixCAW6f19CKQ2F349Oya0lQBi3MpOaOPlCg=",
         "owner": "defn",
         "repo": "m",
         "rev": "cb188fa41c7e6d7cbc0a7b0995aa14ec6377203d",
@@ -467,7 +467,7 @@
       "locked": {
         "dir": "pkg/helm",
         "lastModified": 1681519143,
-        "narHash": "sha256-C8rYILMqaI6237/MFzud6FpQ/NDf3hjEXlm7ix5a+Kc=",
+        "narHash": "sha256-WV0dyyg8CUUZtxHf3m7M+caYeRgtaYk52ieD2mDydgE=",
         "owner": "defn",
         "repo": "m",
         "rev": "744e1d531929a925ab4f38f265694fc17180fd7d",
@@ -1036,7 +1036,7 @@
       "locked": {
         "dir": "pkg/stern",
         "lastModified": 1681519188,
-        "narHash": "sha256-FrHPQFldGX11PrTT7qUouLu/Gssj4s44u/IOOoyWUGw=",
+        "narHash": "sha256-Ejd79QLi23VMTCVE1dbWuhU+jqe1c0EtFr9dvOBaRh8=",
         "owner": "defn",
         "repo": "m",
         "rev": "471dfb9567d0ee0a201f8d325d4c4b995f371a56",
@@ -1057,7 +1057,7 @@
       "locked": {
         "dir": "pkg/vcluster",
         "lastModified": 1681519234,
-        "narHash": "sha256-DTjo/la/wEfXzmklcaMjZYBSMPjjzAb5qfqXH4doOdI=",
+        "narHash": "sha256-5eO3xiECbN9XJ3rnkhiF3uN5Z9WMQEskHOg9a6N5RBA=",
         "owner": "defn",
         "repo": "m",
         "rev": "0b71bf8eb53b0a53c3ca2f433d2c738611202d3f",
