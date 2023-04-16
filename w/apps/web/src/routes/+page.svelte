@@ -1,8 +1,16 @@
 <script lang="ts">
-  import { MyCounterButton } from 'ui';
+  import { Counter } from 'ui';
 </script>
 
-<h1>Web</h1>
-<MyCounterButton />
+<svelte:head>
+  <title>Home</title>
+  <meta name="description" content="Svelte demo web" />
+</svelte:head>
 
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<section>
+  <div>
+    <h1>Web</h1>
+
+    <Counter/>
+  </div>
+</section>

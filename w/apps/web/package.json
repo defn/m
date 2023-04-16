@@ -2,27 +2,33 @@
   "name": "web",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite dev --port 3000 --open",
+    "lint": "prettier --check --ignore-path=../../.prettierignore . && eslint \"src\"",
+    "format": "prettier --write --ignore-path=../../.prettierignore .",
     "build": "vite build",
     "package": "vite package",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --check --ignore-path=../../.prettierignore . && eslint \"src\"",
-    "format": "prettier --write --ignore-path=../../.prettierignore ."
-  },
-  "dependencies": {
-    "ui": "workspace:*"
+    "dev": "vite dev --port 3000 --open"
   },
   "devDependencies": {
+    "ui": "workspace:*",
     "tslib": "^2.3.1",
     "typescript": "^4.7.2",
-    "@sveltejs/adapter-auto": "latest",
+    "@sveltejs/adapter-static": "^2.0.2",
     "@sveltejs/kit": "^1.15.5",
     "eslint-config-custom": "workspace:*",
     "svelte": "^3.44.0",
     "svelte-check": "^2.7.1",
     "svelte-preprocess": "^4.10.6",
+    "autoprefixer": "^10.4.14",
+    "tailwindcss": "^3.3.1",
+    "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
+    "postcss": "^8.4.22",
+    "postcss-load-config": "^4.0.1",
+    "flowbite": "^1.6.5",
+    "flowbite-svelte": "^0.34.9",
+    "vitest": "^0.30.1",
     "vite": "^4.0.0"
   },
   "type": "module"
