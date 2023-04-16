@@ -843,17 +843,17 @@
       },
       "locked": {
         "dir": "pkg/nomad",
-        "lastModified": 1681022593,
-        "narHash": "sha256-KQxbZKqwgNenHdHPAmLlifRdiFw6m2NrbFaFWGUE3+c=",
+        "lastModified": 1681614319,
+        "narHash": "sha256-aLWVEqCe8Xa0P0uH/tr4P2KlKXI76G9moD62gw4Rhmw=",
         "owner": "defn",
         "repo": "m",
-        "rev": "f3e6e368bf2d04538c6d1bdd7b8e1df33f05c456",
+        "rev": "7bb9ecad58de8335258f29060921eb9f3fa03ace",
         "type": "github"
       },
       "original": {
         "dir": "pkg/nomad",
         "owner": "defn",
-        "ref": "pkg-nomad-1.5.3-3",
+        "ref": "pkg-nomad-1.5.3-5",
         "repo": "m",
         "type": "github"
       }
@@ -1132,17 +1132,17 @@
       },
       "locked": {
         "dir": "pkg/tilt",
-        "lastModified": 1681519217,
-        "narHash": "sha256-VxhnUadSkrtS9i9VHMZq9J/7OKdc1UJ1Stu2SEuAako=",
+        "lastModified": 1681614538,
+        "narHash": "sha256-jCJXfIu9oKxrsGVlEEp4zB4tPnjxA3xXO4P1uoWzcYA=",
         "owner": "defn",
         "repo": "m",
-        "rev": "8d23e34cf964b6945ef615b14c51a21a411044e2",
+        "rev": "d446b2ab2e145c86ed884c2874c4335418899697",
         "type": "github"
       },
       "original": {
         "dir": "pkg/tilt",
         "owner": "defn",
-        "ref": "pkg-tilt-0.32.1-1",
+        "ref": "pkg-tilt-0.32.1-3",
         "repo": "m",
         "type": "github"
       }
@@ -1153,17 +1153,17 @@
       },
       "locked": {
         "dir": "pkg/vault",
-        "lastModified": 1681022710,
-        "narHash": "sha256-+q2V2VzovCNHM/wHjrgHTKA4qR/TP8B26v9JPjimxug=",
+        "lastModified": 1681614572,
+        "narHash": "sha256-X5zlysQNXvePs24xdA7SST6WrvbEea+3jcKvvbZh5m8=",
         "owner": "defn",
         "repo": "m",
-        "rev": "6018a54043e2d3bd3394815e516a28cb3466e69e",
+        "rev": "fdfee8391438fc43cd3c12fb81f506614e00b405",
         "type": "github"
       },
       "original": {
         "dir": "pkg/vault",
         "owner": "defn",
-        "ref": "pkg-vault-1.13.1-3",
+        "ref": "pkg-vault-1.13.1-5",
         "repo": "m",
         "type": "github"
       }
