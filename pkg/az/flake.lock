@@ -7,17 +7,17 @@
       },
       "locked": {
         "dir": "pkg/c",
-        "lastModified": 1681604164,
-        "narHash": "sha256-2MX4BWm8tJzFY4gFKl8MbEB+J6LnUfPH6KTKXnWQ4ts=",
+        "lastModified": 1681612360,
+        "narHash": "sha256-85ENRBTHA5nX11SyfpHhjM2E43rBoLZ1kYz4ACs9D4Q=",
         "owner": "defn",
         "repo": "m",
-        "rev": "389e1b62990a0c774dab956b7d9a239ca6ca4ec0",
+        "rev": "11753e7d8762ba64210ec68ffda33c46ae6d538d",
         "type": "github"
       },
       "original": {
         "dir": "pkg/c",
         "owner": "defn",
-        "ref": "pkg-c-0.4.44",
+        "ref": "pkg-c-0.4.47",
         "repo": "m",
         "type": "github"
       }
