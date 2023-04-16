@@ -29,7 +29,7 @@
       "locked": {
         "dir": "pkg/cue",
         "lastModified": 1681519092,
-        "narHash": "sha256-URwjGKrxQWUQ9nulTQJfCTY22DoCmgF9gnEVPlVsnDs=",
+        "narHash": "sha256-VDuGjySZP4Wn/q91XaXRd72nInp6VvYoeub6W4I3zy0=",
         "owner": "defn",
         "repo": "m",
         "rev": "b76e2e3d1e25fc536b17c30858b370dd0fd77a0c",
