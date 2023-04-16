@@ -19,7 +19,7 @@
       voluptatem?
     </p>
 
-    <ol>
+    <ol class="list">
       <li>At sunt rerum sit laborum omnis qui accusantium deserunt.</li>
       <li>Aut delectus quos qui saepe optio.</li>
     </ol>
@@ -38,7 +38,7 @@
       sit magnam dicta. Sit blanditiis molestiae <em>Ut expedita</em> id nisi reiciendis.
     </p>
 
-    <ul>
+    <ul class="list">
       <li>Et laborum ipsum et mollitia beatae est consequatur internos.</li>
       <li>Ad ipsum nihil et officiis ullam.</li>
       <li>Ut quia numquam est explicabo modi hic error dolorem!</li>
