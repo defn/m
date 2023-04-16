@@ -11,8 +11,6 @@
   <div>
     <h1>defn</h1>
 
-    <Counter/>
-
     <p>
       Lorem ipsum dolor sit amet. Non dicta ipsaId iure At eius quae. Eum quidem
       voluptatem <em>Ut fugit ut temporibus eaque eos molestias dolorem</em> id facere
@@ -25,6 +23,8 @@
     </ol>
 
     <p>Quo animi <code>exercitationem</code> et illo unde nam tenetur dolore.</p>
+
+    <Counter/>
 
     <h2>Aut ullam beatae a tenetur quae.</h2>
 
