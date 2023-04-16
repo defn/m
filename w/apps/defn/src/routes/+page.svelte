@@ -1,17 +1,17 @@
-<script>
+<script lang="ts">
   import { Counter } from 'ui';
 </script>
 
 <svelte:head>
   <title>Home</title>
-  <meta name="description" content="Svelte demo app" />
+  <meta name="description" content="Svelte demo defn" />
 </svelte:head>
 
 <section>
   <div>
     <h1>33 ipsam labore eos fugiat asperiores.</h1>
 
-    <Counter />
+    <Counter/>
 
     <p>
       Lorem ipsum dolor sit amet. Non dicta ipsaId iure At eius quae. Eum quidem

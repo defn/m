@@ -90,20 +90,46 @@ importers:
         version: 0.30.1
 
   apps/docs:
-    dependencies:
-      ui:
-        specifier: workspace:*
-        version: link:../../packages/ui
     devDependencies:
-      '@sveltejs/adapter-auto':
-        specifier: latest
-        version: 2.0.0(@sveltejs/kit@1.15.5)
+      '@fontsource/fira-mono':
+        specifier: ^4.5.10
+        version: 4.5.10
+      '@neoconfetti/svelte':
+        specifier: ^1.0.0
+        version: 1.0.0
+      '@popperjs/core':
+        specifier: ^2.11.7
+        version: 2.11.7
+      '@sveltejs/adapter-static':
+        specifier: ^2.0.2
+        version: 2.0.2(@sveltejs/kit@1.15.5)
       '@sveltejs/kit':
         specifier: ^1.15.5
         version: 1.15.5(svelte@3.58.0)(vite@4.2.1)
+      '@tailwindcss/nesting':
+        specifier: 0.0.0-insiders.565cd3e
+        version: 0.0.0-insiders.565cd3e(postcss@8.4.22)
+      '@types/cookie':
+        specifier: ^0.5.1
+        version: 0.5.1
+      autoprefixer:
+        specifier: ^10.4.14
+        version: 10.4.14(postcss@8.4.22)
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom
+      flowbite:
+        specifier: ^1.6.5
+        version: 1.6.5
+      flowbite-svelte:
+        specifier: ^0.34.9
+        version: 0.34.9(@popperjs/core@2.11.7)(classnames@2.3.2)(flowbite@1.6.5)(svelte@3.58.0)
+      postcss:
+        specifier: ^8.4.22
+        version: 8.4.22
+      postcss-load-config:
+        specifier: ^4.0.1
+        version: 4.0.1(postcss@8.4.22)
       svelte:
         specifier: ^3.44.0
         version: 3.58.0
@@ -113,15 +139,24 @@ importers:
       svelte-preprocess:
         specifier: ^4.10.6
         version: 4.10.7(postcss-load-config@4.0.1)(postcss@8.4.22)(svelte@3.58.0)(typescript@4.9.5)
+      tailwindcss:
+        specifier: ^3.3.1
+        version: 3.3.1(postcss@8.4.22)
       tslib:
         specifier: ^2.3.1
         version: 2.5.0
       typescript:
         specifier: ^4.7.2
         version: 4.9.5
+      ui:
+        specifier: workspace:*
+        version: link:../../packages/ui
       vite:
         specifier: ^4.0.0
         version: 4.2.1(@types/node@18.15.11)
+      vitest:
+        specifier: ^0.30.1
+        version: 0.30.1
 
   apps/web:
     dependencies:
@@ -177,12 +212,69 @@ importers:
 
   packages/ui:
     devDependencies:
+      '@fontsource/fira-mono':
+        specifier: ^4.5.10
+        version: 4.5.10
+      '@neoconfetti/svelte':
+        specifier: ^1.0.0
+        version: 1.0.0
+      '@popperjs/core':
+        specifier: ^2.11.7
+        version: 2.11.7
+      '@sveltejs/adapter-static':
+        specifier: ^2.0.2
+        version: 2.0.2(@sveltejs/kit@1.15.5)
+      '@sveltejs/kit':
+        specifier: ^1.15.5
+        version: 1.15.5(svelte@3.58.0)(vite@4.2.1)
+      '@tailwindcss/nesting':
+        specifier: 0.0.0-insiders.565cd3e
+        version: 0.0.0-insiders.565cd3e(postcss@8.4.22)
+      '@types/cookie':
+        specifier: ^0.5.1
+        version: 0.5.1
+      autoprefixer:
+        specifier: ^10.4.14
+        version: 10.4.14(postcss@8.4.22)
       eslint-config-custom:
         specifier: workspace:*
         version: link:../eslint-config-custom
+      flowbite:
+        specifier: ^1.6.5
+        version: 1.6.5
+      flowbite-svelte:
+        specifier: ^0.34.9
+        version: 0.34.9(@popperjs/core@2.11.7)(classnames@2.3.2)(flowbite@1.6.5)(svelte@3.58.0)
+      postcss:
+        specifier: ^8.4.22
+        version: 8.4.22
+      postcss-load-config:
+        specifier: ^4.0.1
+        version: 4.0.1(postcss@8.4.22)
       svelte:
-        specifier: ^3.9.2
+        specifier: ^3.44.0
         version: 3.58.0
+      svelte-check:
+        specifier: ^2.7.1
+        version: 2.10.3(postcss-load-config@4.0.1)(postcss@8.4.22)(svelte@3.58.0)
+      svelte-preprocess:
+        specifier: ^4.10.6
+        version: 4.10.7(postcss-load-config@4.0.1)(postcss@8.4.22)(svelte@3.58.0)(typescript@4.9.5)
+      tailwindcss:
+        specifier: ^3.3.1
+        version: 3.3.1(postcss@8.4.22)
+      tslib:
+        specifier: ^2.3.1
+        version: 2.5.0
+      typescript:
+        specifier: ^4.7.2
+        version: 4.9.5
+      vite:
+        specifier: ^4.0.0
+        version: 4.2.1(@types/node@18.15.11)
+      vitest:
+        specifier: ^0.30.1
+        version: 0.30.1
 
 packages:
 
