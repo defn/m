@@ -1,6 +1,6 @@
 {
   inputs = {
-    cue.url = github:defn/m/pkg-cue-0.5.0-1?dir=pkg/cue;
+    cue.url = github:defn/m/pkg-cue-0.5.0-3?dir=pkg/cue;
     hof.url = github:defn/m/pkg-hof-0.6.8-beta.12-3?dir=pkg/hof;
   };
 
