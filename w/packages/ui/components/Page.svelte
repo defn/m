@@ -18,6 +18,7 @@
       </div>
       <NavUl {hidden} class="order-1">
         <NavLi href="/">Home</NavLi>
+        <slot name="nav"/>
       </NavUl>
     </Navbar>
 
