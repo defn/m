@@ -1,7 +1,7 @@
 <script>
-  import { Header } from '../..';
+  import { Page } from '../..';
 </script>
 
-<Header>
+<Page>
   <slot />
-</Header>
+</Page>

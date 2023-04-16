@@ -1,7 +1,7 @@
 <script>
-  import { Header } from 'ui';
+  import { Page } from 'ui';
 </script>
 
-<Header>
+<Page>
   <slot />
-</Header>
+</Page>

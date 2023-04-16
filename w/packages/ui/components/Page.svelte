@@ -3,8 +3,8 @@
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button } from 'flowbite-svelte';
 </script>
 
-<div class="app">
-  <header>
+<header>
+  <div class="app">
     <Navbar let:hidden let:toggle>
       <NavBrand href="/">
         <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="logo" />
@@ -21,24 +21,24 @@
         <NavLi href="/about">About</NavLi>
       </NavUl>
     </Navbar>
-  </header>
 
-  <main>
-    <slot />
-  </main>
-</div>
+    <main>
+      <slot />
+    </main>
+  </div>
+</header>
 
 <style>
   header {
     display: flex;
     justify-content: space-between;
   }
-  .app {
+  header .app {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
   }
-  main {
+  header main {
     flex: 1;
     display: flex;
     flex-direction: column;
