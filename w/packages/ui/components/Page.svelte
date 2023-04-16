@@ -18,7 +18,6 @@
       </div>
       <NavUl {hidden} class="order-1">
         <NavLi href="/">Home</NavLi>
-        <NavLi href="/about">About</NavLi>
       </NavUl>
     </Navbar>
 
