@@ -12,9 +12,9 @@
     <h1>defn</h1>
 
     <p>
-      Lorem ipsum dolor sit amet. Non dicta ipsaId iure At eius quae. Eum quidem
-      voluptatem <em>Ut fugit ut temporibus eaque eos molestias dolorem</em> id facere
-      voluptatem?
+      Lorem ipsum dolor sit amet. Non dicta ipsaId iure At eius quae. Eum quidem voluptatem <em
+        >Ut fugit ut temporibus eaque eos molestias dolorem</em
+      > id facere voluptatem?
     </p>
 
     <ol class="list">
@@ -24,16 +24,15 @@
 
     <p>Quo animi <code>exercitationem</code> et illo unde nam tenetur dolore.</p>
 
-    <Counter/>
+    <h2>Counter</h2>
+    <Counter />
 
     <h2>Aut ullam beatae a tenetur quae.</h2>
 
     <p>
-      33 quidem deleniti <a href="https://www.loremipzum.com" target="_blank"
-        >33 neque</a
-      >
-      ut officia beatae eum sapiente eaque. Et eveniet illum vel quam explicaboEt
-      rerum ut amet nobis sed quisquam expedita
+      33 quidem deleniti <a href="https://www.loremipzum.com" target="_blank">33 neque</a>
+      ut officia beatae eum sapiente eaque. Et eveniet illum vel quam explicaboEt rerum ut amet nobis
+      sed quisquam expedita
       <strong>sed assumenda beatae</strong>
       sit magnam dicta. Sit blanditiis molestiae <em>Ut expedita</em> id nisi reiciendis.
     </p>
@@ -43,18 +42,7 @@
       <li>Ad ipsum nihil et officiis ullam.</li>
       <li>Ut quia numquam est explicabo modi hic error dolorem!</li>
       <li>Aut suscipit accusamus et eligendi facere.</li>
-      <li>
-        Ut nihil fugiat id omnis distinctio qui eaque enim qui soluta sequi.
-      </li>
+      <li>Ut nihil fugiat id omnis distinctio qui eaque enim qui soluta sequi.</li>
     </ul>
-
-    <h3>Ea quia consectetur 33 vero accusamus non sunt perspiciatis!</h3>
-
-    <p>
-      Est quibusdam rerum <em
-        >Id maxime ea voluptatum obcaecati qui architecto autem</em
-      > aut ratione adipisci qui facilis inventore At dolorum dolor. 33 earum reiciendis
-      qui necessitatibus harumnam natus ea exercitationem harum!
-    </p>
   </div>
 </section>
