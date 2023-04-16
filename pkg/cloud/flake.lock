@@ -7,7 +7,7 @@
       "locked": {
         "dir": "pkg/awscli",
         "lastModified": 1681518890,
-        "narHash": "sha256-WUqtzSojIPwYu0eHdRcm5J+TxzKdH7ycOagyewiAzis=",
+        "narHash": "sha256-IxnuJQGSnNS0XX3BKt8LymEM3ECfwhFxXi6iC9+2my0=",
         "owner": "defn",
         "repo": "m",
         "rev": "1f2eb9e836566815c6ed49de286666e0b7d70839",
@@ -357,7 +357,7 @@
       "locked": {
         "dir": "pkg/step",
         "lastModified": 1681519176,
-        "narHash": "sha256-qAcoDH443u4Izq/zFGL6eqHBWuX7MzLIm1Nfy7B1XjI=",
+        "narHash": "sha256-puoruyU18TAzQVzQTXU3973LPoiQMn36brgNLmj8R6g=",
         "owner": "defn",
         "repo": "m",
         "rev": "a3efb458ac0fe6faa0e0ae489e218a36c7031c6a",
@@ -378,7 +378,7 @@
       "locked": {
         "dir": "pkg/terraform",
         "lastModified": 1681519200,
-        "narHash": "sha256-m5N3NMVfCa/rIYzsM++0QdVqQEu0qHga/vUyvD2i0y0=",
+        "narHash": "sha256-UGglXbHVbSpAVx+uJ1nlgcWL2Y2VWVIUcopwFEy0dio=",
         "owner": "defn",
         "repo": "m",
         "rev": "f8bd82d0d2dabbd06055ec7cddcdf0fdbdcb60ed",
