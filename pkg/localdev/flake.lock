@@ -355,7 +355,7 @@
       "locked": {
         "dir": "pkg/earthly",
         "lastModified": 1681519113,
-        "narHash": "sha256-YtY4hQkppK+Ntffe4W7ci920HN4DDhj9Kd5Gxd3HO4w=",
+        "narHash": "sha256-MMmaeivH2WXgNvLWWfV+iyHUDrRRB8TpKwidYZqwa3g=",
         "owner": "defn",
         "repo": "m",
         "rev": "1daa090360c8057b6bc2e5864d65c22949b8d077",
@@ -610,7 +610,7 @@
       "locked": {
         "dir": "pkg/honeytail",
         "lastModified": 1681519161,
-        "narHash": "sha256-7ziLL/Gz7BVRFsLIMLZ6q+/0VYxtnf0/uDVLs0oCIRk=",
+        "narHash": "sha256-WWi9GlWfYDCXqRM2WJEIESZausWx5oaE6gxH02uDbWo=",
         "owner": "defn",
         "repo": "m",
         "rev": "7f0c01b201a727ec7f32f5b2ab44bbe8aa9d19c6",
@@ -1133,7 +1133,7 @@
       "locked": {
         "dir": "pkg/tilt",
         "lastModified": 1681519217,
-        "narHash": "sha256-R6/9JaX5p8zAnyjQ3o9X0z4wXq2Ak5IYoUMzezIW0WE=",
+        "narHash": "sha256-VxhnUadSkrtS9i9VHMZq9J/7OKdc1UJ1Stu2SEuAako=",
         "owner": "defn",
         "repo": "m",
         "rev": "8d23e34cf964b6945ef615b14c51a21a411044e2",
