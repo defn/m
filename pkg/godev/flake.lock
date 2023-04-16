@@ -201,7 +201,7 @@
       "locked": {
         "dir": "pkg/goreleaser",
         "lastModified": 1681519129,
-        "narHash": "sha256-BQAEpb/fMpFDEvQ7feFQnUvRAP/Ng+h/Q1bBCfweK60=",
+        "narHash": "sha256-UlKxgvHs59zYHNncSwp4g9gkQda5NehpcyCtoZZJ0+w=",
         "owner": "defn",
         "repo": "m",
         "rev": "a48697af7e0c94bfcb220b9abf3d7df19eeb723d",
