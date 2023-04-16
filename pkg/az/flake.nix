@@ -1,6 +1,6 @@
 {
   inputs = {
-    c.url = github:defn/m/pkg-c-0.4.50?dir=pkg/c;
+    c.url = github:defn/m/pkg-c-0.4.51?dir=pkg/c;
     n.url = github:defn/m/pkg-n-0.0.94?dir=pkg/n;
     tf.url = github:defn/m/pkg-tf-0.0.51?dir=pkg/tf;
     gum.url = github:defn/m/pkg-gum-0.10.0-6?dir=pkg/gum;
