@@ -1,6 +1,6 @@
 <script>
   import "../app.postcss";
-  import Header from "./Header.svelte";
+  import { Header } from 'ui';
 </script>
 
 <div class="app">
