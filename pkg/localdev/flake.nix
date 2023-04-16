@@ -7,7 +7,7 @@
     gh.url = github:defn/m/pkg-gh-2.27.0-3?dir=pkg/gh;
     earthly.url = github:defn/m/pkg-earthly-0.7.4-1?dir=pkg/earthly;
     buildkite.url = github:defn/m/pkg-buildkite-3.45.0-3?dir=pkg/buildkite;
-    bk.url = github:defn/m/pkg-bk-2.0.0-3?dir=pkg/bk;
+    bk.url = github:defn/m/pkg-bk-2.0.0-4?dir=pkg/bk;
     buildevents.url = github:defn/m/pkg-buildevents-0.13.0-3?dir=pkg/buildevents;
     honeyvent.url = github:defn/m/pkg-honeyvent-1.1.3-3?dir=pkg/honeyvent;
     honeymarker.url = github:defn/m/pkg-honeymarker-0.2.10-3?dir=pkg/honeymarker;
