@@ -91,7 +91,7 @@
       "locked": {
         "dir": "pkg/buildifier",
         "lastModified": 1681586811,
-        "narHash": "sha256-LXpvvivhjmAUYEpmcmlj+uCXew+rv2wLvsY/PcnJ8QQ=",
+        "narHash": "sha256-waF5i9QGv6RXxmH4S0RdmvjaHm/ptQhhVtEbWzmmZOQ=",
         "owner": "defn",
         "repo": "m",
         "rev": "7dc88fb6a74c838665db4cf0b27321ec846fa188",
@@ -595,17 +595,17 @@
       },
       "locked": {
         "dir": "pkg/development",
-        "lastModified": 1681586847,
-        "narHash": "sha256-GMMnC9JipNcnsyg7MWj/hs2ozMnCxAQRTt0uxvHqtOM=",
+        "lastModified": 1681604759,
+        "narHash": "sha256-et6+RYPg3wV4/9JtHJftOnLxoZDAuBPeoMGS61I7H54=",
         "owner": "defn",
         "repo": "m",
-        "rev": "5e70fd01307efdacb4e47dc172fb52604b309acb",
+        "rev": "21f1f56fea788f233e74c37ff96f7058858a28f3",
         "type": "github"
       },
       "original": {
         "dir": "pkg/development",
         "owner": "defn",
-        "ref": "pkg-development-0.0.45",
+        "ref": "pkg-development-0.0.46",
         "repo": "m",
         "type": "github"
       }
@@ -617,7 +617,7 @@
       "locked": {
         "dir": "pkg/earthly",
         "lastModified": 1681519113,
-        "narHash": "sha256-YtY4hQkppK+Ntffe4W7ci920HN4DDhj9Kd5Gxd3HO4w=",
+        "narHash": "sha256-MMmaeivH2WXgNvLWWfV+iyHUDrRRB8TpKwidYZqwa3g=",
         "owner": "defn",
         "repo": "m",
         "rev": "1daa090360c8057b6bc2e5864d65c22949b8d077",
@@ -982,17 +982,17 @@
       },
       "locked": {
         "dir": "pkg/godev",
-        "lastModified": 1681520515,
-        "narHash": "sha256-nAxh1Gnsowqrjwmj5O4B/nLugoB0wb++LalLnMzHzyc=",
+        "lastModified": 1681604842,
+        "narHash": "sha256-RaZODw7m4Igqt9Y7I376rXEbAB+pahzSemQNijT0eSM=",
         "owner": "defn",
         "repo": "m",
-        "rev": "b765e72836f5156757e54ef0dce53dc91e978785",
+        "rev": "dc046b945e1103e721ea0bc6a068f7017fe5b874",
         "type": "github"
       },
       "original": {
         "dir": "pkg/godev",
         "owner": "defn",
-        "ref": "pkg-godev-0.0.69",
+        "ref": "pkg-godev-0.0.70",
         "repo": "m",
         "type": "github"
       }
@@ -1023,7 +1023,7 @@
       "locked": {
         "dir": "pkg/goreleaser",
         "lastModified": 1681519129,
-        "narHash": "sha256-BQAEpb/fMpFDEvQ7feFQnUvRAP/Ng+h/Q1bBCfweK60=",
+        "narHash": "sha256-UlKxgvHs59zYHNncSwp4g9gkQda5NehpcyCtoZZJ0+w=",
         "owner": "defn",
         "repo": "m",
         "rev": "a48697af7e0c94bfcb220b9abf3d7df19eeb723d",
@@ -1065,7 +1065,7 @@
       "locked": {
         "dir": "pkg/honeytail",
         "lastModified": 1681519161,
-        "narHash": "sha256-7ziLL/Gz7BVRFsLIMLZ6q+/0VYxtnf0/uDVLs0oCIRk=",
+        "narHash": "sha256-WWi9GlWfYDCXqRM2WJEIESZausWx5oaE6gxH02uDbWo=",
         "owner": "defn",
         "repo": "m",
         "rev": "7f0c01b201a727ec7f32f5b2ab44bbe8aa9d19c6",
@@ -1107,7 +1107,7 @@
       "locked": {
         "dir": "pkg/ibazel",
         "lastModified": 1681584939,
-        "narHash": "sha256-KiYft5UDP/h6segxWK1myEPFmUuuJLh/mcyVWkyAUiM=",
+        "narHash": "sha256-oI6pzOQn08pRuxVbXW3BxTky6C6p3LqhzZxj/2xqJUI=",
         "owner": "defn",
         "repo": "m",
         "rev": "5e152648d877602aea78f053ec2cd8419caae971",
@@ -1202,17 +1202,17 @@
       },
       "locked": {
         "dir": "pkg/localdev",
-        "lastModified": 1681519458,
-        "narHash": "sha256-JGj4L8VzyhqEMwNBC8ii3Xw7VBeGXVsCRlozZe1XfTc=",
+        "lastModified": 1681604616,
+        "narHash": "sha256-5pHuCgdUI+GOQiAA/3IQoMcu5VmxZvLEoJdigr9/VAM=",
         "owner": "defn",
         "repo": "m",
-        "rev": "cf6f1061a30311449d5fc627e79a1df1b8ead6b3",
+        "rev": "81c53944f007f5f7da3a871dde1a1c9aa4984996",
         "type": "github"
       },
       "original": {
         "dir": "pkg/localdev",
         "owner": "defn",
-        "ref": "pkg-localdev-0.0.100",
+        "ref": "pkg-localdev-0.0.101",
         "repo": "m",
         "type": "github"
       }
@@ -2036,7 +2036,7 @@
       "locked": {
         "dir": "pkg/tilt",
         "lastModified": 1681519217,
-        "narHash": "sha256-R6/9JaX5p8zAnyjQ3o9X0z4wXq2Ak5IYoUMzezIW0WE=",
+        "narHash": "sha256-VxhnUadSkrtS9i9VHMZq9J/7OKdc1UJ1Stu2SEuAako=",
         "owner": "defn",
         "repo": "m",
         "rev": "8d23e34cf964b6945ef615b14c51a21a411044e2",
