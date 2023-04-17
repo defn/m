@@ -14,12 +14,3 @@ type Story = StoryObj<Counter>;
 
 export const Primary: Story = {
 };
-
-export const Secondary: Story = {
-};
-
-export const Large: Story = {
-};
-
-export const Small: Story = {
-};
