@@ -9,6 +9,7 @@ const meta: Meta<Counter> = {
 };
 
 export default meta;
+
 type Story = StoryObj<Counter>;
 
 export const Primary: Story = {
