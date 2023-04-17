@@ -21,6 +21,13 @@ importers:
         version: 1.9.1
 
   apps/defn:
+    dependencies:
+      '@popperjs/core':
+        specifier: ^2.11.7
+        version: 2.11.7
+      classnames:
+        specifier: ^2.3.2
+        version: 2.3.2
     devDependencies:
       '@sveltejs/adapter-static':
         specifier: ^2.0.2
@@ -78,6 +85,13 @@ importers:
         version: 0.30.1
 
   apps/docs:
+    dependencies:
+      '@popperjs/core':
+        specifier: ^2.11.7
+        version: 2.11.7
+      classnames:
+        specifier: ^2.3.2
+        version: 2.3.2
     devDependencies:
       '@sveltejs/adapter-static':
         specifier: ^2.0.2
@@ -135,6 +149,13 @@ importers:
         version: 0.30.1
 
   apps/web:
+    dependencies:
+      '@popperjs/core':
+        specifier: ^2.11.7
+        version: 2.11.7
+      classnames:
+        specifier: ^2.3.2
+        version: 2.3.2
     devDependencies:
       '@sveltejs/adapter-static':
         specifier: ^2.0.2
@@ -210,6 +231,13 @@ importers:
         version: 4.0.0(eslint@8.38.0)(svelte@3.58.0)
 
   packages/ui:
+    dependencies:
+      '@popperjs/core':
+        specifier: ^2.11.7
+        version: 2.11.7
+      classnames:
+        specifier: ^2.3.2
+        version: 2.3.2
     devDependencies:
       '@storybook/addon-essentials':
         specifier: ^7.0.5
@@ -2017,7 +2045,6 @@ packages:
 
   /@popperjs/core@2.11.7:
     resolution: {integrity: sha512-Cr4OjIkipTtcXKjAsm8agyleBuDHvxzeBoa1v543lbv1YaIwQjESsVcmjiWiPEbC1FIeHOG/Op9kdCmAmiS3Kw==}
-    dev: true
 
   /@sinclair/typebox@0.25.24:
     resolution: {integrity: sha512-XJfwUVUKDHF5ugKwIcxEgc9k8b7HbznCp6eUfWgu710hMPNIO4aw4/zB5RogDQz8nd6gyCDpU9O/m6qYEWY6yQ==}
@@ -3917,7 +3944,6 @@ packages:
 
   /classnames@2.3.2:
     resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
-    dev: true
 
   /clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
