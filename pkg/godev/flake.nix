@@ -1,6 +1,6 @@
 {
   inputs = {
-    goreleaser.url = github:defn/m/pkg-goreleaser-1.17.1-4?dir=pkg/goreleaser;
+    goreleaser.url = github:defn/m/pkg-goreleaser-1.17.2-1?dir=pkg/goreleaser;
     buf.url = github:defn/m/pkg-buf-1.17.0-6?dir=pkg/buf;
     operatorsdk.url = github:defn/m/pkg-operatorsdk-1.28.0-7?dir=pkg/operatorsdk;
     cosign.url = github:defn/m/pkg-cosign-2.0.1-6?dir=pkg/cosign;
