@@ -77,7 +77,6 @@ r/argo-cd/.direnv
 r/argo-workflows/.direnv
 r/meh/.direnv
 sandbox/.direnv
-web/defn.nghiem.io/.direnv
 app/app/result
 boot/result
 cmd/cli/result
@@ -155,7 +154,6 @@ r/argo-workflows/result
 r/meh/result
 result
 sandbox/result
-web/defn.nghiem.io/result
 boot/cue.mod
 sandbox/cue.mod
 cmd/cli/proto
