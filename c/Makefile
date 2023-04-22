@@ -7,6 +7,7 @@ check:
 gen:
 	$(MAKE) check
 	find ../e/ -name '*.yaml' | xargs rm -f
+	rm -f ../r/*/main.yaml
 	rm -f ../k/*/kustomization.yaml
 	rm -f ../k/*/resource-*.yaml
 	rm -f ../k/*/patch-*.yaml

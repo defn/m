@@ -48,6 +48,7 @@ env: (#Transform & {
 				"kourier": [40, ""]
 				"defn": [40, ""]
 				"caddy": [50, ""]
+				"global-vc0": [60, ""]
 				"hello": [60, ""]
 				"coder": [60, ""]
 				"argo-cd": [1000, ""]
