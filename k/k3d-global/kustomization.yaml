@@ -4,9 +4,6 @@ patches: []
 resources: []
 helmCharts:
   - releaseName: bootstrap
-    name: any-resource
-    version: 0.1.0
-    repo: https://kiwigrid.github.io
     valuesInline:
       anyResources:
         kyverno: |
@@ -143,7 +140,7 @@ helmCharts:
             namespace: argocd
             name: k3d-global-external-dns
             annotations:
-              argocd.argoproj.io/sync-wave: "40"
+              argocd.argoproj.io/sync-wave: "30"
           spec:
             project: default
             destination:
@@ -348,4 +345,7 @@ helmCharts:
                 prune: true
                 selfHeal: true
               syncOptions: []
+    name: any-resource
+    version: 0.1.0
+    repo: https://kiwigrid.github.io
     includeCRDs: true

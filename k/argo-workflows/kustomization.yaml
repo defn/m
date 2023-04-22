@@ -5,13 +5,13 @@ resources:
   - resource-namespace-argo-workflows.yaml
 helmCharts:
   - releaseName: argo-workflows
-    name: argo-workflows
-    version: 0.24.1
-    repo: https://argoproj.github.io/argo-helm
+    namespace: argo-workflows
     valuesInline:
       controller:
         workflowNamespaces:
           - argo-workflows
           - defn
-    namespace: argo-workflows
+    name: argo-workflows
+    version: 0.24.1
+    repo: https://argoproj.github.io/argo-helm
     includeCRDs: true
