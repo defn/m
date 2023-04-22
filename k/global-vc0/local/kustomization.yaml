@@ -17,7 +17,8 @@ helmCharts:
     multiNamespaceMode:
       enabled: true
     service:
-      type: ClusterIP
+      loadBalancerClass: tailscale
+      type: LoadBalancer
     sync:
       nodes:
         enabled: true

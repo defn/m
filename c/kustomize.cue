@@ -805,7 +805,6 @@ kustomize: "velero": #KustomizeHelm & {
 		repo:    "https://charts.loft.sh"
 
 		values: {
-			service: type:   "ClusterIP"
 			vcluster: image: "rancher/k3s:v1.24.13-k3s1"
 
 			syncer: extraArgs: [
@@ -833,6 +832,9 @@ kustomize: "velero": #KustomizeHelm & {
 			}]
 
 			multiNamespaceMode: enabled: true
+
+			service: type:              "LoadBalancer"
+			service: loadBalancerClass: "tailscale"
 		}
 	}
 

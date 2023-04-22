@@ -8,8 +8,6 @@ helmCharts:
   - releaseName: vcluster
     namespace: global-vc0
     valuesInline:
-      service:
-        type: ClusterIP
       vcluster:
         image: rancher/k3s:v1.24.13-k3s1
       syncer:
@@ -35,6 +33,9 @@ helmCharts:
                       - global
       multiNamespaceMode:
         enabled: true
+      service:
+        type: LoadBalancer
+        loadBalancerClass: tailscale
     name: vcluster
     version: 0.15.0
     repo: https://charts.loft.sh
