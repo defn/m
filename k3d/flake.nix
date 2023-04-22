@@ -140,13 +140,22 @@
 
         if test -f ../e/k3d-$nme.yaml; then
           kubectl config use-context k3d-global
-          while ! argocd --core app list 2>/dev/null; do date; sleep 5; done
-          argocd cluster add --core --yes --upsert k3d-$nme
 
+          mark waiting for argocd
+          while ! argocd --core app list 2>/dev/null; do date; sleep 5; done
+
+          mark upserting k3d-$nme
+          while ! argocd cluster add --core --yes --upsert k3d-$nme; do date; sleep 5; done
+
+          mark syncing
           kubectl --context k3d-global apply -f ../e/k3d-$nme.yaml
-          while ! app wait argocd/k3d-$nme --timeout 30; do
+          app wait argocd/k3d-$nme --timeout 5 || true
+          while true; do
             app sync argocd/k3d-$nme || true
-            sleep 1
+            if app wait argocd/k3d-$nme --timeout 60; then
+              break
+            fi
+            app list | grep -v 'Synced.*Healthy'
           done
         fi
       '';
