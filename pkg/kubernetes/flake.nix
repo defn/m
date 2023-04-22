@@ -32,6 +32,7 @@
             inputs.kn.defaultPackage.${ctx.system}
             inputs.vcluster.defaultPackage.${ctx.system}
             inputs.kubevirt.defaultPackage.${ctx.system}
+            inputs.velero.defaultPackage.${ctx.system}
           ];
         in
         flakeInputs;
