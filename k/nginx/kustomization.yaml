@@ -2,7 +2,8 @@
 
 patches: []
 namespace: nginx
-resources: []
+resources:
+  - resource-namespace-nginx.yaml
 helmCharts:
   - releaseName: nginx
     namespace: nginx

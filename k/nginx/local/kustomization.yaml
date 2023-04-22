@@ -6,3 +6,5 @@ helmCharts:
   repo: https://charts.bitnami.com/bitnami
   version: 13.2.34
 namespace: nginx
+resources:
+- resource-namespace-nginx.yaml

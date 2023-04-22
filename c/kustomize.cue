@@ -861,6 +861,15 @@ kustomize: "nginx": #KustomizeHelm & {
 		values: {
 		}
 	}
+
+	resource: "namespace-nginx": core.#Namespace & {
+		apiVersion: "v1"
+		kind:       "Namespace"
+		metadata: {
+			name: "nginx"
+		}
+	}
+
 }
 
 // https://artifacthub.io/packages/helm/alekc/caddy
