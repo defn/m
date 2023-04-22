@@ -7,7 +7,7 @@
     n.url = github:defn/m/pkg-n-0.0.94?dir=pkg/n;
   };
 
-  outputs = inputs: inputs.c.inputs.cue.inputs.pkg.main rec {
+  outputs = inputs: inputs.cue.inputs.pkg.main rec {
     src = ./.;
 
     defaultPackage = ctx: ctx.wrap.bashBuilder {
