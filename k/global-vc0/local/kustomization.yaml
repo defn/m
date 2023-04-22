@@ -29,8 +29,8 @@ helmCharts:
       operator: Equal
       value: global
     vcluster:
-      image: rancher/k3s:v1.24.12-k3s1
-  version: 0.14.2
+      image: rancher/k3s:v1.24.13-k3s1
+  version: 0.15.0
 namespace: global-vc0
 resources:
 - resource-namespace-vcluster.yaml

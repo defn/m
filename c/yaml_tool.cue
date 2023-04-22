@@ -47,8 +47,8 @@ command: gen: {
 		for ename, e in env {
 			// Configuration for K3D:
 			// env application -> bootstrap
-			// ex: e/k3d-control.yaml
-			// ex: e/k3d-control-vc0.yaml
+			// ex: e/k3d-global.yaml
+			// ex: e/k3d-global-vc0.yaml
 			"\(ename)-env": file.Create & {
 				filename: "../e/\(e.env.metadata.name).yaml"
 				contents: "# ManagedBy: cue\n\n" + yaml.Marshal(e.env)
@@ -59,7 +59,7 @@ command: gen: {
 	genTerraformCluster: {
 		for cname, c in cluster {
 			// Configuration for K3D clusters:
-			// ex: cluster.control.out > tf/control/main.tf.json
+			// ex: cluster.global.out > misc/tf/global/main.tf.json
 			"\(cname)": file.Create & {
 				filename: "../misc/tf/\(cname)/main.tf.json"
 				contents: json.Marshal({c.out, "//": "ManagedBy: cue"})

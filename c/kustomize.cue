@@ -790,6 +790,59 @@ kustomize: "velero": #KustomizeHelm & {
 	}
 }
 
+// https://artifacthub.io/packages/helm/loft/vcluster
+#KustomizeVCluster: {
+	_in: #TransformKustomizeVCluster.from
+
+	#KustomizeHelm
+
+	namespace: _in.name
+
+	helm: {
+		release: "vcluster"
+		name:    "vcluster"
+		version: "0.15.0"
+		repo:    "https://charts.loft.sh"
+
+		values: {
+			service: type:   "ClusterIP"
+			vcluster: image: "rancher/k3s:v1.24.13-k3s1"
+
+			syncer: extraArgs: [
+				"--tls-san=vcluster.\(_in.vc_name).svc.cluster.local",
+				"--enforce-toleration=env=\(_in.vc_name):NoSchedule",
+			]
+
+			sync: nodes: {
+				enabled:      true
+				nodeSelector: "env=\(_in.vc_machine)"
+			}
+
+			tolerations: [{
+				key:      "env"
+				value:    _in.vc_machine
+				operator: "Equal"
+			}]
+
+			affinity: nodeAffinity: requiredDuringSchedulingIgnoredDuringExecution: nodeSelectorTerms: [{
+				matchExpressions: [{
+					key:      "env"
+					operator: "In"
+					values: [_in.vc_machine]
+				}]
+			}]
+		}
+	}
+
+	resource: "namespace-vcluster": core.#Namespace & {
+		apiVersion: "v1"
+		kind:       "Namespace"
+		metadata: {
+			name: _in.vc_name
+		}
+	}
+}
+
 // https://artifacthub.io/packages/helm/alekc/caddy
 kustomize: "caddy": #KustomizeHelm & {
 	namespace: "caddy"

@@ -1,7 +1,6 @@
 package c
 
 import (
-	core "github.com/defn/boot/k8s.io/api/core/v1"
 	batch "github.com/defn/boot/k8s.io/api/batch/v1"
 )
 
@@ -98,58 +97,6 @@ kustomize: [NAME=string]: _name: NAME
 	}
 
 	to: #KustomizeVCluster
-}
-
-#KustomizeVCluster: {
-	_in: #TransformKustomizeVCluster.from
-
-	#KustomizeHelm
-
-	namespace: _in.name
-
-	helm: {
-		release: "vcluster"
-		name:    "vcluster"
-		version: "0.14.2"
-		repo:    "https://charts.loft.sh"
-
-		values: {
-			service: type:   "ClusterIP"
-			vcluster: image: "rancher/k3s:v1.24.12-k3s1"
-
-			syncer: extraArgs: [
-				"--tls-san=vcluster.\(_in.vc_name).svc.cluster.local",
-				"--enforce-toleration=env=\(_in.vc_name):NoSchedule",
-			]
-
-			sync: nodes: {
-				enabled:      true
-				nodeSelector: "env=\(_in.vc_machine)"
-			}
-
-			tolerations: [{
-				key:      "env"
-				value:    _in.vc_machine
-				operator: "Equal"
-			}]
-
-			affinity: nodeAffinity: requiredDuringSchedulingIgnoredDuringExecution: nodeSelectorTerms: [{
-				matchExpressions: [{
-					key:      "env"
-					operator: "In"
-					values: [_in.vc_machine]
-				}]
-			}]
-		}
-	}
-
-	resource: "namespace-vcluster": core.#Namespace & {
-		apiVersion: "v1"
-		kind:       "Namespace"
-		metadata: {
-			name: _in.vc_name
-		}
-	}
 }
 
 #TransformKarpenterProvisioner: {

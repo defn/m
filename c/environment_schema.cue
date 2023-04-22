@@ -147,8 +147,8 @@ import (
 	bootstrap: [string]: [int, ...string]
 	env: #EnvApp
 	env: {
-		// ex: k/k3d-control
-		// ex: k/vcluster-vc1
+		// ex: k/k3d-global
+		// ex: k/vcluster-global-vc0
 		spec: source: path: "r/\(type)-\(name)"
 
 		spec: destination: name: "in-cluster"
@@ -201,7 +201,7 @@ import (
 	name:      _in.name
 	bootstrap: _in.bootstrap
 
-	// ex: k3d-control
+	// ex: k3d-global
 	env: metadata: name: "\(type)-\(ctx.name)"
 }
 
@@ -230,6 +230,6 @@ import (
 
 	instance_types: [...string] | *["t3.medium", "t3a.medium"]
 
-	// ex: k3d-control-vc1
+	// ex: k3d-global-vc1
 	env: metadata: name: "\(type)-\(ctx.name)"
 }
