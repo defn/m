@@ -11,7 +11,7 @@ env: (#Transform & {
 
 		[N=string]: {
 			bootstrap: {
-				"cert-manager": [1, ""]
+				"nginx": [1, ""]
 			}
 		}
 	}
@@ -21,16 +21,6 @@ env: (#Transform & {
 	transformer: #TransformK3D
 
 	inputs: {
-		// control is the control plane, used by the operator.
-		control: {
-			bootstrap: {
-				"cert-manager": [1, ""]
-				"pod-identity-webhook": [10, ""]
-				"external-secrets-operator": [10, ""]
-				"k3d-control-secrets-store": [20, ""]
-			}
-		}
-
 		// global is the global control plane, used by all machines.
 		global: {
 			bootstrap: {

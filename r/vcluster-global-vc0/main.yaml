@@ -3,14 +3,14 @@ kind: Application
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "1"
-  name: vcluster-global-vc0-cert-manager
+  name: vcluster-global-vc0-nginx
   namespace: argocd
 spec:
   destination:
     name: vcluster-global-vc0
   project: default
   source:
-    path: r/cert-manager
+    path: r/nginx
     repoURL: https://github.com/defn/m
     targetRevision: main
   syncPolicy:

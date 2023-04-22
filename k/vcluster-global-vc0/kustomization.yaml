@@ -6,12 +6,12 @@ helmCharts:
   - releaseName: bootstrap
     valuesInline:
       anyResources:
-        cert-manager: |
+        nginx: |
           apiVersion: argoproj.io/v1alpha1
           kind: Application
           metadata:
             namespace: argocd
-            name: vcluster-global-vc0-cert-manager
+            name: vcluster-global-vc0-nginx
             annotations:
               argocd.argoproj.io/sync-wave: "1"
           spec:
@@ -21,7 +21,7 @@ helmCharts:
             source:
               repoURL: https://github.com/defn/m
               targetRevision: main
-              path: r/cert-manager
+              path: r/nginx
             syncPolicy:
               automated:
                 prune: true

@@ -831,6 +831,7 @@ kustomize: "velero": #KustomizeHelm & {
 				}]
 			}]
 
+			fallbackHostDns: true
 			multiNamespaceMode: enabled: true
 
 			service: type:              "LoadBalancer"
@@ -843,6 +844,21 @@ kustomize: "velero": #KustomizeHelm & {
 		kind:       "Namespace"
 		metadata: {
 			name: _in.vc_name
+		}
+	}
+}
+
+// https://artifacthub.io/packages/helm/bitnami/nginx
+kustomize: "nginx": #KustomizeHelm & {
+	namespace: "nginx"
+
+	helm: {
+		release:   "nginx"
+		name:      "nginx"
+		namespace: "nginx"
+		version:   "13.2.34"
+		repo:      "https://charts.bitnami.com/bitnami"
+		values: {
 		}
 	}
 }

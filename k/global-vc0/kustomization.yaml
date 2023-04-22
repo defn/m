@@ -31,6 +31,7 @@ helmCharts:
                     operator: In
                     values:
                       - global
+      fallbackHostDns: true
       multiNamespaceMode:
         enabled: true
       service:

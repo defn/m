@@ -194,18 +194,19 @@ data:
     \       {{.LOG_IN_DEBUG}}\n        errors\n        health\n        ready\n        rewrite
     name regex .*\\.nodes\\.vcluster\\.com kubernetes.default.svc.cluster.local\n
     \       kubernetes cluster.local in-addr.arpa ip6.arpa { \n          pods insecure\n
-    \         fallthrough in-addr.arpa ip6.arpa\n        }\n        hosts /etc/coredns/NodeHosts
-    {\n          ttl 60\n          reload 15s\n          fallthrough\n        }\n
-    \       prometheus :9153\n        forward . /etc/resolv.conf\n        cache 30\n
-    \       loop\n        reload\n        loadbalance\n    }\n\n    import /etc/coredns/custom/*.server\n
-    \ NodeHosts: \"\"\n---\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name:
-    coredns\n  namespace: kube-system\n  labels:\n    k8s-app: kube-dns\n    kubernetes.io/name:
-    \"CoreDNS\"\nspec:\n  replicas: 1\n  strategy:\n    type: RollingUpdate\n    rollingUpdate:\n
-    \     maxUnavailable: 1\n  selector:\n    matchLabels:\n      k8s-app: kube-dns\n
-    \ template:\n    metadata:\n      labels:\n        k8s-app: kube-dns\n    spec:\n
-    \     priorityClassName: \"system-cluster-critical\"\n      serviceAccountName:
-    coredns\n      nodeSelector:\n        kubernetes.io/os: linux\n      topologySpreadConstraints:\n
-    \       - maxSkew: 1\n          topologyKey: kubernetes.io/hostname\n          whenUnsatisfiable:
+    \         fallthrough cluster.local in-addr.arpa ip6.arpa\n        }\n        hosts
+    /etc/coredns/NodeHosts {\n          ttl 60\n          reload 15s\n          fallthrough\n
+    \       }\n        prometheus :9153\n        forward . {{.HOST_CLUSTER_DNS}}\n
+    \       cache 30\n        loop\n        reload\n        loadbalance\n    }\n\n
+    \   import /etc/coredns/custom/*.server\n  NodeHosts: \"\"\n---\napiVersion: apps/v1\nkind:
+    Deployment\nmetadata:\n  name: coredns\n  namespace: kube-system\n  labels:\n
+    \   k8s-app: kube-dns\n    kubernetes.io/name: \"CoreDNS\"\nspec:\n  replicas:
+    1\n  strategy:\n    type: RollingUpdate\n    rollingUpdate:\n      maxUnavailable:
+    1\n  selector:\n    matchLabels:\n      k8s-app: kube-dns\n  template:\n    metadata:\n
+    \     labels:\n        k8s-app: kube-dns\n    spec:\n      priorityClassName:
+    \"system-cluster-critical\"\n      serviceAccountName: coredns\n      nodeSelector:\n
+    \       kubernetes.io/os: linux\n      topologySpreadConstraints:\n        - maxSkew:
+    1\n          topologyKey: kubernetes.io/hostname\n          whenUnsatisfiable:
     DoNotSchedule\n          labelSelector:\n            matchLabels:\n              k8s-app:
     kube-dns\n      containers:\n        - name: coredns\n          image: {{.IMAGE}}\n
     \         imagePullPolicy: IfNotPresent\n          resources:\n            limits:\n
