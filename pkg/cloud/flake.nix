@@ -9,7 +9,9 @@
   outputs = inputs: inputs.terraform.inputs.pkg.main rec {
     src = ./.;
 
-    defaultPackage = ctx: ctx.wrap.nullBuilder {
+    defaultPackage = ctx: ctx.wrap.bashBuilder {
+      inherit src;
+
       propagatedBuildInputs =
         let
           flakeInputs = [
@@ -20,6 +22,12 @@
           ];
         in
         flakeInputs;
+
+      installPhase = ''
+        mkdir -p $out/bin
+        cp -a $src/bin/* $out/bin/
+        chmod 755 $out/bin/tf $out/bin/tf-*
+      '';
     };
   };
 }
