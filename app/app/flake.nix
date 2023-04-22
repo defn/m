@@ -1,7 +1,7 @@
 {
   inputs = {
     gomod2nix.url = github:defn/gomod2nix/1.5.0-9;
-    godev.url = github:defn/m/pkg-godev-0.0.75?dir=pkg/godev;
+    godev.url = github:defn/m/pkg-godev-0.0.76?dir=pkg/godev;
     nodedev.url = github:defn/m/pkg-nodedev-0.0.47?dir=pkg/nodedev;
     terraform.url = github:defn/m/pkg-terraform-1.4.5-5?dir=pkg/terraform;
     kustomize.url = github:defn/m/pkg-kustomize-5.0.1-6?dir=pkg/kustomize;
