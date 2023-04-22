@@ -1,11 +1,14 @@
 #ManagedBy: cue
 
 patches: []
-namespace: control-vc4
 resources:
   - resource-namespace-vcluster.yaml
+namespace: control-vc4
 helmCharts:
   - releaseName: vcluster
+    name: vcluster
+    version: 0.14.2
+    repo: https://charts.loft.sh
     namespace: control-vc4
     valuesInline:
       service:
@@ -33,7 +36,4 @@ helmCharts:
                     operator: In
                     values:
                       - control-vc4
-    name: vcluster
-    version: 0.14.2
-    repo: https://charts.loft.sh
     includeCRDs: true

@@ -1,12 +1,15 @@
 #ManagedBy: cue
 
 patches: []
-namespace: coder
 resources:
   - resource-namespace-coder.yaml
   - resource-externalsecret-coder.yaml
+namespace: coder
 helmCharts:
   - releaseName: coder
+    name: coder
+    version: 0.22.0
+    repo: https://helm.coder.com/v2
     namespace: coder
     valuesInline:
       coder:
@@ -18,7 +21,4 @@ helmCharts:
               secretKeyRef:
                 name: coder
                 key: CODER_ACCESS_URL
-    name: coder
-    version: 0.22.0
-    repo: https://helm.coder.com/v2
     includeCRDs: true

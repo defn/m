@@ -4,6 +4,9 @@ patches: []
 resources: []
 helmCharts:
   - releaseName: bootstrap
+    name: any-resource
+    version: 0.1.0
+    repo: https://kiwigrid.github.io
     valuesInline:
       anyResources:
         kyverno: |
@@ -112,27 +115,6 @@ helmCharts:
                 prune: true
                 selfHeal: true
               syncOptions: []
-        external-dns: |
-          apiVersion: argoproj.io/v1alpha1
-          kind: Application
-          metadata:
-            namespace: argocd
-            name: k3d-global-external-dns
-            annotations:
-              argocd.argoproj.io/sync-wave: "30"
-          spec:
-            project: default
-            destination:
-              name: k3d-global
-            source:
-              repoURL: https://github.com/defn/m
-              targetRevision: main
-              path: r/external-dns
-            syncPolicy:
-              automated:
-                prune: true
-                selfHeal: true
-              syncOptions: []
         defn-shared: |
           apiVersion: argoproj.io/v1alpha1
           kind: Application
@@ -140,7 +122,7 @@ helmCharts:
             namespace: argocd
             name: k3d-global-defn-shared
             annotations:
-              argocd.argoproj.io/sync-wave: "40"
+              argocd.argoproj.io/sync-wave: "30"
           spec:
             project: default
             destination:
@@ -154,6 +136,27 @@ helmCharts:
                 prune: true
                 selfHeal: true
               syncOptions: []
+        external-dns: |
+          apiVersion: argoproj.io/v1alpha1
+          kind: Application
+          metadata:
+            namespace: argocd
+            name: k3d-global-external-dns
+            annotations:
+              argocd.argoproj.io/sync-wave: "40"
+          spec:
+            project: default
+            destination:
+              name: k3d-global
+            source:
+              repoURL: https://github.com/defn/m
+              targetRevision: main
+              path: r/external-dns
+            syncPolicy:
+              automated:
+                prune: true
+                selfHeal: true
+              syncOptions: []
         argo-workflows: |
           apiVersion: argoproj.io/v1alpha1
           kind: Application
@@ -161,7 +164,7 @@ helmCharts:
             namespace: argocd
             name: k3d-global-argo-workflows
             annotations:
-              argocd.argoproj.io/sync-wave: "50"
+              argocd.argoproj.io/sync-wave: "40"
           spec:
             project: default
             destination:
@@ -184,7 +187,7 @@ helmCharts:
             namespace: argocd
             name: k3d-global-tfo
             annotations:
-              argocd.argoproj.io/sync-wave: "50"
+              argocd.argoproj.io/sync-wave: "40"
           spec:
             project: default
             destination:
@@ -205,7 +208,7 @@ helmCharts:
             namespace: argocd
             name: k3d-global-knative
             annotations:
-              argocd.argoproj.io/sync-wave: "50"
+              argocd.argoproj.io/sync-wave: "40"
           spec:
             project: default
             destination:
@@ -226,7 +229,7 @@ helmCharts:
             namespace: argocd
             name: k3d-global-kourier
             annotations:
-              argocd.argoproj.io/sync-wave: "50"
+              argocd.argoproj.io/sync-wave: "40"
           spec:
             project: default
             destination:
@@ -247,7 +250,7 @@ helmCharts:
             namespace: argocd
             name: k3d-global-defn
             annotations:
-              argocd.argoproj.io/sync-wave: "50"
+              argocd.argoproj.io/sync-wave: "40"
           spec:
             project: default
             destination:
@@ -268,7 +271,7 @@ helmCharts:
             namespace: argocd
             name: k3d-global-caddy
             annotations:
-              argocd.argoproj.io/sync-wave: "60"
+              argocd.argoproj.io/sync-wave: "50"
           spec:
             project: default
             destination:
@@ -289,7 +292,7 @@ helmCharts:
             namespace: argocd
             name: k3d-global-hello
             annotations:
-              argocd.argoproj.io/sync-wave: "70"
+              argocd.argoproj.io/sync-wave: "60"
           spec:
             project: default
             destination:
@@ -310,7 +313,7 @@ helmCharts:
             namespace: argocd
             name: k3d-global-coder
             annotations:
-              argocd.argoproj.io/sync-wave: "70"
+              argocd.argoproj.io/sync-wave: "60"
           spec:
             project: default
             destination:
@@ -345,7 +348,4 @@ helmCharts:
                 prune: true
                 selfHeal: true
               syncOptions: []
-    name: any-resource
-    version: 0.1.0
-    repo: https://kiwigrid.github.io
     includeCRDs: true

@@ -33,7 +33,7 @@ helmCharts:
           namespace: argocd
           name: k3d-global-argo-workflows
           annotations:
-            argocd.argoproj.io/sync-wave: "50"
+            argocd.argoproj.io/sync-wave: "40"
         spec:
           project: default
           destination:
@@ -56,7 +56,7 @@ helmCharts:
           namespace: argocd
           name: k3d-global-caddy
           annotations:
-            argocd.argoproj.io/sync-wave: "60"
+            argocd.argoproj.io/sync-wave: "50"
         spec:
           project: default
           destination:
@@ -98,7 +98,7 @@ helmCharts:
           namespace: argocd
           name: k3d-global-coder
           annotations:
-            argocd.argoproj.io/sync-wave: "70"
+            argocd.argoproj.io/sync-wave: "60"
         spec:
           project: default
           destination:
@@ -119,7 +119,7 @@ helmCharts:
           namespace: argocd
           name: k3d-global-defn
           annotations:
-            argocd.argoproj.io/sync-wave: "50"
+            argocd.argoproj.io/sync-wave: "40"
         spec:
           project: default
           destination:
@@ -140,7 +140,7 @@ helmCharts:
           namespace: argocd
           name: k3d-global-defn-shared
           annotations:
-            argocd.argoproj.io/sync-wave: "40"
+            argocd.argoproj.io/sync-wave: "30"
         spec:
           project: default
           destination:
@@ -161,7 +161,7 @@ helmCharts:
           namespace: argocd
           name: k3d-global-external-dns
           annotations:
-            argocd.argoproj.io/sync-wave: "30"
+            argocd.argoproj.io/sync-wave: "40"
         spec:
           project: default
           destination:
@@ -203,7 +203,7 @@ helmCharts:
           namespace: argocd
           name: k3d-global-hello
           annotations:
-            argocd.argoproj.io/sync-wave: "70"
+            argocd.argoproj.io/sync-wave: "60"
         spec:
           project: default
           destination:
@@ -245,7 +245,7 @@ helmCharts:
           namespace: argocd
           name: k3d-global-knative
           annotations:
-            argocd.argoproj.io/sync-wave: "50"
+            argocd.argoproj.io/sync-wave: "40"
         spec:
           project: default
           destination:
@@ -266,7 +266,7 @@ helmCharts:
           namespace: argocd
           name: k3d-global-kourier
           annotations:
-            argocd.argoproj.io/sync-wave: "50"
+            argocd.argoproj.io/sync-wave: "40"
         spec:
           project: default
           destination:
@@ -330,7 +330,7 @@ helmCharts:
           namespace: argocd
           name: k3d-global-tfo
           annotations:
-            argocd.argoproj.io/sync-wave: "50"
+            argocd.argoproj.io/sync-wave: "40"
         spec:
           project: default
           destination:
