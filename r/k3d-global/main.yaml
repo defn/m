@@ -23,7 +23,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "40"
+    argocd.argoproj.io/sync-wave: "50"
   name: k3d-global-argo-workflows
   namespace: argocd
 spec:
@@ -46,7 +46,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "50"
+    argocd.argoproj.io/sync-wave: "60"
   name: k3d-global-caddy
   namespace: argocd
 spec:
@@ -88,7 +88,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "60"
+    argocd.argoproj.io/sync-wave: "70"
   name: k3d-global-coder
   namespace: argocd
 spec:
@@ -109,7 +109,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "40"
+    argocd.argoproj.io/sync-wave: "50"
   name: k3d-global-defn
   namespace: argocd
 spec:
@@ -130,7 +130,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "30"
+    argocd.argoproj.io/sync-wave: "40"
   name: k3d-global-defn-shared
   namespace: argocd
 spec:
@@ -151,7 +151,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "40"
+    argocd.argoproj.io/sync-wave: "30"
   name: k3d-global-external-dns
   namespace: argocd
 spec:
@@ -193,7 +193,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "60"
+    argocd.argoproj.io/sync-wave: "70"
   name: k3d-global-hello
   namespace: argocd
 spec:
@@ -214,7 +214,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "40"
+    argocd.argoproj.io/sync-wave: "50"
   name: k3d-global-knative
   namespace: argocd
 spec:
@@ -235,7 +235,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "40"
+    argocd.argoproj.io/sync-wave: "50"
   name: k3d-global-kourier
   namespace: argocd
 spec:
@@ -320,7 +320,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "40"
+    argocd.argoproj.io/sync-wave: "50"
   name: k3d-global-tfo
   namespace: argocd
 spec:
