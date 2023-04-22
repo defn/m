@@ -11,7 +11,7 @@
     kn.url = github:defn/m/pkg-kn-1.9.2-6?dir=pkg/kn;
     vcluster.url = github:defn/m/pkg-vcluster-0.15.0-5?dir=pkg/vcluster;
     kubevirt.url = github:defn/m/pkg-kubevirt-0.59.0-6?dir=pkg/kubevirt;
-    velero.url = github:defn/m/pkg-velero-0.59.0-6?dir=pkg/velero;
+    velero.url = github:defn/m/pkg-velero-1.9.7-1?dir=pkg/velero;
   };
 
   outputs = inputs: inputs.kubectl.inputs.pkg.main rec {
