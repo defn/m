@@ -5,12 +5,11 @@ import Page from './Page.svelte';
 const meta: Meta<Page> = {
   title: 'Page',
   component: Page,
-  tags: ['autodocs'],
+  tags: ['autodocs']
 };
 
 export default meta;
 
 type Story = StoryObj<Page>;
 
-export const Primary: Story = {
-};
+export const Primary: Story = {};
