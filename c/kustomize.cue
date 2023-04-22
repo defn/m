@@ -54,6 +54,20 @@ kustomize: "demo2": #Kustomize & {
 	}
 }
 
+kustomize: "coredns": #Kustomize & {
+	resource: "configmap-coredns": core.#ConfigMap & {
+		apiVersion: "v1"
+		kind:       "ConfigMap"
+		metadata: name:      "coredns-custom"
+		metadata: namespace: "kube-system"
+		data: tailscale: """
+			  ts.net {
+			    forward . 100.100.100.100
+			   }
+			"""
+	}
+}
+
 // https://artifacthub.io/packages/helm/argo/argo-cd
 kustomize: "argo-cd": #Kustomize & {
 	namespace: "argocd"

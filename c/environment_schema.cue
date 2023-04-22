@@ -1,8 +1,6 @@
 package c
 
-import (
-	"encoding/yaml"
-)
+import "encoding/yaml"
 
 #TransformEnvToAnyResource: {
 	from: {

@@ -1,9 +1,9 @@
 package c
 
 import (
-	"tool/file"
-	"encoding/yaml"
 	"encoding/json"
+	"encoding/yaml"
+	"tool/file"
 )
 
 // This makes the c wrapper happy.
