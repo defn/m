@@ -1,28 +1,38 @@
 {
   inputs = {
-    c.url = github:defn/m/pkg-c-0.4.51?dir=pkg/c;
-    n.url = github:defn/m/pkg-n-0.0.94?dir=pkg/n;
-    tf.url = github:defn/m/pkg-tf-0.0.51?dir=pkg/tf;
+    cue.url = github:defn/m/pkg-cue-0.5.0-4?dir=pkg/cue;
+    hof.url = github:defn/m/pkg-hof-0.6.8-beta.12-3?dir=pkg/hof;
     gum.url = github:defn/m/pkg-gum-0.10.0-6?dir=pkg/gum;
     glow.url = github:defn/m/pkg-glow-1.5.0-6?dir=pkg/glow;
+    n.url = github:defn/m/pkg-n-0.0.94?dir=pkg/n;
   };
 
   outputs = inputs: inputs.c.inputs.cue.inputs.pkg.main rec {
     src = ./.;
 
-    defaultPackage = ctx: ctx.wrap.nullBuilder {
+    defaultPackage = ctx: ctx.wrap.bashBuilder {
+      inherit src;
+
       propagatedBuildInputs = with ctx.pkgs; [
         inputs.c.defaultPackage.${ctx.system}
         inputs.n.defaultPackage.${ctx.system}
         inputs.tf.defaultPackage.${ctx.system}
         inputs.gum.defaultPackage.${ctx.system}
         inputs.glow.defaultPackage.${ctx.system}
+        inputs.cue.defaultPackage.${ctx.system}
+        inputs.hof.defaultPackage.${ctx.system}
         jq
         yq
         gron
         fzf
         bashInteractive
       ];
+
+      installPhase = ''
+        mkdir -p $out/bin
+        cp -a $src/bin/* $out/bin/
+        chmod 755 $out/bin/*
+      '';
     };
   };
 }
