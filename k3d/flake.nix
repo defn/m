@@ -55,6 +55,8 @@
             export DEFN_DEV_HOST_API="$(host $host | grep 'has address' | awk '{print $NF}')"
             this-k3d-provision ${nme} $name
             ${nme} get -A svc | grep -v '<none>'
+
+            $BROWSER https://argocd.defn.run
             argocd admin initial-password
             ;;
           root)
