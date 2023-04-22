@@ -188,6 +188,7 @@
                 | sed "s#client_secret: .*#client_secret: \"$(pass tailscale-operator-client-secret-$name)\"#"
               echo ---
               kustomize build --enable-helm ../k/argo-cd
+              kustomize build --enable-helm ../k/coredns
             ) | docker run --rm -i \
               -v $name-manifest:/var/lib/rancher/k3s/server/manifests \
               ubuntu bash -c 'tee /var/lib/rancher/k3s/server/manifests/defn-dev-argo-cd.yaml | wc -l'
