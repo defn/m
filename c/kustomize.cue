@@ -756,13 +756,15 @@ kustomize: "cert-manager": #KustomizeHelm & {
 		release:   "cert-manager"
 		name:      "cert-manager"
 		namespace: "cert-manager"
-		version:   "1.11.0"
+		version:   "1.11.1"
 		repo:      "https://charts.jetstack.io"
 		values: {
 			ingressShim: {
 				defaultIssuerName: _issuer
 				defaultIssuerKind: "ClusterIssuer"
 			}
+
+			global: logLevel: 4
 		}
 	}
 
@@ -775,7 +777,7 @@ kustomize: "cert-manager": #KustomizeHelm & {
 	}
 
 	resource: "cert-manager-crds": {
-		url: "https://github.com/cert-manager/cert-manager/releases/download/v1.9.1/cert-manager.crds.yaml"
+		url: "https://github.com/cert-manager/cert-manager/releases/download/v\(helm.version)/cert-manager.crds.yaml"
 	}
 }
 
