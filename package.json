@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "cdktf-cli": "^0.15.5",
-    "pnpm": "^8.2.0"
+    "cdktf-cli": "^0.16.0",
+    "pnpm": "^8.3.0"
   }
 }
