@@ -1,9 +1,9 @@
 {
   inputs = {
     gomod2nix.url = github:defn/gomod2nix/1.5.0-9;
-    godev.url = github:defn/m/pkg-godev-0.0.75?dir=pkg/godev;
+    godev.url = github:defn/m/pkg-godev-0.0.76?dir=pkg/godev;
     nodedev.url = github:defn/m/pkg-nodedev-0.0.47?dir=pkg/nodedev;
-    localdev.url = github:defn/m/pkg-localdev-0.0.107?dir=pkg/localdev;
+    localdev.url = github:defn/m/pkg-localdev-0.0.110?dir=pkg/localdev;
     development.url = github:defn/m/pkg-development-0.0.50?dir=pkg/development;
     latest.url = github:NixOS/nixpkgs?rev=64c27498901f104a11df646278c4e5c9f4d642db;
   };
