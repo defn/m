@@ -33,6 +33,8 @@ helmCharts:
                     operator: In
                     values:
                       - global
+      multiNamespaceMode:
+        enabled: true
     name: vcluster
     version: 0.15.0
     repo: https://charts.loft.sh

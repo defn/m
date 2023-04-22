@@ -26,14 +26,14 @@ metadata:
   namespace: global-vc0
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
+kind: ClusterRole
 metadata:
   labels:
     app: vcluster
     chart: vcluster-0.15.0
     heritage: Helm
     release: vcluster
-  name: vcluster
+  name: vc-mn-vcluster-v-global-vc0
   namespace: global-vc0
 rules:
 - apiGroups:
@@ -115,21 +115,44 @@ rules:
   - get
   - watch
   - list
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - create
+  - delete
+  - patch
+  - update
+  - get
+  - watch
+  - list
+- apiGroups:
+  - ""
+  resources:
+  - serviceaccounts
+  verbs:
+  - create
+  - delete
+  - patch
+  - update
+  - get
+  - list
+  - watch
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRoleBinding
 metadata:
   labels:
     app: vcluster
     chart: vcluster-0.15.0
     heritage: Helm
     release: vcluster
-  name: vcluster
-  namespace: global-vc0
+  name: vc-mn-vcluster-v-global-vc0
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: Role
-  name: vcluster
+  kind: ClusterRole
+  name: vc-mn-vcluster-v-global-vc0
 subjects:
 - kind: ServiceAccount
   name: vc-vcluster
@@ -353,6 +376,7 @@ spec:
         - --sync=nodes
         - --sync=-ingressclasses
         - --node-selector=env=global
+        - --multi-namespace-mode=true
         - --tls-san=vcluster.global-vc0.svc.cluster.local
         - --enforce-toleration=env=global-vc0:NoSchedule
         env:

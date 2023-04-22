@@ -831,6 +831,8 @@ kustomize: "velero": #KustomizeHelm & {
 					values: [_in.vc_machine]
 				}]
 			}]
+
+			multiNamespaceMode: enabled: true
 		}
 	}
 
