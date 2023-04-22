@@ -28,6 +28,27 @@ helmCharts:
                 selfHeal: true
               syncOptions:
                 - ServerSideApply=true
+        velero: |
+          apiVersion: argoproj.io/v1alpha1
+          kind: Application
+          metadata:
+            namespace: argocd
+            name: k3d-global-velero
+            annotations:
+              argocd.argoproj.io/sync-wave: "1"
+          spec:
+            project: default
+            destination:
+              name: k3d-global
+            source:
+              repoURL: https://github.com/defn/m
+              targetRevision: main
+              path: r/velero
+            syncPolicy:
+              automated:
+                prune: true
+                selfHeal: true
+              syncOptions: []
         cert-manager: |
           apiVersion: argoproj.io/v1alpha1
           kind: Application

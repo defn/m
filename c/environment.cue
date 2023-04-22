@@ -52,6 +52,7 @@ env: (#Transform & {
 		global: {
 			bootstrap: {
 				"kyverno": [1, "", "ServerSideApply=true"]
+				"velero": [1, ""]
 				"cert-manager": [2, ""]
 				"pod-identity-webhook": [10, ""]
 				"external-secrets-operator": [10, ""]
