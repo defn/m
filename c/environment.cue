@@ -12,7 +12,7 @@ env: (#Transform & {
 		[N=string]: {
 			bootstrap: {
 				"external-secrets-operator": [10, ""]
-				"k3d-global-secrets-store": [20, ""]
+				"cluster-global-vc0-secrets-store": [20, ""]
 				"coder": [30, ""]
 			}
 		}

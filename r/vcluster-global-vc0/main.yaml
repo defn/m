@@ -2,6 +2,27 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "20"
+  name: vcluster-global-vc0-cluster-global-vc0-secrets-store
+  namespace: argocd
+spec:
+  destination:
+    name: vcluster-global-vc0
+  project: default
+  source:
+    path: r/cluster-global-vc0-secrets-store
+    repoURL: https://github.com/defn/m
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions: []
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
     argocd.argoproj.io/sync-wave: "30"
   name: vcluster-global-vc0-coder
   namespace: argocd
@@ -32,27 +53,6 @@ spec:
   project: default
   source:
     path: r/external-secrets-operator
-    repoURL: https://github.com/defn/m
-    targetRevision: main
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions: []
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "20"
-  name: vcluster-global-vc0-k3d-global-secrets-store
-  namespace: argocd
-spec:
-  destination:
-    name: vcluster-global-vc0
-  project: default
-  source:
-    path: r/k3d-global-secrets-store
     repoURL: https://github.com/defn/m
     targetRevision: main
   syncPolicy:
