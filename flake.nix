@@ -78,6 +78,21 @@
             vc0)
               set -x
               vcluster connect --context k3d-${nme} --kube-config-context-name=vcluster-${nme}-$1 vcluster
+
+              kubectl config use-context vcluster-${nme}-$1
+              server="$(kubectl --context vcluster-${nme}-$1 config view -o jsonpath='{.clusters[?(@.name == "vcluster-'${nme}-$1'")]}' --raw | jq -r '.cluster.server')"
+              ca="$(kubectl --context vcluster-${nme}-$1 config view -o jsonpath='{.clusters[?(@.name == "vcluster-'${nme}-$1'")]}' --raw | jq -r '.cluster["certificate-authority-data"] | @base64d')"
+              vault write sys/policy/vcluster-${nme}-$1-external-secrets policy=@k3d/policy-external-secrets.hcl
+              vault auth enable -path "vcluster-${nme}-$1" kubernetes || true
+              vault write "auth/vcluster-${nme}-$1/config" \
+                kubernetes_host="$server" \
+                kubernetes_ca_cert=@<(echo "$ca") \
+                disable_local_ca_jwt=true
+              vault write "auth/vcluster-${nme}-$1/role/external-secrets" \
+                bound_service_account_names=external-secrets \
+                bound_service_account_namespaces=external-secrets \
+                policies=vcluster-${nme}-$1-external-secrets ttl=1h
+
               kubectl config use-context k3d-${nme}
               kubectl config set-context --current --namespace=argocd
               argocd cluster add --core --yes --upsert vcluster-${nme}-$1

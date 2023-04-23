@@ -231,6 +231,21 @@ kustomize: "coder": #KustomizeHelm & {
 		}
 	}
 
+	psm: "service-coder": {
+		apiVersion: "v1"
+		kind:       "Service"
+
+		metadata: {
+			name: "coder"
+			annotations: {
+				"external-dns.alpha.kubernetes.io/hostname": "coder.defn.run"
+			}
+		}
+
+		spec: loadBalancerClass: "tailscale"
+		spec: type:              "LoadBalancer"
+	}
+
 	resource: "externalsecret-coder": {
 		apiVersion: "external-secrets.io/v1beta1"
 		kind:       "ExternalSecret"

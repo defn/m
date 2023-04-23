@@ -16,6 +16,8 @@ helmCharts:
         type: ClusterIP
   version: 0.22.0
 namespace: coder
+patches:
+- path: patch-service-coder.yaml
 resources:
 - resource-namespace-coder.yaml
 - resource-externalsecret-coder.yaml
