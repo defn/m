@@ -4,6 +4,9 @@ helmCharts:
   namespace: mastodon
   releaseName: mastodon
   repo: https://charts.bitnami.com/bitnami
+  valuesInline:
+    local_https: false
+    localDomain: mastodon.defn.run
   version: 1.2.0
 namespace: mastodon
 patches:
