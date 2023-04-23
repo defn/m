@@ -56,14 +56,16 @@
             this-k3d-provision ${nme} $name
             ${nme} get -A svc | grep -v '<none>'
 
-            vcluster connect --context k3d-$name --kube-config-context-name=vcluster-$name-vc0 vcluster
-            kubectl config use-context k3d-$name
-            kubectl config set-context --current --namespace=argocd
-            argocd cluster add --core --yes --upsert vcluster-$name-vc0
-            kubectl apply -f ../e/vcluster-$name-vc0.yaml
-
             $BROWSER https://argocd.defn.run
             argocd admin initial-password
+            ;;
+          vc0)
+            set -x
+            vcluster connect --context k3d-${nme} --kube-config-context-name=vcluster-${nme}-$1 vcluster
+            kubectl config use-context k3d-${nme}
+            kubectl config set-context --current --namespace=argocd
+            argocd cluster add --core --yes --upsert vcluster-${nme}-$1
+            kubectl apply -f ../e/vcluster-${nme}-$1.yaml
             ;;
           root)
             docker exec -ti -u root -w /home/ubuntu k3d-$name-server-0 bash
