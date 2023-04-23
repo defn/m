@@ -12,6 +12,7 @@ env: (#Transform & {
 		[N=string]: {
 			bootstrap: {
 				"nginx": [1, ""]
+				"mastodon": [1, ""]
 			}
 		}
 	}

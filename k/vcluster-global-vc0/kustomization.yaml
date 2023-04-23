@@ -27,6 +27,27 @@ helmCharts:
                 prune: true
                 selfHeal: true
               syncOptions: []
+        mastodon: |
+          apiVersion: argoproj.io/v1alpha1
+          kind: Application
+          metadata:
+            namespace: argocd
+            name: vcluster-global-vc0-mastodon
+            annotations:
+              argocd.argoproj.io/sync-wave: "1"
+          spec:
+            project: default
+            destination:
+              name: vcluster-global-vc0
+            source:
+              repoURL: https://github.com/defn/m
+              targetRevision: main
+              path: r/mastodon
+            syncPolicy:
+              automated:
+                prune: true
+                selfHeal: true
+              syncOptions: []
     name: any-resource
     version: 0.1.0
     repo: https://kiwigrid.github.io

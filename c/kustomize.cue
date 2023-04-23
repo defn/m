@@ -26,14 +26,6 @@ kustomize: "hello": #Kustomize & {
 	}
 }
 
-kustomize: "mastodon": #Kustomize & {
-	namespace: "mastodon"
-
-	resource: "mastodon": {
-		url: "mastodon.yaml"
-	}
-}
-
 kustomize: "events": #Kustomize & {
 	namespace: "default"
 
@@ -860,6 +852,29 @@ kustomize: "velero": #KustomizeHelm & {
 		kind:       "Namespace"
 		metadata: {
 			name: _in.vc_name
+		}
+	}
+}
+
+// https://artifacthub.io/packages/helm/bitnami/mastodon
+kustomize: "mastodon": #KustomizeHelm & {
+	namespace: "mastodon"
+
+	helm: {
+		release:   "mastodon"
+		name:      "mastodon"
+		namespace: "mastodon"
+		version:   "1.2.0"
+		repo:      "https://charts.bitnami.com/bitnami"
+		values: {
+		}
+	}
+
+	resource: "namespace-mastodon": core.#Namespace & {
+		apiVersion: "v1"
+		kind:       "Namespace"
+		metadata: {
+			name: "mastodon"
 		}
 	}
 }

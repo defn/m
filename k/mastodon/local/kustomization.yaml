@@ -1,3 +1,10 @@
+helmCharts:
+- includeCRDs: true
+  name: mastodon
+  namespace: mastodon
+  releaseName: mastodon
+  repo: https://charts.bitnami.com/bitnami
+  version: 1.2.0
 namespace: mastodon
 resources:
-- mastodon.yaml
+- resource-namespace-mastodon.yaml
