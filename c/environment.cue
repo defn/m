@@ -13,6 +13,7 @@ env: (#Transform & {
 			bootstrap: {
 				"nginx": [1, ""]
 				"hello": [10, ""]
+				"coder": [20, ""]
 			}
 		}
 	}
@@ -41,7 +42,6 @@ env: (#Transform & {
 				"defn": [40, ""]
 				"caddy": [50, ""]
 				"global-vc0": [60, ""]
-				"coder": [60, ""]
 				"argo-cd": [1000, ""]
 			}
 		}

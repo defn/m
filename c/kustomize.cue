@@ -1276,7 +1276,7 @@ kustomize: "defn-shared": #Kustomize & {
 	}
 }
 
-kustomize: "defn": #Kustomize & {
+kustomize: defn: #Kustomize & {
 	resource: "namespace-defn": core.#Namespace & {
 		apiVersion: "v1"
 		kind:       "Namespace"
