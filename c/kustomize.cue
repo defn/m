@@ -840,7 +840,7 @@ kustomize: "velero": #KustomizeHelm & {
 			}]
 
 			fallbackHostDns: true
-			multiNamespaceMode: enabled: true
+			multiNamespaceMode: enabled: false
 
 			service: type:              "LoadBalancer"
 			service: loadBalancerClass: "tailscale"

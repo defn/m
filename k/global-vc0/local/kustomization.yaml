@@ -16,7 +16,7 @@ helmCharts:
               - global
     fallbackHostDns: true
     multiNamespaceMode:
-      enabled: true
+      enabled: false
     service:
       loadBalancerClass: tailscale
       type: LoadBalancer
