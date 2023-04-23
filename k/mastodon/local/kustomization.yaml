@@ -6,5 +6,7 @@ helmCharts:
   repo: https://charts.bitnami.com/bitnami
   version: 1.2.0
 namespace: mastodon
+patches:
+- path: patch-service-mastodon-apache.yaml
 resources:
 - resource-namespace-mastodon.yaml

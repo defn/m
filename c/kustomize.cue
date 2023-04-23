@@ -877,6 +877,21 @@ kustomize: "mastodon": #KustomizeHelm & {
 			name: "mastodon"
 		}
 	}
+
+	psm: "service-mastodon-apache": {
+		apiVersion: "v1"
+		kind:       "Service"
+
+		metadata: {
+			name:      "mastodon-apache"
+			namespace: "mastodon"
+			annotations: {
+				"external-dns.alpha.kubernetes.io/hostname": "mastodon.defn.run"
+			}
+		}
+
+		spec: loadBalancerClass: "tailscale"
+	}
 }
 
 // https://artifacthub.io/packages/helm/bitnami/nginx

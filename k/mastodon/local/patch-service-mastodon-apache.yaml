@@ -1,0 +1,11 @@
+#ManagedBy: cue
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mastodon-apache
+  namespace: mastodon
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: mastodon.defn.run
+spec:
+  loadBalancerClass: tailscale
