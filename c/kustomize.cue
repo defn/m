@@ -868,7 +868,7 @@ kustomize: "mastodon": #KustomizeHelm & {
 		repo:      "https://charts.bitnami.com/bitnami"
 		values: {
 			local_https: false
-			localDomain: "mastodon.defn.run"
+			webDomain:   "mastodon.defn.run:80"
 		}
 	}
 

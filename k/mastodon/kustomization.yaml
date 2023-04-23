@@ -10,7 +10,7 @@ helmCharts:
     namespace: mastodon
     valuesInline:
       local_https: false
-      localDomain: mastodon.defn.run
+      webDomain: mastodon.defn.run:80
     name: mastodon
     version: 1.2.0
     repo: https://charts.bitnami.com/bitnami
