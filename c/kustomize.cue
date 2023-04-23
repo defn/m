@@ -206,7 +206,7 @@ kustomize: "coder": #KustomizeHelm & {
 		release:   "coder"
 		name:      "coder"
 		namespace: "coder"
-		version:   "0.22.2"
+		version:   "0.22.0"
 		repo:      "https://helm.coder.com/v2"
 		values: {
 			coder: {
@@ -906,6 +906,46 @@ kustomize: "nginx": #KustomizeHelm & {
 		}
 
 		spec: loadBalancerClass: "tailscale"
+	}
+}
+
+// https://artifacthub.io/packages/helm/traefik/traefik
+kustomize: "traefik": #KustomizeHelm & {
+	namespace: "traefik"
+
+	helm: {
+		release:   "traefik"
+		name:      "traefik"
+		namespace: "traefik"
+		version:   "22.1.0"
+		repo:      "https://traefik.github.io/charts"
+		values: {
+		}
+	}
+
+	resource: "namespace-traefik": core.#Namespace & {
+		apiVersion: "v1"
+		kind:       "Namespace"
+		metadata: {
+			name: "traefik"
+		}
+	}
+
+	psm: "service-tailscale": {
+		apiVersion: "v1"
+		kind:       "Service"
+
+		metadata: {
+			name: "traefik"
+			annotations: {
+				"external-dns.alpha.kubernetes.io/hostname": "traefik.defn.run"
+			}
+		}
+
+		spec: {
+			type:              "LoadBalancer"
+			loadBalancerClass: "tailscale"
+		}
 	}
 }
 

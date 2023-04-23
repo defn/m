@@ -1,0 +1,15 @@
+#ManagedBy: cue
+
+patches:
+  - path: patch-service-tailscale.yaml
+namespace: traefik
+resources:
+  - resource-namespace-traefik.yaml
+helmCharts:
+  - releaseName: traefik
+    namespace: traefik
+    valuesInline: {}
+    name: traefik
+    version: 22.1.0
+    repo: https://traefik.github.io/charts
+    includeCRDs: true
