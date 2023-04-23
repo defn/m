@@ -856,33 +856,6 @@ kustomize: "velero": #KustomizeHelm & {
 				nodeSelector: "env=\(_in.vc_machine)"
 			}
 
-			sync: generic: {
-				clusterRole: extraRules: [{
-					apiGroups: ["apiextensions.k8s.io"]
-					resources: ["customresourcedefinitions"]
-					verbs: ["get", "list", "watch"]
-				}]
-
-				role: extraRules: [{
-					apiGroups: ["dapr.io"]
-					resources: ["components", "configurations", "resiliencies", "subscriptions"]
-					verbs: ["create", "delete", "patch", "update", "get", "list", "watch"]
-				}]
-
-				config: """
-					version: v1beta1
-					export:
-					  - kind: Component
-					    apiVersion: dapr.io/v1alpha1
-					  - kind: Configuration
-					    apiVersion: dapr.io/v1alpha1
-					  - kind: Resiliency
-					    apiVersion: dapr.io/v1alpha1
-					  - kind: Subscription
-					    apiVersion: dapr.io/v1alpha1
-					"""
-			}
-
 			tolerations: [{
 				key:      "env"
 				value:    _in.vc_machine

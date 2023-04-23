@@ -84,21 +84,6 @@ rules:
   - get
   - list
   - watch
-- apiGroups:
-  - dapr.io
-  resources:
-  - components
-  - configurations
-  - resiliencies
-  - subscriptions
-  verbs:
-  - create
-  - delete
-  - patch
-  - update
-  - get
-  - list
-  - watch
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -130,14 +115,6 @@ rules:
   - get
   - watch
   - list
-- apiGroups:
-  - apiextensions.k8s.io
-  resources:
-  - customresourcedefinitions
-  verbs:
-  - get
-  - list
-  - watch
 - apiGroups:
   - ""
   resources:
@@ -435,17 +412,7 @@ spec:
             fieldRef:
               fieldPath: spec.nodeName
         - name: CONFIG
-          value: |-
-            version: v1beta1
-            export:
-              - kind: Component
-                apiVersion: dapr.io/v1alpha1
-              - kind: Configuration
-                apiVersion: dapr.io/v1alpha1
-              - kind: Resiliency
-                apiVersion: dapr.io/v1alpha1
-              - kind: Subscription
-                apiVersion: dapr.io/v1alpha1
+          value: '---'
         - name: VCLUSTER_TELEMETRY_CONFIG
           value: '{"disabled":"false","instanceCreator":"helm","instanceCreatorUID":""}'
         image: ghcr.io/loft-sh/vcluster:0.15.0
