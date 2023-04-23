@@ -24,10 +24,10 @@ data:
     http {\n            tls\n            tls_insecure_skip_verify\n        }\n    }\n}\n\nhttps://coder.defn.run
     {\n    tls /certs/tls.crt /certs/tls.key\n    reverse_proxy http://coder.coder.svc.cluster.local
     {\n    }\n}\n\nhttps://*.defn.run {\n    tls /certs/tls.crt /certs/tls.key\n    reverse_proxy
-    {http.request.host.labels.2}.vcluster-37a8eec1-2a8b5fb4.svc.cluster.local:80 {\n
-    \       header_up -Host\n        header_up X-defn-label0\t\"{http.request.host.labels.0}\"\n
-    \       header_up X-defn-label1\t\"{http.request.host.labels.1}\"\n        header_up
-    X-defn-label2\t\"{http.request.host.labels.2}\"\n    }\n}\n"
+    {http.request.host.labels.2}.default.svc.cluster.local:80 {\n        header_up
+    -Host\n        header_up X-defn-label0\t\"{http.request.host.labels.0}\"\n        header_up
+    X-defn-label1\t\"{http.request.host.labels.1}\"\n        header_up X-defn-label2\t\"{http.request.host.labels.2}\"\n
+    \   }\n}\n"
 kind: ConfigMap
 metadata:
   labels:
@@ -88,7 +88,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: 48978710f894f680c8dcfa55907e390eaeb4187e05eae6de626e13408220ec06
+        checksum/config: 84357311aa515900ff82e0250b7fbbc736eefa51afbd0d5b67b26d4cf9814ea7
       labels:
         app.kubernetes.io/instance: caddy
         app.kubernetes.io/name: caddy

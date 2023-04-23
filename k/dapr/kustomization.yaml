@@ -2,7 +2,8 @@
 
 patches: []
 namespace: dapr-system
-resources: []
+resources:
+  - resource-namespace-dapr.yaml
 helmCharts:
   - releaseName: dapr
     namespace: dapr-system

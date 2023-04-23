@@ -218,6 +218,15 @@ kustomize: "dapr": #KustomizeHelm & {
 		values: {
 		}
 	}
+
+	resource: "namespace-dapr": core.#Namespace & {
+		apiVersion: "v1"
+		kind:       "Namespace"
+		metadata: {
+			name: "dapr"
+		}
+	}
+
 }
 
 // https://artifacthub.io/packages/helm/coder-v2/coder
@@ -1029,7 +1038,7 @@ kustomize: "caddy": #KustomizeHelm & {
 
 				https://*.defn.run {
 				    tls /certs/tls.crt /certs/tls.key
-				    reverse_proxy {http.request.host.labels.2}.vcluster-37a8eec1-2a8b5fb4.svc.cluster.local:80 {
+				    reverse_proxy {http.request.host.labels.2}.default.svc.cluster.local:80 {
 				        header_up -Host
 				        header_up X-defn-label0	"{http.request.host.labels.0}"
 				        header_up X-defn-label1	"{http.request.host.labels.1}"

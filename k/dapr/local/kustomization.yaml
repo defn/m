@@ -6,3 +6,5 @@ helmCharts:
   repo: https://charts.wener.tech
   version: 1.10.5
 namespace: dapr-system
+resources:
+- resource-namespace-dapr.yaml
