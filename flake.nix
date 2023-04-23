@@ -79,7 +79,7 @@
               kubectl config use-context k3d-${nme}
               kubectl config set-context --current --namespace=argocd
               argocd cluster add --core --yes --upsert vcluster-${nme}-$1
-              kubectl apply -f ../e/vcluster-${nme}-$1.yaml
+              kubectl apply -f e/vcluster-${nme}-$1.yaml
               ;;
             root)
               docker exec -ti -u root -w /home/ubuntu k3d-$name-server-0 bash
@@ -161,7 +161,7 @@
           $nme vault-init
           $nme vault-config
 
-          if test -f ../e/k3d-$nme.yaml; then
+          if test -f e/k3d-$nme.yaml; then
             kubectl config use-context k3d-global
 
             mark waiting for argocd
@@ -171,7 +171,7 @@
             while ! argocd cluster add --core --yes --upsert k3d-$nme; do date; sleep 5; done
 
             mark syncing
-            kubectl --context k3d-global apply -f ../e/k3d-$nme.yaml
+            kubectl --context k3d-global apply -f e/k3d-$nme.yaml
             app wait argocd/k3d-$nme --timeout 5 || true
             while true; do
               app sync argocd/k3d-$nme || true
