@@ -202,6 +202,8 @@ kustomize: "argo-workflows": #KustomizeHelm & {
 kustomize: "coder": #KustomizeHelm & {
 	namespace: "coder"
 
+	_host: "coder.defn.run"
+
 	helm: {
 		release:   "coder"
 		name:      "coder"
@@ -232,14 +234,13 @@ kustomize: "coder": #KustomizeHelm & {
 	}
 
 	resource: "ingress-coder": {
-		_host: "coder.defn.run"
-
 		apiVersion: "networking.k8s.io/v1"
 		kind:       "Ingress"
 		metadata: {
 			name: "coder"
 			annotations: {
-				"cert-manager.io/cluster-issuer": "zerossl-production"
+				"cert-manager.io/cluster-issuer":            "zerossl-production"
+				"external-dns.alpha.kubernetes.io/hostname": _host
 			}
 		}
 
