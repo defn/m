@@ -60,7 +60,7 @@ kustomize: "coredns": #Kustomize & {
 		kind:       "ConfigMap"
 		metadata: name:      "coredns-custom"
 		metadata: namespace: "kube-system"
-		data: tailscale: """
+		data: "ts.net.server": """
 			  ts.net {
 			    forward . 100.100.100.100
 			   }
