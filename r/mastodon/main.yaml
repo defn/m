@@ -350,9 +350,9 @@ metadata:
 ---
 apiVersion: v1
 data:
-  MASTODON_ADMIN_PASSWORD: ek1nNFdFcjNwSw==
-  OTP_SECRET: dmQ4S0VEYnBjTw==
-  SECRET_KEY_BASE: NWJ6cE9FZWF1SQ==
+  MASTODON_ADMIN_PASSWORD: d2liVWwyNjRDQw==
+  OTP_SECRET: V3FWc3pmSlFOaw==
+  SECRET_KEY_BASE: c3ZJR1VZNWNlRA==
 kind: Secret
 metadata:
   labels:
@@ -366,7 +366,7 @@ metadata:
 ---
 apiVersion: v1
 data:
-  root-password: YmtCRnNEelJTRg==
+  root-password: TklZa2F4V1o0bg==
   root-user: YWRtaW4=
 kind: Secret
 metadata:
@@ -381,8 +381,8 @@ type: Opaque
 ---
 apiVersion: v1
 data:
-  password: SVEzUld6RGVtVA==
-  postgres-password: Rm9Bb0p5a0lNcg==
+  password: NDFyMVpsM1hIag==
+  postgres-password: YVN4SW9UUHNoMQ==
 kind: Secret
 metadata:
   labels:
@@ -396,7 +396,7 @@ type: Opaque
 ---
 apiVersion: v1
 data:
-  redis-password: R3czREJrUVMxRA==
+  redis-password: SDZISzV0aEdrcg==
 kind: Secret
 metadata:
   labels:
@@ -887,7 +887,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/credentials-secret: a8e26557bfff80c255ae87791fb2154c82338ffa32c2a7c7f464b96b3974dfec
+        checksum/credentials-secret: 1c9cc6173a5278c1194be715d3d9df9c202588f5180565106590e4e45f75a443
       labels:
         app.kubernetes.io/instance: mastodon
         app.kubernetes.io/managed-by: Helm
@@ -1709,7 +1709,7 @@ spec:
         checksum/configmap: 17891dc35a785ce67adf84b84108ad8f98c67d931c43749e02ee945239d4c56d
         checksum/health: d0c4190cc7ea25a006572d4d12e779558626083bb7c0f0a301543dafaa5d5c74
         checksum/scripts: aab3fef2b658fa55b12ca51b7ba4003f7706d28028905a8e02d7a1a8e09f9598
-        checksum/secret: af3914fede86750713e8ac9b139e6c8f2c6c2a85319d89bb652a2d8d8cd29c80
+        checksum/secret: 85c01445cf7447d9909585fa837235d3bc1e48063d53ed79b8a80839878c89ae
       labels:
         app.kubernetes.io/component: master
         app.kubernetes.io/instance: mastodon
