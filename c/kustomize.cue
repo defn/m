@@ -206,27 +206,6 @@ kustomize: "argo-workflows": #KustomizeHelm & {
 	}
 }
 
-kustomize: "dapr": #KustomizeHelm & {
-	namespace: "dapr-system"
-
-	helm: {
-		release:   "dapr"
-		name:      "dapr"
-		namespace: "dapr-system"
-		version:   "1.10.5"
-		repo:      "https://dapr.github.io/helm-charts"
-	}
-
-	resource: "namespace-dapr": core.#Namespace & {
-		apiVersion: "v1"
-		kind:       "Namespace"
-		metadata: {
-			name: "dapr"
-		}
-	}
-
-}
-
 // https://artifacthub.io/packages/helm/coder-v2/coder
 kustomize: "coder": #KustomizeHelm & {
 	namespace: "coder"
