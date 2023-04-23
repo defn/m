@@ -942,7 +942,8 @@ kustomize: "traefik": #KustomizeHelm & {
 		kind:       "Service"
 
 		metadata: {
-			name: "traefik"
+			name:      "traefik"
+			namespace: "traefik"
 			annotations: {
 				"external-dns.alpha.kubernetes.io/hostname": "traefik.defn.run"
 			}
