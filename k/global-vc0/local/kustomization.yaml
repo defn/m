@@ -51,6 +51,7 @@ helmCharts:
             - apiVersion: serving.knative.dev/v1
               kind: Revision
             - apiVersion: serving.knative.dev/v1
+              kind: Route
         role:
           extraRules:
           - apiGroups:

@@ -865,6 +865,7 @@ kustomize: "velero": #KustomizeHelm & {
 					  - apiVersion: serving.knative.dev/v1
 					    kind: Revision
 					  - apiVersion: serving.knative.dev/v1
+					    kind: Route
 					"""
 			}
 

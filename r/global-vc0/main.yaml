@@ -454,6 +454,7 @@ spec:
               - apiVersion: serving.knative.dev/v1
                 kind: Revision
               - apiVersion: serving.knative.dev/v1
+                kind: Route
         - name: VCLUSTER_TELEMETRY_CONFIG
           value: '{"disabled":"false","instanceCreator":"helm","instanceCreatorUID":""}'
         image: ghcr.io/loft-sh/vcluster:0.15.0
