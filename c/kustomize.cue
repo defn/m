@@ -864,10 +864,6 @@ kustomize: "velero": #KustomizeHelm & {
 				}]
 
 				role: extraRules: [{
-					apiGroups: ["serving.knative.dev"]
-					resources: ["services", "configurations", "revisions", "routes"]
-					verbs: ["create", "delete", "patch", "update", "get", "list", "watch"]
-				}, {
 					apiGroups: ["dapr.io"]
 					resources: ["components", "configurations", "resiliencies", "subscriptions"]
 					verbs: ["create", "delete", "patch", "update", "get", "list", "watch"]
@@ -884,55 +880,6 @@ kustomize: "velero": #KustomizeHelm & {
 					    apiVersion: dapr.io/v1alpha1
 					  - kind: Subscription
 					    apiVersion: dapr.io/v1alpha1
-					  - apiVersion: serving.knative.dev/v1
-					    kind: Service
-					    patches:
-					      - op: copyFromObject
-					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
-					  - apiVersion: serving.knative.dev/v1
-					    kind: Configuration
-					    patches:
-					      - op: copyFromObject
-					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
-					  - apiVersion: serving.knative.dev/v1
-					    kind: Revision
-					    patches:
-					      - op: copyFromObject
-					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
-					  - apiVersion: serving.knative.dev/v1
-					    kind: Route
-					    patches:
-					      - op: copyFromObject
-					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
-					import:
-					  - apiVersion: serving.knative.dev/v1
-					    kind: Service
-					    patches:
-					      - op: copyFromObject
-					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
-					  - apiVersion: serving.knative.dev/v1
-					    kind: Configuration
-					    patches:
-					      - op: copyFromObject
-					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
-					  - apiVersion: serving.knative.dev/v1
-					    kind: Revision
-					    patches:
-					      - op: copyFromObject
-					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
-					  - apiVersion: serving.knative.dev/v1
-					    kind: Route
-					    patches:
-					      - op: copyFromObject
-					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
 					"""
 			}
 
