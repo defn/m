@@ -833,6 +833,41 @@ kustomize: "velero": #KustomizeHelm & {
 				nodeSelector: "env=\(_in.vc_machine)"
 			}
 
+			sync: generic: {
+				clusterRole: extraRules: [{
+					apiGroups: ["apiextensions.k8s.io"]
+					resources: ["customresourcedefinitions"]
+					verbs: ["get", "list", "watch"]
+				}]
+
+				role: extraRules: [{
+					apiGroups: ["serving.knative.dev"]
+					resources: ["services", "configurations", "revisions", "routes"]
+					verbs: ["create", "delete", "patch", "update", "get", "list", "watch"]
+				}]
+
+				config: """
+					version: v1beta1
+					export:
+					  - apiVersion: serving.knative.dev/v1
+					    kind: Service
+					  - apiVersion: serving.knative.dev/v1
+					    kind: Configuration
+					  - apiVersion: serving.knative.dev/v1
+					    kind: Revision
+					  - apiVersion: serving.knative.dev/v1
+					    kind: Route
+					import:
+					  - apiVersion: serving.knative.dev/v1
+					    kind: Service
+					  - apiVersion: serving.knative.dev/v1
+					    kind: Configuration
+					  - apiVersion: serving.knative.dev/v1
+					    kind: Revision
+					  - apiVersion: serving.knative.dev/v1
+					"""
+			}
+
 			tolerations: [{
 				key:      "env"
 				value:    _in.vc_machine

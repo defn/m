@@ -2,6 +2,27 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "10"
+  name: vcluster-global-vc0-hello
+  namespace: argocd
+spec:
+  destination:
+    name: vcluster-global-vc0
+  project: default
+  source:
+    path: r/hello
+    repoURL: https://github.com/defn/m
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions: []
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
     argocd.argoproj.io/sync-wave: "1"
   name: vcluster-global-vc0-nginx
   namespace: argocd
