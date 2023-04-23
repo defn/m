@@ -18,4 +18,5 @@ helmCharts:
 namespace: coder
 resources:
 - resource-namespace-coder.yaml
+- resource-ingress-coder.yaml
 - resource-externalsecret-coder.yaml

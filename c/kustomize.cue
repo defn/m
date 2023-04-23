@@ -231,6 +231,40 @@ kustomize: "coder": #KustomizeHelm & {
 		}
 	}
 
+	resource: "ingress-coder": {
+		_host: "coder.defn.run"
+
+		apiVersion: "networking.k8s.io/v1"
+		kind:       "Ingress"
+		metadata: {
+			name: "coder"
+			annotations: {
+				"cert-manager.io/issuer":                    "zerossl-production"
+				"external-dns.alpha.kubernetes.io/hostname": _host
+			}
+		}
+
+		spec: {
+			ingressClassName: "traefik"
+
+			rules: [{
+				http: paths: [{
+					path:     "/"
+					pathType: "Prefix"
+					backend: service: {
+						name: "coder"
+						port: number: 80
+					}
+				}]
+			}]
+
+			tls: [{
+				hosts: [_host]
+				secretName: _host
+			}]
+		}
+	}
+
 	resource: "externalsecret-coder": {
 		apiVersion: "external-secrets.io/v1beta1"
 		kind:       "ExternalSecret"
