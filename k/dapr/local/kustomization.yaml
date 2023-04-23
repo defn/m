@@ -4,6 +4,10 @@ helmCharts:
   namespace: dapr-system
   releaseName: dapr
   repo: https://charts.wener.tech
+  valuesInline:
+    global:
+      mtls:
+        enabled: false
   version: 1.10.5
 namespace: dapr-system
 resources:
