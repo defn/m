@@ -56,6 +56,8 @@
         (nme: value: ctx.pkgs.writeShellScriptBin nme ''
           set -efu
 
+          cd "./$(git rev-parse --show-cdup)"
+
           name="$GIT_AUTHOR_NAME-${nme}"
           host=k3d-$name-server-0.$(tailscale cert 2>&1 | grep domain..use | cut -d'"' -f2 | cut -d. -f2-)
 
@@ -63,7 +65,7 @@
 
           case "''${1:-}" in
             build)
-              earthly --push +build
+              cd k3d && earthly --push +build
               ;;
             create)
               export DEFN_DEV_HOST_API="$(host $host | grep 'has address' | awk '{print $NF}')"
