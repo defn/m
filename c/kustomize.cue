@@ -856,46 +856,6 @@ kustomize: "velero": #KustomizeHelm & {
 	}
 }
 
-// https://artifacthub.io/packages/helm/bitnami/mastodon
-kustomize: "mastodon": #KustomizeHelm & {
-	namespace: "mastodon"
-
-	helm: {
-		release:   "mastodon"
-		name:      "mastodon"
-		namespace: "mastodon"
-		version:   "1.2.0"
-		repo:      "https://charts.bitnami.com/bitnami"
-		values: {
-			local_https: false
-			webDomain:   "mastodon.defn.run:80"
-		}
-	}
-
-	resource: "namespace-mastodon": core.#Namespace & {
-		apiVersion: "v1"
-		kind:       "Namespace"
-		metadata: {
-			name: "mastodon"
-		}
-	}
-
-	psm: "service-mastodon-apache": {
-		apiVersion: "v1"
-		kind:       "Service"
-
-		metadata: {
-			name:      "mastodon-apache"
-			namespace: "mastodon"
-			annotations: {
-				"external-dns.alpha.kubernetes.io/hostname": "mastodon.defn.run"
-			}
-		}
-
-		spec: loadBalancerClass: "tailscale"
-	}
-}
-
 // https://artifacthub.io/packages/helm/bitnami/nginx
 kustomize: "nginx": #KustomizeHelm & {
 	namespace: "nginx"
@@ -968,12 +928,6 @@ kustomize: "caddy": #KustomizeHelm & {
 				            tls
 				            tls_insecure_skip_verify
 				        }
-				    }
-				}
-
-				https://coder.defn.run {
-				    tls /certs/tls.crt /certs/tls.key
-				    reverse_proxy http://coder.coder.svc.cluster.local {
 				    }
 				}
 

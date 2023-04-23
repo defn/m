@@ -11,7 +11,7 @@ env: (#Transform & {
 
 		[N=string]: {
 			bootstrap: {
-				"mastodon": [1, ""]
+				"coder": [1, ""]
 			}
 		}
 	}

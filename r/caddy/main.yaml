@@ -21,13 +21,11 @@ data:
     \ \n  log {\n      output stdout\n  }\n}\n\n:9999 {\n  handle / {\n    respond
     \"OK\"\n  }\n}\n\n\nhttps://argocd.defn.run {\n    tls /certs/tls.crt /certs/tls.key\n
     \   reverse_proxy https://argocd-server.argocd.svc.cluster.local {\n        transport
-    http {\n            tls\n            tls_insecure_skip_verify\n        }\n    }\n}\n\nhttps://coder.defn.run
-    {\n    tls /certs/tls.crt /certs/tls.key\n    reverse_proxy http://coder.coder.svc.cluster.local
-    {\n    }\n}\n\nhttps://*.defn.run {\n    tls /certs/tls.crt /certs/tls.key\n    reverse_proxy
-    {http.request.host.labels.2}.default.svc.cluster.local:80 {\n        header_up
-    -Host\n        header_up X-defn-label0\t\"{http.request.host.labels.0}\"\n        header_up
-    X-defn-label1\t\"{http.request.host.labels.1}\"\n        header_up X-defn-label2\t\"{http.request.host.labels.2}\"\n
-    \   }\n}\n"
+    http {\n            tls\n            tls_insecure_skip_verify\n        }\n    }\n}\n\nhttps://*.defn.run
+    {\n    tls /certs/tls.crt /certs/tls.key\n    reverse_proxy {http.request.host.labels.2}.default.svc.cluster.local:80
+    {\n        header_up -Host\n        header_up X-defn-label0\t\"{http.request.host.labels.0}\"\n
+    \       header_up X-defn-label1\t\"{http.request.host.labels.1}\"\n        header_up
+    X-defn-label2\t\"{http.request.host.labels.2}\"\n    }\n}\n"
 kind: ConfigMap
 metadata:
   labels:
@@ -88,7 +86,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: 84357311aa515900ff82e0250b7fbbc736eefa51afbd0d5b67b26d4cf9814ea7
+        checksum/config: 7edca90052825359df83bf219df6116cc2e4bd102b5d3c5ad539dae366ec666c
       labels:
         app.kubernetes.io/instance: caddy
         app.kubernetes.io/name: caddy

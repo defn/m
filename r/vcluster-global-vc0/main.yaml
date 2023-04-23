@@ -3,14 +3,14 @@ kind: Application
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "1"
-  name: vcluster-global-vc0-mastodon
+  name: vcluster-global-vc0-coder
   namespace: argocd
 spec:
   destination:
     name: vcluster-global-vc0
   project: default
   source:
-    path: r/mastodon
+    path: r/coder
     repoURL: https://github.com/defn/m
     targetRevision: main
   syncPolicy:

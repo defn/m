@@ -9,9 +9,8 @@ helmCharts:
       caddyFile: "https://argocd.defn.run {\n    tls /certs/tls.crt /certs/tls.key\n
         \   reverse_proxy https://argocd-server.argocd.svc.cluster.local {\n        transport
         http {\n            tls\n            tls_insecure_skip_verify\n        }\n
-        \   }\n}\n\nhttps://coder.defn.run {\n    tls /certs/tls.crt /certs/tls.key\n
-        \   reverse_proxy http://coder.coder.svc.cluster.local {\n    }\n}\n\nhttps://*.defn.run
-        {\n    tls /certs/tls.crt /certs/tls.key\n    reverse_proxy {http.request.host.labels.2}.default.svc.cluster.local:80
+        \   }\n}\n\nhttps://*.defn.run {\n    tls /certs/tls.crt /certs/tls.key\n
+        \   reverse_proxy {http.request.host.labels.2}.default.svc.cluster.local:80
         {\n        header_up -Host\n        header_up X-defn-label0\t\"{http.request.host.labels.0}\"\n
         \       header_up X-defn-label1\t\"{http.request.host.labels.1}\"\n        header_up
         X-defn-label2\t\"{http.request.host.labels.2}\"\n    }\n}"
