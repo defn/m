@@ -73,7 +73,7 @@
               ${nme} get -A svc | grep -v '<none>'
 
               $BROWSER https://argocd.defn.run
-              argocd admin initial-password
+              ${nme} password
               ;;
             vc0)
               set -x
