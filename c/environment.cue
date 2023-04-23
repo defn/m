@@ -33,6 +33,7 @@ env: (#Transform & {
 				"k3d-global-secrets-store": [20, ""]
 				"defn-shared": [30, ""]
 				"external-dns": [30, ""]
+				"dapr": [30, ""]
 				"argo-workflows": [40, "argo-workflows", "CreateNamespace=true"]
 				"tfo": [40, ""]
 				"knative": [40, ""]

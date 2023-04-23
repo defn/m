@@ -1,0 +1,13 @@
+#ManagedBy: cue
+
+patches: []
+namespace: dapr-system
+resources: []
+helmCharts:
+  - releaseName: dapr
+    namespace: dapr-system
+    valuesInline: {}
+    name: dapr
+    version: 1.10.5
+    repo: https://charts.wener.tech
+    includeCRDs: true

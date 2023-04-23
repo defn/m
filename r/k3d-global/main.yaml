@@ -109,6 +109,27 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "30"
+  name: k3d-global-dapr
+  namespace: argocd
+spec:
+  destination:
+    name: k3d-global
+  project: default
+  source:
+    path: r/dapr
+    repoURL: https://github.com/defn/m
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions: []
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
     argocd.argoproj.io/sync-wave: "40"
   name: k3d-global-defn
   namespace: argocd

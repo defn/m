@@ -1,0 +1,8 @@
+helmCharts:
+- includeCRDs: true
+  name: dapr
+  namespace: dapr-system
+  releaseName: dapr
+  repo: https://charts.wener.tech
+  version: 1.10.5
+namespace: dapr-system
