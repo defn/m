@@ -886,6 +886,17 @@ kustomize: "nginx": #KustomizeHelm & {
 		}
 	}
 
+	psm: "service-nginx": {
+		apiVersion: "v1"
+		kind:       "Service"
+
+		metadata: {
+			name:      "nginx"
+			namespace: "nginx"
+		}
+
+		spec: loadBalancerClass: "tailscale"
+	}
 }
 
 // https://artifacthub.io/packages/helm/alekc/caddy
