@@ -107,6 +107,9 @@
             use)
               kubectl config use-context k3d-${nme}
               ;;
+            password)
+              argocd --context k3d-${nme} admin initial-password | head -1
+              ;;
             server)
               kubectl --context k3d-${nme} config view -o jsonpath='{.clusters[?(@.name == "k3d-'$name'")]}' --raw | jq -r '.cluster.server'
               ;;
