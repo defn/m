@@ -214,6 +214,27 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "60"
+  name: k3d-global-hello
+  namespace: argocd
+spec:
+  destination:
+    name: k3d-global
+  project: default
+  source:
+    path: r/hello
+    repoURL: https://github.com/defn/m
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions: []
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
     argocd.argoproj.io/sync-wave: "40"
   name: k3d-global-knative
   namespace: argocd

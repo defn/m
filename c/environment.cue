@@ -12,7 +12,6 @@ env: (#Transform & {
 		[N=string]: {
 			bootstrap: {
 				"nginx": [1, ""]
-				"hello": [10, ""]
 			}
 		}
 	}
@@ -40,6 +39,7 @@ env: (#Transform & {
 				"kourier": [40, ""]
 				"defn": [40, ""]
 				"caddy": [50, ""]
+				"hello": [60, ""]
 				"global-vc0": [60, ""]
 				"argo-cd": [1000, ""]
 			}
