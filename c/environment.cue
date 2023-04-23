@@ -13,7 +13,6 @@ env: (#Transform & {
 			bootstrap: {
 				"nginx": [1, ""]
 				"hello": [10, ""]
-				"coder": [20, ""]
 			}
 		}
 	}

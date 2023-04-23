@@ -5,27 +5,6 @@ helmCharts:
   repo: https://kiwigrid.github.io
   valuesInline:
     anyResources:
-      coder: |
-        apiVersion: argoproj.io/v1alpha1
-        kind: Application
-        metadata:
-          namespace: argocd
-          name: vcluster-global-vc0-coder
-          annotations:
-            argocd.argoproj.io/sync-wave: "20"
-        spec:
-          project: default
-          destination:
-            name: vcluster-global-vc0
-          source:
-            repoURL: https://github.com/defn/m
-            targetRevision: main
-            path: r/coder
-          syncPolicy:
-            automated:
-              prune: true
-              selfHeal: true
-            syncOptions: []
       hello: |
         apiVersion: argoproj.io/v1alpha1
         kind: Application
