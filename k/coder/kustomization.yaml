@@ -1,7 +1,6 @@
 #ManagedBy: cue
 
-patches:
-  - path: patch-service-coder.yaml
+patches: []
 namespace: coder
 resources:
   - resource-namespace-coder.yaml

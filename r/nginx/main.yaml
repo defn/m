@@ -6,8 +6,6 @@ metadata:
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    external-dns.alpha.kubernetes.io/hostname: nginx.defn.run
   labels:
     app.kubernetes.io/instance: nginx
     app.kubernetes.io/managed-by: Helm
@@ -17,7 +15,6 @@ metadata:
   namespace: nginx
 spec:
   externalTrafficPolicy: Cluster
-  loadBalancerClass: tailscale
   ports:
   - name: http
     port: 80

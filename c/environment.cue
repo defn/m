@@ -13,6 +13,7 @@ env: (#Transform & {
 			bootstrap: {
 				"external-secrets-operator": [10, ""]
 				"vcluster-global-vc0-secrets-store": [20, ""]
+				"nginx": [30, ""]
 				"coder": [30, ""]
 			}
 		}

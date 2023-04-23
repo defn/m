@@ -48,6 +48,27 @@ helmCharts:
                 prune: true
                 selfHeal: true
               syncOptions: []
+        nginx: |
+          apiVersion: argoproj.io/v1alpha1
+          kind: Application
+          metadata:
+            namespace: argocd
+            name: vcluster-global-vc0-nginx
+            annotations:
+              argocd.argoproj.io/sync-wave: "30"
+          spec:
+            project: default
+            destination:
+              name: vcluster-global-vc0
+            source:
+              repoURL: https://github.com/defn/m
+              targetRevision: main
+              path: r/nginx
+            syncPolicy:
+              automated:
+                prune: true
+                selfHeal: true
+              syncOptions: []
         coder: |
           apiVersion: argoproj.io/v1alpha1
           kind: Application

@@ -52,8 +52,6 @@ subjects:
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    external-dns.alpha.kubernetes.io/hostname: coder.defn.run
   labels:
     app.kubernetes.io/instance: coder
     app.kubernetes.io/managed-by: Helm
@@ -64,7 +62,6 @@ metadata:
   name: coder
   namespace: coder
 spec:
-  loadBalancerClass: tailscale
   ports:
   - name: http
     port: 80
@@ -74,7 +71,7 @@ spec:
     app.kubernetes.io/instance: coder
     app.kubernetes.io/name: coder
   sessionAffinity: ClientIP
-  type: LoadBalancer
+  type: ClusterIP
 ---
 apiVersion: apps/v1
 kind: Deployment

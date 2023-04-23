@@ -231,21 +231,6 @@ kustomize: "coder": #KustomizeHelm & {
 		}
 	}
 
-	psm: "service-coder": {
-		apiVersion: "v1"
-		kind:       "Service"
-
-		metadata: {
-			name: "coder"
-			annotations: {
-				"external-dns.alpha.kubernetes.io/hostname": "coder.defn.run"
-			}
-		}
-
-		spec: loadBalancerClass: "tailscale"
-		spec: type:              "LoadBalancer"
-	}
-
 	resource: "externalsecret-coder": {
 		apiVersion: "external-secrets.io/v1beta1"
 		kind:       "ExternalSecret"
@@ -897,21 +882,6 @@ kustomize: "nginx": #KustomizeHelm & {
 		metadata: {
 			name: "nginx"
 		}
-	}
-
-	psm: "service-nginx": {
-		apiVersion: "v1"
-		kind:       "Service"
-
-		metadata: {
-			name:      "nginx"
-			namespace: "nginx"
-			annotations: {
-				"external-dns.alpha.kubernetes.io/hostname": "nginx.defn.run"
-			}
-		}
-
-		spec: loadBalancerClass: "tailscale"
 	}
 }
 
