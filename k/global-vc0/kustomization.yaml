@@ -46,9 +46,32 @@ helmCharts:
                   - get
                   - list
                   - watch
+              - apiGroups:
+                  - dapr.io
+                resources:
+                  - components
+                  - configurations
+                  - resiliencies
+                  - subscriptions
+                verbs:
+                  - create
+                  - delete
+                  - patch
+                  - update
+                  - get
+                  - list
+                  - watch
           config: |-
             version: v1beta1
             export:
+              - kind: Component
+            	apiVersion: dapr.io/v1alpha1
+              - kind: Configuration
+            	apiVersion: dapr.io/v1alpha1
+              - kind: Resiliency
+            	apiVersion: dapr.io/v1alpha1
+              - kind: Subscription
+            	apiVersion: dapr.io/v1alpha1
               - apiVersion: serving.knative.dev/v1
                 kind: Service
                 patches:
