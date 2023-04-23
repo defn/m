@@ -1153,17 +1153,17 @@
       },
       "locked": {
         "dir": "pkg/velero",
-        "lastModified": 1682184058,
-        "narHash": "sha256-gDZ96QGGaOBxVfYR/5Nto2Ty86MBHt5JkTnGdgbFZNM=",
+        "lastModified": 1682247454,
+        "narHash": "sha256-nqU3xBxiEgLvJIl/IElUbAEUN7lHfawuxWFk9rt86XI=",
         "owner": "defn",
         "repo": "m",
-        "rev": "529d4e39cdf5d904dd3ff6dc821ae4927a006946",
+        "rev": "f90082af86ded97d529fd8c902a9509ef70528bf",
         "type": "github"
       },
       "original": {
         "dir": "pkg/velero",
         "owner": "defn",
-        "ref": "pkg-velero-1.9.7-1",
+        "ref": "pkg-velero-1.11.0-1",
         "repo": "m",
         "type": "github"
       }
