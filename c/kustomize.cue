@@ -840,6 +840,12 @@ kustomize: "velero": #KustomizeHelm & {
 				nodeSelector: "env=\(_in.vc_machine)"
 			}
 
+			sync: {
+				pods: ephemeralContainers:  true
+				persistentvolumes: enabled: true
+				ingresses: enabled:         true
+			}
+
 			tolerations: [{
 				key:      "env"
 				value:    _in.vc_machine

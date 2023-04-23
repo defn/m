@@ -18,6 +18,12 @@ helmCharts:
         nodes:
           enabled: true
           nodeSelector: env=global
+        pods:
+          ephemeralContainers: true
+        persistentvolumes:
+          enabled: true
+        ingresses:
+          enabled: true
       tolerations:
         - key: env
           value: global

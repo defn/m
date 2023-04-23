@@ -58,6 +58,13 @@ rules:
 - apiGroups:
   - ""
   resources:
+  - pods/ephemeralcontainers
+  verbs:
+  - patch
+  - update
+- apiGroups:
+  - ""
+  resources:
   - endpoints
   verbs:
   - create
@@ -71,6 +78,18 @@ rules:
   - events
   - pods/log
   verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - networking.k8s.io
+  resources:
+  - ingresses
+  verbs:
+  - create
+  - delete
+  - patch
+  - update
   - get
   - list
   - watch
@@ -111,6 +130,26 @@ rules:
   - nodes/proxy
   - nodes/metrics
   - nodes/stats
+  verbs:
+  - get
+  - watch
+  - list
+- apiGroups:
+  - ""
+  resources:
+  - persistentvolumes
+  verbs:
+  - create
+  - delete
+  - patch
+  - update
+  - get
+  - watch
+  - list
+- apiGroups:
+  - networking.k8s.io
+  resources:
+  - ingressclasses
   verbs:
   - get
   - watch
@@ -373,8 +412,9 @@ spec:
         - --service-account=vc-workload-vcluster
         - --kube-config-context-name=my-vcluster
         - --leader-elect=false
+        - --sync=ingresses
         - --sync=nodes
-        - --sync=-ingressclasses
+        - --sync=persistentvolumes
         - --node-selector=env=global
         - --tls-san=vcluster.global-vc0.svc.cluster.local
         - --enforce-toleration=env=global-vc0:NoSchedule

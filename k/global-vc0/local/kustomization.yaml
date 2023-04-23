@@ -21,9 +21,15 @@ helmCharts:
       loadBalancerClass: tailscale
       type: LoadBalancer
     sync:
+      ingresses:
+        enabled: true
       nodes:
         enabled: true
         nodeSelector: env=global
+      persistentvolumes:
+        enabled: true
+      pods:
+        ephemeralContainers: true
     syncer:
       extraArgs:
       - --tls-san=vcluster.global-vc0.svc.cluster.local
