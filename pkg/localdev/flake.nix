@@ -12,6 +12,7 @@
     honeyvent.url = github:defn/m/pkg-honeyvent-1.1.3-6?dir=pkg/honeyvent;
     honeymarker.url = github:defn/m/pkg-honeymarker-0.2.10-6?dir=pkg/honeymarker;
     honeytail.url = github:defn/m/pkg-honeytail-1.8.3-4?dir=pkg/honeytail;
+    kuma.url = github:defn/m/pkg-kuma-2.2.0-1?dir=pkg/kuma;
   };
 
   outputs = inputs: inputs.tilt.inputs.pkg.main rec {
@@ -33,6 +34,7 @@
             inputs.honeyvent.defaultPackage.${ctx.system}
             inputs.honeymarker.defaultPackage.${ctx.system}
             inputs.honeytail.defaultPackage.${ctx.system}
+            inputs.kuma.defaultPackage.${ctx.system}
           ];
         in
         flakeInputs ++ ctx.commands;
