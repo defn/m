@@ -12,7 +12,7 @@ env: (#Transform & {
 		[N=string]: {
 			bootstrap: {
 				"external-secrets-operator": [10, ""]
-				"cluster-global-vc0-secrets-store": [20, ""]
+				"vcluster-global-vc0-secrets-store": [20, ""]
 				"coder": [30, ""]
 			}
 		}

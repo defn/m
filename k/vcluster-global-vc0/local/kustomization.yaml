@@ -5,27 +5,6 @@ helmCharts:
   repo: https://kiwigrid.github.io
   valuesInline:
     anyResources:
-      cluster-global-vc0-secrets-store: |
-        apiVersion: argoproj.io/v1alpha1
-        kind: Application
-        metadata:
-          namespace: argocd
-          name: vcluster-global-vc0-cluster-global-vc0-secrets-store
-          annotations:
-            argocd.argoproj.io/sync-wave: "20"
-        spec:
-          project: default
-          destination:
-            name: vcluster-global-vc0
-          source:
-            repoURL: https://github.com/defn/m
-            targetRevision: main
-            path: r/cluster-global-vc0-secrets-store
-          syncPolicy:
-            automated:
-              prune: true
-              selfHeal: true
-            syncOptions: []
       coder: |
         apiVersion: argoproj.io/v1alpha1
         kind: Application
@@ -63,6 +42,27 @@ helmCharts:
             repoURL: https://github.com/defn/m
             targetRevision: main
             path: r/external-secrets-operator
+          syncPolicy:
+            automated:
+              prune: true
+              selfHeal: true
+            syncOptions: []
+      vcluster-global-vc0-secrets-store: |
+        apiVersion: argoproj.io/v1alpha1
+        kind: Application
+        metadata:
+          namespace: argocd
+          name: vcluster-global-vc0-secrets-store
+          annotations:
+            argocd.argoproj.io/sync-wave: "20"
+        spec:
+          project: default
+          destination:
+            name: vcluster-global-vc0
+          source:
+            repoURL: https://github.com/defn/m
+            targetRevision: main
+            path: r/vcluster-global-vc0-secrets-store
           syncPolicy:
             automated:
               prune: true
