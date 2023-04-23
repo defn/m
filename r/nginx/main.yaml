@@ -6,6 +6,8 @@ metadata:
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: nginx.defn.run
   labels:
     app.kubernetes.io/instance: nginx
     app.kubernetes.io/managed-by: Helm

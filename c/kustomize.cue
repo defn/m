@@ -893,6 +893,9 @@ kustomize: "nginx": #KustomizeHelm & {
 		metadata: {
 			name:      "nginx"
 			namespace: "nginx"
+			annotations: {
+				"external-dns.alpha.kubernetes.io/hostname": "nginx.defn.run"
+			}
 		}
 
 		spec: loadBalancerClass: "tailscale"
