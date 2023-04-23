@@ -7,11 +7,8 @@ resources:
 helmCharts:
   - releaseName: dapr
     namespace: dapr-system
-    valuesInline:
-      global:
-        mtls:
-          enabled: false
+    valuesInline: {}
     name: dapr
     version: 1.10.5
-    repo: https://charts.wener.tech
+    repo: https://dapr.github.io/helm-charts
     includeCRDs: true

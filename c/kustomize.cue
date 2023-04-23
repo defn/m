@@ -214,9 +214,7 @@ kustomize: "dapr": #KustomizeHelm & {
 		name:      "dapr"
 		namespace: "dapr-system"
 		version:   "1.10.5"
-		repo:      "https://charts.wener.tech"
-		values: {
-		}
+		repo:      "https://dapr.github.io/helm-charts"
 	}
 
 	resource: "namespace-dapr": core.#Namespace & {
