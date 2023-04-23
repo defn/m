@@ -11,7 +11,9 @@ env: (#Transform & {
 
 		[N=string]: {
 			bootstrap: {
-				"coder": [1, ""]
+				"external-secrets-operator": [10, ""]
+				"k3d-global-secrets-store": [20, ""]
+				"coder": [30, ""]
 			}
 		}
 	}
