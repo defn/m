@@ -65,13 +65,13 @@ helmCharts:
             version: v1beta1
             export:
               - kind: Component
-            	apiVersion: dapr.io/v1alpha1
+                apiVersion: dapr.io/v1alpha1
               - kind: Configuration
-            	apiVersion: dapr.io/v1alpha1
+                apiVersion: dapr.io/v1alpha1
               - kind: Resiliency
-            	apiVersion: dapr.io/v1alpha1
+                apiVersion: dapr.io/v1alpha1
               - kind: Subscription
-            	apiVersion: dapr.io/v1alpha1
+                apiVersion: dapr.io/v1alpha1
               - apiVersion: serving.knative.dev/v1
                 kind: Service
                 patches:

@@ -450,33 +450,66 @@ spec:
             fieldRef:
               fieldPath: spec.nodeName
         - name: CONFIG
-          value: "version: v1beta1\nexport:\n  - kind: Component\n\tapiVersion: dapr.io/v1alpha1\n
-            \ - kind: Configuration\n\tapiVersion: dapr.io/v1alpha1\n  - kind: Resiliency\n\tapiVersion:
-            dapr.io/v1alpha1\n  - kind: Subscription\n\tapiVersion: dapr.io/v1alpha1\n
-            \ - apiVersion: serving.knative.dev/v1\n    kind: Service\n    patches:\n
-            \     - op: copyFromObject\n        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']\n
-            \       path: .metadata.annnotations['argocd.argoproj.io/tracking-id']\n
-            \ - apiVersion: serving.knative.dev/v1\n    kind: Configuration\n    patches:\n
-            \     - op: copyFromObject\n        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']\n
-            \       path: .metadata.annnotations['argocd.argoproj.io/tracking-id']\n
-            \ - apiVersion: serving.knative.dev/v1\n    kind: Revision\n    patches:\n
-            \     - op: copyFromObject\n        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']\n
-            \       path: .metadata.annnotations['argocd.argoproj.io/tracking-id']\n
-            \ - apiVersion: serving.knative.dev/v1\n    kind: Route\n    patches:\n
-            \     - op: copyFromObject\n        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']\n
-            \       path: .metadata.annnotations['argocd.argoproj.io/tracking-id']\nimport:\n
-            \ - apiVersion: serving.knative.dev/v1\n    kind: Service\n    patches:\n
-            \     - op: copyFromObject\n        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']\n
-            \       path: .metadata.annnotations['argocd.argoproj.io/tracking-id']\n
-            \ - apiVersion: serving.knative.dev/v1\n    kind: Configuration\n    patches:\n
-            \     - op: copyFromObject\n        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']\n
-            \       path: .metadata.annnotations['argocd.argoproj.io/tracking-id']\n
-            \ - apiVersion: serving.knative.dev/v1\n    kind: Revision\n    patches:\n
-            \     - op: copyFromObject\n        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']\n
-            \       path: .metadata.annnotations['argocd.argoproj.io/tracking-id']\n
-            \ - apiVersion: serving.knative.dev/v1\n    kind: Route\n    patches:\n
-            \     - op: copyFromObject\n        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']\n
-            \       path: .metadata.annnotations['argocd.argoproj.io/tracking-id']"
+          value: |-
+            version: v1beta1
+            export:
+              - kind: Component
+                apiVersion: dapr.io/v1alpha1
+              - kind: Configuration
+                apiVersion: dapr.io/v1alpha1
+              - kind: Resiliency
+                apiVersion: dapr.io/v1alpha1
+              - kind: Subscription
+                apiVersion: dapr.io/v1alpha1
+              - apiVersion: serving.knative.dev/v1
+                kind: Service
+                patches:
+                  - op: copyFromObject
+                    fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+                    path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
+              - apiVersion: serving.knative.dev/v1
+                kind: Configuration
+                patches:
+                  - op: copyFromObject
+                    fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+                    path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
+              - apiVersion: serving.knative.dev/v1
+                kind: Revision
+                patches:
+                  - op: copyFromObject
+                    fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+                    path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
+              - apiVersion: serving.knative.dev/v1
+                kind: Route
+                patches:
+                  - op: copyFromObject
+                    fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+                    path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
+            import:
+              - apiVersion: serving.knative.dev/v1
+                kind: Service
+                patches:
+                  - op: copyFromObject
+                    fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+                    path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
+              - apiVersion: serving.knative.dev/v1
+                kind: Configuration
+                patches:
+                  - op: copyFromObject
+                    fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+                    path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
+              - apiVersion: serving.knative.dev/v1
+                kind: Revision
+                patches:
+                  - op: copyFromObject
+                    fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+                    path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
+              - apiVersion: serving.knative.dev/v1
+                kind: Route
+                patches:
+                  - op: copyFromObject
+                    fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+                    path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
         - name: VCLUSTER_TELEMETRY_CONFIG
           value: '{"disabled":"false","instanceCreator":"helm","instanceCreatorUID":""}'
         image: ghcr.io/loft-sh/vcluster:0.15.0
