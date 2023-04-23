@@ -239,7 +239,7 @@ kustomize: "coder": #KustomizeHelm & {
 		metadata: {
 			name: "coder"
 			annotations: {
-				"cert-manager.io/issuer":                    "zerossl-production"
+				"cert-manager.io/cluster-issuer":            "zerossl-production"
 				"external-dns.alpha.kubernetes.io/hostname": _host
 			}
 		}
