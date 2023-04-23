@@ -239,8 +239,7 @@ kustomize: "coder": #KustomizeHelm & {
 		metadata: {
 			name: "coder"
 			annotations: {
-				"cert-manager.io/cluster-issuer":            "zerossl-production"
-				"external-dns.alpha.kubernetes.io/hostname": _host
+				"cert-manager.io/cluster-issuer": "zerossl-production"
 			}
 		}
 
@@ -248,6 +247,7 @@ kustomize: "coder": #KustomizeHelm & {
 			ingressClassName: "traefik"
 
 			rules: [{
+				host: _host
 				http: paths: [{
 					path:     "/"
 					pathType: "Prefix"

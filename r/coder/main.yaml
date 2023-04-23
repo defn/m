@@ -185,13 +185,13 @@ kind: Ingress
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: zerossl-production
-    external-dns.alpha.kubernetes.io/hostname: coder.defn.run
   name: coder
   namespace: coder
 spec:
   ingressClassName: traefik
   rules:
-  - http:
+  - host: coder.defn.run
+    http:
       paths:
       - backend:
           service:
