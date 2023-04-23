@@ -48,8 +48,14 @@ metadata:
   name: bonchon
   namespace: default
 spec:
-  backend: "terraform {\n\tbackend \"kubernetes\" {\n\t\tin_cluster_config = true\n\t\tsecret_suffix
-    \    = \"bonchon\"\n\t\tnamespace         = \"default\"\n\t}\n}"
+  backend: |-
+    terraform {
+        backend "kubernetes" {
+            in_cluster_config = true
+            secret_suffix     = "bonchon"
+            namespace         = "default"
+        }
+    }
   ignoreDelete: true
   keepLatestPodsOnly: true
   outputsToOmit:

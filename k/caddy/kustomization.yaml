@@ -20,33 +20,33 @@ helmCharts:
           local_certs
 
           log {
-          	output stdout
+              output stdout
           }
         caddyFile: |-
           https://argocd.defn.run {
-          	tls /certs/tls.crt /certs/tls.key
-          	reverse_proxy https://argocd-server.argocd.svc.cluster.local {
-          		transport http {
-          			tls
-          			tls_insecure_skip_verify
-          		}
-          	}
+              tls /certs/tls.crt /certs/tls.key
+              reverse_proxy https://argocd-server.argocd.svc.cluster.local {
+                  transport http {
+                      tls
+                      tls_insecure_skip_verify
+                  }
+              }
           }
 
           https://coder.defn.run {
-          	tls /certs/tls.crt /certs/tls.key
-          	reverse_proxy http://coder.coder.svc.cluster.local {
-          	}
+              tls /certs/tls.crt /certs/tls.key
+              reverse_proxy http://coder.coder.svc.cluster.local {
+              }
           }
 
           https://*.defn.run {
-          	tls /certs/tls.crt /certs/tls.key
-          	reverse_proxy {http.request.host.labels.2}.vcluster-37a8eec1-2a8b5fb4.svc.cluster.local:80 {
-          		header_up -Host
-          		header_up X-defn-label0	"{http.request.host.labels.0}"
-          		header_up X-defn-label1	"{http.request.host.labels.1}"
-          		header_up X-defn-label2	"{http.request.host.labels.2}"
-          	}
+              tls /certs/tls.crt /certs/tls.key
+              reverse_proxy {http.request.host.labels.2}.vcluster-37a8eec1-2a8b5fb4.svc.cluster.local:80 {
+                  header_up -Host
+                  header_up X-defn-label0	"{http.request.host.labels.0}"
+                  header_up X-defn-label1	"{http.request.host.labels.1}"
+                  header_up X-defn-label2	"{http.request.host.labels.2}"
+              }
           }
       volumes:
         - name: certs

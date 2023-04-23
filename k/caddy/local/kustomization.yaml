@@ -6,14 +6,23 @@ helmCharts:
   repo: https://charts.alekc.dev
   valuesInline:
     config:
-      caddyFile: "https://argocd.defn.run {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy
-        https://argocd-server.argocd.svc.cluster.local {\n\t\ttransport http {\n\t\t\ttls\n\t\t\ttls_insecure_skip_verify\n\t\t}\n\t}\n}\n\nhttps://coder.defn.run
-        {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy http://coder.coder.svc.cluster.local
-        {\n\t}\n}\n\nhttps://*.defn.run {\n\ttls /certs/tls.crt /certs/tls.key\n\treverse_proxy
-        {http.request.host.labels.2}.vcluster-37a8eec1-2a8b5fb4.svc.cluster.local:80
-        {\n\t\theader_up -Host\n\t\theader_up X-defn-label0\t\"{http.request.host.labels.0}\"\n\t\theader_up
-        X-defn-label1\t\"{http.request.host.labels.1}\"\n\t\theader_up X-defn-label2\t\"{http.request.host.labels.2}\"\n\t}\n}"
-      global: "auto_https disable_certs\n\nlocal_certs\n\nlog {\n\toutput stdout\n}"
+      caddyFile: "https://argocd.defn.run {\n    tls /certs/tls.crt /certs/tls.key\n
+        \   reverse_proxy https://argocd-server.argocd.svc.cluster.local {\n        transport
+        http {\n            tls\n            tls_insecure_skip_verify\n        }\n
+        \   }\n}\n\nhttps://coder.defn.run {\n    tls /certs/tls.crt /certs/tls.key\n
+        \   reverse_proxy http://coder.coder.svc.cluster.local {\n    }\n}\n\nhttps://*.defn.run
+        {\n    tls /certs/tls.crt /certs/tls.key\n    reverse_proxy {http.request.host.labels.2}.vcluster-37a8eec1-2a8b5fb4.svc.cluster.local:80
+        {\n        header_up -Host\n        header_up X-defn-label0\t\"{http.request.host.labels.0}\"\n
+        \       header_up X-defn-label1\t\"{http.request.host.labels.1}\"\n        header_up
+        X-defn-label2\t\"{http.request.host.labels.2}\"\n    }\n}"
+      global: |-
+        auto_https disable_certs
+
+        local_certs
+
+        log {
+            output stdout
+        }
     https:
       enabled: true
       port: 443

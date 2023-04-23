@@ -62,7 +62,7 @@ kustomize: "coredns": #Kustomize & {
 		metadata: namespace: "kube-system"
 		data: "ts.net.server": """
 			  ts.net {
-				forward . 100.100.100.100
+			    forward . 100.100.100.100
 			   }
 			"""
 	}
@@ -104,17 +104,17 @@ kustomize: "argo-cd": #Kustomize & {
 				hs.status = "Progressing"
 				hs.message = ""
 				if obj.status ~= nil then
-					if obj.status.phase ~= nil then
-					  	if obj.status.phase == "completed" then
-				   			hs.status = "Healthy"
-					 	end
+				    if obj.status.phase ~= nil then
+				          if obj.status.phase == "completed" then
+				               hs.status = "Healthy"
+				         end
 
-					  	if obj.status.stage ~= nil then
-							if obj.status.stage.reason ~= nil then
-						  		hs.message = obj.status.stage.reason
-							end
-					  	end
-					end
+				          if obj.status.stage ~= nil then
+				            if obj.status.stage.reason ~= nil then
+				                  hs.message = obj.status.stage.reason
+				            end
+				          end
+				    end
 				end
 				return hs
 				"""
@@ -124,12 +124,12 @@ kustomize: "argo-cd": #Kustomize & {
 				hs.status = "Progressing"
 				hs.message = ""
 				if obj.status ~= nil then
-					if obj.status.health ~= nil then
-					hs.status = obj.status.health.status
-					if obj.status.health.message ~= nil then
-						hs.message = obj.status.health.message
-					end
-					end
+				    if obj.status.health ~= nil then
+				    hs.status = obj.status.health.status
+				    if obj.status.health.message ~= nil then
+				        hs.message = obj.status.health.message
+				    end
+				    end
 				end
 				return hs
 				"""
@@ -850,54 +850,54 @@ kustomize: "velero": #KustomizeHelm & {
 					version: v1beta1
 					export:
 					  - apiVersion: serving.knative.dev/v1
-						kind: Service
-						patches:
-						  - op: copyFromObject
-							fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-							path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
+					    kind: Service
+					    patches:
+					      - op: copyFromObject
+					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
 					  - apiVersion: serving.knative.dev/v1
-						kind: Configuration
-						patches:
-						  - op: copyFromObject
-							fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-							path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
+					    kind: Configuration
+					    patches:
+					      - op: copyFromObject
+					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
 					  - apiVersion: serving.knative.dev/v1
-						kind: Revision
-						patches:
-						  - op: copyFromObject
-							fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-							path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
+					    kind: Revision
+					    patches:
+					      - op: copyFromObject
+					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
 					  - apiVersion: serving.knative.dev/v1
-						kind: Route
-						patches:
-						  - op: copyFromObject
-							fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-							path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
+					    kind: Route
+					    patches:
+					      - op: copyFromObject
+					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
 					import:
 					  - apiVersion: serving.knative.dev/v1
-						kind: Service
-						patches:
-						  - op: copyFromObject
-							fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-							path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
+					    kind: Service
+					    patches:
+					      - op: copyFromObject
+					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
 					  - apiVersion: serving.knative.dev/v1
-						kind: Configuration
-						patches:
-						  - op: copyFromObject
-							fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-							path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
+					    kind: Configuration
+					    patches:
+					      - op: copyFromObject
+					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
 					  - apiVersion: serving.knative.dev/v1
-						kind: Revision
-						patches:
-						  - op: copyFromObject
-							fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-							path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
+					    kind: Revision
+					    patches:
+					      - op: copyFromObject
+					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
 					  - apiVersion: serving.knative.dev/v1
-						kind: Route
-						patches:
-						  - op: copyFromObject
-							fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
-							path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
+					    kind: Route
+					    patches:
+					      - op: copyFromObject
+					        fromPath: .metadata.annotations['argocd.argoproj.io/tracking-id']
+					        path: .metadata.annnotations['argocd.argoproj.io/tracking-id']
 					"""
 			}
 
@@ -992,35 +992,35 @@ kustomize: "caddy": #KustomizeHelm & {
 				local_certs
 
 				log {
-					output stdout
+				    output stdout
 				}
 				"""
 
 			config: caddyFile: """
 				https://argocd.defn.run {
-					tls /certs/tls.crt /certs/tls.key
-					reverse_proxy https://argocd-server.argocd.svc.cluster.local {
-						transport http {
-							tls
-							tls_insecure_skip_verify
-						}
-					}
+				    tls /certs/tls.crt /certs/tls.key
+				    reverse_proxy https://argocd-server.argocd.svc.cluster.local {
+				        transport http {
+				            tls
+				            tls_insecure_skip_verify
+				        }
+				    }
 				}
 
 				https://coder.defn.run {
-					tls /certs/tls.crt /certs/tls.key
-					reverse_proxy http://coder.coder.svc.cluster.local {
-					}
+				    tls /certs/tls.crt /certs/tls.key
+				    reverse_proxy http://coder.coder.svc.cluster.local {
+				    }
 				}
 
 				https://*.defn.run {
-					tls /certs/tls.crt /certs/tls.key
-					reverse_proxy {http.request.host.labels.2}.vcluster-37a8eec1-2a8b5fb4.svc.cluster.local:80 {
-						header_up -Host
-						header_up X-defn-label0	"{http.request.host.labels.0}"
-						header_up X-defn-label1	"{http.request.host.labels.1}"
-						header_up X-defn-label2	"{http.request.host.labels.2}"
-					}
+				    tls /certs/tls.crt /certs/tls.key
+				    reverse_proxy {http.request.host.labels.2}.vcluster-37a8eec1-2a8b5fb4.svc.cluster.local:80 {
+				        header_up -Host
+				        header_up X-defn-label0	"{http.request.host.labels.0}"
+				        header_up X-defn-label1	"{http.request.host.labels.1}"
+				        header_up X-defn-label2	"{http.request.host.labels.2}"
+				    }
 				}
 				"""
 
@@ -1093,8 +1093,8 @@ kustomize: "bonchon": #Kustomize & {
 					image: "defn/dev:kubectl"
 					command: ["bash", "-c"]
 					args: ["""
-					test "completed" == "$(kubectl get tf "\(chicken)" -o json | jq -r '.status.phase')"
-					"""]
+                    test "completed" == "$(kubectl get tf "\(chicken)" -o json | jq -r '.status.phase')"
+                    """]
 				}]
 				restartPolicy: "Never"
 			}
@@ -1124,11 +1124,11 @@ kustomize: "bonchon": #Kustomize & {
 
 			backend: """
 				terraform {
-					backend "kubernetes" {
-						in_cluster_config = true
-						secret_suffix     = "bonchon"
-						namespace         = "default"
-					}
+				    backend "kubernetes" {
+				        in_cluster_config = true
+				        secret_suffix     = "bonchon"
+				        namespace         = "default"
+				    }
 				}
 				"""
 		}
