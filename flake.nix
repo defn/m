@@ -112,7 +112,7 @@
               kubectl --context k3d-${nme} config view -o jsonpath='{.clusters[?(@.name == "k3d-'$name'")]}' --raw | jq -r '.cluster["certificate-authority-data"] | @base64d'
               ;;
             vault-init)
-              vault write sys/policy/k3d-${nme}-external-secrets policy=@policy-external-secrets.hcl
+              vault write sys/policy/k3d-${nme}-external-secrets policy=@k3d/policy-external-secrets.hcl
               vault auth enable -path "k3d-${nme}" kubernetes || true
               ;;
             vault-config)
@@ -206,12 +206,12 @@
             *-global)
               (
                 set +x
-                cat operator.yaml \
+                cat k3d/operator.yaml \
                   | sed "s#client_id: .*#client_id: \"$(pass tailscale-operator-client-id-$name)\"#" \
                   | sed "s#client_secret: .*#client_secret: \"$(pass tailscale-operator-client-secret-$name)\"#"
                 echo ---
-                kustomize build --enable-helm ../k/argo-cd
-                kustomize build --enable-helm ../k/coredns
+                kustomize build --enable-helm k/argo-cd
+                kustomize build --enable-helm k/coredns
               ) | docker run --rm -i \
                 -v $name-manifest:/var/lib/rancher/k3s/server/manifests \
                 ubuntu bash -c 'tee /var/lib/rancher/k3s/server/manifests/defn-dev-argo-cd.yaml | wc -l'
@@ -224,8 +224,8 @@
           esac
 
           k3d cluster create $name \
-            --config k3d.yaml \
-            --registry-config k3d-registries.yaml \
+            --config k3d/k3d.yaml \
+            --registry-config k3d/k3d-registries.yaml \
             --k3s-node-label env=''${name##*-}@server:0 \
             --volume $name-tailscale:/var/lib/tailscale@server:0 \
             --volume $name-irsa:/var/lib/rancher/k3s/server/tls2@server:0 \
