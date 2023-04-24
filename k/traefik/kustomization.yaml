@@ -5,6 +5,7 @@ patches:
 namespace: traefik
 resources:
   - resource-namespace-traefik.yaml
+  - resource-tlsstore-traefik.yaml
 helmCharts:
   - releaseName: traefik
     namespace: traefik

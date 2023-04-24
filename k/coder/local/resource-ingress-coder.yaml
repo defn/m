@@ -24,4 +24,3 @@ spec:
   tls:
     - hosts:
         - coder.defn.run
-      secretName: coder.defn.run

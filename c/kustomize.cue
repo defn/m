@@ -261,7 +261,6 @@ kustomize: "coder": #KustomizeHelm & {
 
 			tls: [{
 				hosts: [_host]
-				secretName: _host
 			}]
 		}
 	}
@@ -959,6 +958,16 @@ kustomize: "traefik": #KustomizeHelm & {
 		}
 	}
 
+	resource: "tlsstore-traefik": {
+		apiVersion: "traefik.containo.us/v1alpha1"
+		kind:       "TLSStore"
+		metadata: {
+			name:      "traefik"
+			namespace: "traefik"
+		}
+
+		spec: defaultCertificate: secretName: "defn-run-wildcard"
+	}
 	psm: "service-tailscale": {
 		apiVersion: "v1"
 		kind:       "Service"
@@ -1293,6 +1302,26 @@ kustomize: defn: #Kustomize & {
 		metadata: {
 			name:      "defn-run-wildcard"
 			namespace: "caddy"
+		}
+		spec: {
+			secretName: "defn-run-wildcard"
+			dnsNames: [
+				"*.defn.run",
+			]
+			issuerRef: {
+				name:  _issuer
+				kind:  "ClusterIssuer"
+				group: "cert-manager.io"
+			}
+		}
+	}
+
+	resource: "certificate-defn-run-wildcard-traefik": {
+		apiVersion: "cert-manager.io/v1"
+		kind:       "Certificate"
+		metadata: {
+			name:      "defn-run-wildcard"
+			namespace: "traefik"
 		}
 		spec: {
 			secretName: "defn-run-wildcard"

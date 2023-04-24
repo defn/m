@@ -20,3 +20,4 @@ patches:
 - path: patch-service-tailscale.yaml
 resources:
 - resource-namespace-traefik.yaml
+- resource-tlsstore-traefik.yaml
