@@ -1,0 +1,24 @@
+#ManagedBy: cue
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bye
+  namespace: default
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: bye.defn.run
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: bye.defn.run
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: bye
+                port:
+                  number: 80

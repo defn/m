@@ -21,84 +21,62 @@ kustomize: (#Transform & {
 kustomize: "hello": #Kustomize & {
 	namespace: "default"
 
-	resource: "kservice-hello": {
-		apiVersion: "serving.knative.dev/v1"
-		kind:       "Service"
-		metadata: {
-			labels: "networking.knative.dev/visibility": "cluster-local"
-			name:      "hello"
-			namespace: "default"
+	_funcs: ["hello", "bye"]
+
+	for f in _funcs {
+		resource: "kservice-\(f)": {
+			apiVersion: "serving.knative.dev/v1"
+			kind:       "Service"
+			metadata: {
+				labels: "networking.knative.dev/visibility": "cluster-local"
+				name:      f
+				namespace: "default"
+			}
+			spec: {
+				template: spec: {
+					containerConcurrency: 0
+					containers: [{
+						name:  "whoami"
+						image: "containous/whoami:latest"
+						ports: [{
+							containerPort: 80
+						}]
+					}]
+				}
+				traffic: [{
+					latestRevision: true
+					percent:        100
+				}]
+			}
 		}
-		spec: {
-			template: spec: {
-				containerConcurrency: 0
-				containers: [{
-					name:  "whoami"
-					image: "containous/whoami:latest"
-					ports: [{
-						containerPort: 80
+
+		resource: "ingress-\(f)": {
+			apiVersion: "networking.k8s.io/v1"
+			kind:       "Ingress"
+			metadata: {
+				name:      f
+				namespace: "default"
+				annotations: {
+					"external-dns.alpha.kubernetes.io/hostname":        "\(f).defn.run"
+					"traefik.ingress.kubernetes.io/router.tls":         "true"
+					"traefik.ingress.kubernetes.io/router.entrypoints": "websecure"
+				}
+			}
+
+			spec: {
+				ingressClassName: "traefik"
+				rules: [{
+					host: "\(f).defn.run"
+					http: paths: [{
+						path:     "/"
+						pathType: "Prefix"
+						backend: service: {
+							name: f
+							port: number: 80
+						}
 					}]
 				}]
 			}
-			traffic: [{
-				latestRevision: true
-				percent:        100
-			}]
-		}
-	}
-
-	resource: "ingress-hello": {
-		apiVersion: "networking.k8s.io/v1"
-		kind:       "Ingress"
-		metadata: {
-			name:      "hello"
-			namespace: "default"
-			annotations: {
-				"external-dns.alpha.kubernetes.io/hostname":        "hello.defn.run"
-				"traefik.ingress.kubernetes.io/router.tls":         "true"
-				"traefik.ingress.kubernetes.io/router.entrypoints": "websecure"
-			}
-		}
-
-		spec: {
-			ingressClassName: "traefik"
-			rules: [{
-				host: "hello.defn.run"
-				http: paths: [{
-					path:     "/"
-					pathType: "Prefix"
-					backend: service: {
-						name: "hello"
-						port: number: 80
-					}
-				}]
-			}]
-		}
-	}
-
-	resource: "kservice-bye": {
-		apiVersion: "serving.knative.dev/v1"
-		kind:       "Service"
-		metadata: {
-			labels: "networking.knative.dev/visibility": "cluster-local"
-			name:      "bye"
-			namespace: "default"
-		}
-		spec: {
-			template: spec: {
-				containerConcurrency: 0
-				containers: [{
-					name:  "whoami"
-					image: "containous/whoami:latest"
-					ports: [{
-						containerPort: 80
-					}]
-				}]
-			}
-			traffic: [{
-				latestRevision: true
-				percent:        100
-			}]
 		}
 	}
 }
