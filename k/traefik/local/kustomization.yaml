@@ -10,6 +10,10 @@ helmCharts:
         enabled: true
       general:
         level: DEBUG
+    providers:
+      kubernetesIngress:
+        publishedService:
+          enabled: true
   version: 22.1.0
 namespace: traefik
 patches:
