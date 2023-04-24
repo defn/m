@@ -6,7 +6,6 @@ metadata:
   name: coder
   annotations:
     external-dns.alpha.kubernetes.io/hostname: coder.defn.run
-    kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.tls: "true"
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:

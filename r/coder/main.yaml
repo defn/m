@@ -185,7 +185,6 @@ kind: Ingress
 metadata:
   annotations:
     external-dns.alpha.kubernetes.io/hostname: coder.defn.run
-    kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
     traefik.ingress.kubernetes.io/router.tls: "true"
   name: coder

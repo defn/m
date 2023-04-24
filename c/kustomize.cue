@@ -85,7 +85,6 @@ kustomize: "argo-cd": #Kustomize & {
 			name: "argo-cd"
 			annotations: {
 				"external-dns.alpha.kubernetes.io/hostname":        _host
-				"kubernetes.io/ingress.class":                      "traefik"
 				"traefik.ingress.kubernetes.io/router.tls":         "true"
 				"traefik.ingress.kubernetes.io/router.entrypoints": "websecure"
 			}
@@ -271,7 +270,6 @@ kustomize: "coder": #KustomizeHelm & {
 			name: "coder"
 			annotations: {
 				"external-dns.alpha.kubernetes.io/hostname":        _host
-				"kubernetes.io/ingress.class":                      "traefik"
 				"traefik.ingress.kubernetes.io/router.tls":         "true"
 				"traefik.ingress.kubernetes.io/router.entrypoints": "websecure"
 			}

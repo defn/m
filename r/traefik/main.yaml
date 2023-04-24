@@ -2559,7 +2559,7 @@ spec:
     - name: http-to-https
     services:
     - kind: TraefikService
-      name: ping@internal
+      name: noop@internal
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
