@@ -21,4 +21,5 @@ patches:
 resources:
 - resource-namespace-traefik.yaml
 - resource-tlsstore-traefik.yaml
+- resource-ingressroute-traefik-dashboard.yaml
 - resource-middleware-http-to-https.yaml

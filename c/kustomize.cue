@@ -972,6 +972,23 @@ kustomize: "traefik": #KustomizeHelm & {
 		spec: defaultCertificate: secretName: "defn-run-wildcard"
 	}
 
+	resource: "ingressroute-traefik-dashboard": {
+		apiVersion: "traefik.containo.us/v1alpha1"
+		kind:       "IngressRoute"
+		metadata: name: "traefik-dashboard"
+		spec: routes: [{
+			match: "Host(`traefik.defn.run`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
+			kind:  "Rule"
+			services: [{
+				name: "api@internal"
+				kind: "TraefikService"
+			}]
+			middlewares: [{
+				name: "http-to-https"
+			}]
+		}]
+	}
+
 	resource: "middleware-http-to-https": {
 		apiVersion: "traefik.containo.us/v1alpha1"
 		kind:       "Middleware"
