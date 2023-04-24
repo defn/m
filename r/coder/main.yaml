@@ -184,9 +184,11 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    cert-manager.io/cluster-issuer: zerossl-production
+    TODO-cert-manager.io/cluster-issuer: zerossl-production
     external-dns.alpha.kubernetes.io/hostname: coder.defn.run
     kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.middlewares: traefik-http-to-https@kubernetescrd
+    traefik.ingress.kubernetes.io/router.tls: "true"
   name: coder
   namespace: coder
 spec:
