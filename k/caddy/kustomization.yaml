@@ -23,16 +23,6 @@ helmCharts:
               output stdout
           }
         caddyFile: |-
-          https://argocd.defn.run {
-              tls /certs/tls.crt /certs/tls.key
-              reverse_proxy https://argocd-server.argocd.svc.cluster.local {
-                  transport http {
-                      tls
-                      tls_insecure_skip_verify
-                  }
-              }
-          }
-
           https://*.defn.run {
               tls /certs/tls.crt /certs/tls.key
               reverse_proxy {http.request.host.labels.2}.default.svc.cluster.local:80 {

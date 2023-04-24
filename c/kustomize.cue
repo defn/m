@@ -76,6 +76,37 @@ kustomize: "argo-cd": #Kustomize & {
 		url: "https://raw.githubusercontent.com/argoproj/argo-cd/v2.6.7/manifests/install.yaml"
 	}
 
+	_host: "argocd.defn.run"
+
+	resource: "ingress-argo-cd": {
+		apiVersion: "networking.k8s.io/v1"
+		kind:       "Ingress"
+		metadata: {
+			name: "argo-cd"
+			annotations: {
+				"external-dns.alpha.kubernetes.io/hostname":        _host
+				"kubernetes.io/ingress.class":                      "traefik"
+				"traefik.ingress.kubernetes.io/router.tls":         "true"
+				"traefik.ingress.kubernetes.io/router.entrypoints": "websecure"
+			}
+		}
+
+		spec: {
+			ingressClassName: "traefik"
+			rules: [{
+				host: _host
+				http: paths: [{
+					path:     "/"
+					pathType: "Prefix"
+					backend: service: {
+						name: "argocd-server"
+						port: number: 80
+					}
+				}]
+			}]
+		}
+	}
+
 	psm: "configmap-argocd-cm": core.#ConfigMap & {
 		apiVersion: "v1"
 		kind:       "ConfigMap"
@@ -239,12 +270,10 @@ kustomize: "coder": #KustomizeHelm & {
 		metadata: {
 			name: "coder"
 			annotations: {
-				"TODO-cert-manager.io/cluster-issuer":              "zerossl-production"
 				"external-dns.alpha.kubernetes.io/hostname":        _host
 				"kubernetes.io/ingress.class":                      "traefik"
-				"traefik.ingress.kubernetes.io/router.entrypoints": "websecure"
-				"traefik.ingress.kubernetes.io/router.middlewares": "traefik-http-to-https@kubernetescrd"
 				"traefik.ingress.kubernetes.io/router.tls":         "true"
+				"traefik.ingress.kubernetes.io/router.entrypoints": "websecure"
 			}
 		}
 
@@ -260,10 +289,6 @@ kustomize: "coder": #KustomizeHelm & {
 						port: number: 80
 					}
 				}]
-			}]
-
-			tls: [{
-				hosts: [_host]
 			}]
 		}
 	}
@@ -1070,16 +1095,6 @@ kustomize: "caddy": #KustomizeHelm & {
 				"""
 
 			config: caddyFile: """
-				https://argocd.defn.run {
-				    tls /certs/tls.crt /certs/tls.key
-				    reverse_proxy https://argocd-server.argocd.svc.cluster.local {
-				        transport http {
-				            tls
-				            tls_insecure_skip_verify
-				        }
-				    }
-				}
-
 				https://*.defn.run {
 				    tls /certs/tls.crt /certs/tls.key
 				    reverse_proxy {http.request.host.labels.2}.default.svc.cluster.local:80 {
