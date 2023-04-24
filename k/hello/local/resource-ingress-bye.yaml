@@ -6,13 +6,13 @@ metadata:
   name: bye
   namespace: default
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: bye.defn.run
+    external-dns.alpha.kubernetes.io/hostname: bye.default.defn.run
     traefik.ingress.kubernetes.io/router.tls: "true"
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
   ingressClassName: traefik
   rules:
-    - host: bye.defn.run
+    - host: bye.default.defn.run
       http:
         paths:
           - path: /

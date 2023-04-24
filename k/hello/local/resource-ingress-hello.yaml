@@ -6,13 +6,13 @@ metadata:
   name: hello
   namespace: default
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: hello.defn.run
+    external-dns.alpha.kubernetes.io/hostname: hello.default.defn.run
     traefik.ingress.kubernetes.io/router.tls: "true"
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
   ingressClassName: traefik
   rules:
-    - host: hello.defn.run
+    - host: hello.default.defn.run
       http:
         paths:
           - path: /

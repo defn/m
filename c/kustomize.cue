@@ -22,6 +22,7 @@ kustomize: "hello": #Kustomize & {
 	namespace: "default"
 
 	_funcs: ["hello", "bye"]
+	_domain: "default.defn.run"
 
 	for f in _funcs {
 		resource: "kservice-\(f)": {
@@ -57,7 +58,7 @@ kustomize: "hello": #Kustomize & {
 				name:      f
 				namespace: "default"
 				annotations: {
-					"external-dns.alpha.kubernetes.io/hostname":        "\(f).defn.run"
+					"external-dns.alpha.kubernetes.io/hostname":        "\(f).\(_domain)"
 					"traefik.ingress.kubernetes.io/router.tls":         "true"
 					"traefik.ingress.kubernetes.io/router.entrypoints": "websecure"
 				}
@@ -66,7 +67,7 @@ kustomize: "hello": #Kustomize & {
 			spec: {
 				ingressClassName: "traefik"
 				rules: [{
-					host: "\(f).defn.run"
+					host: "\(f).\(_domain)"
 					http: paths: [{
 						path:     "/"
 						pathType: "Prefix"

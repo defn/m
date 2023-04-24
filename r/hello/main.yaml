@@ -38,7 +38,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: bye.defn.run
+    external-dns.alpha.kubernetes.io/hostname: bye.default.defn.run
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
     traefik.ingress.kubernetes.io/router.tls: "true"
   name: bye
@@ -46,7 +46,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-  - host: bye.defn.run
+  - host: bye.default.defn.run
     http:
       paths:
       - backend:
@@ -61,7 +61,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: hello.defn.run
+    external-dns.alpha.kubernetes.io/hostname: hello.default.defn.run
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
     traefik.ingress.kubernetes.io/router.tls: "true"
   name: hello
@@ -69,7 +69,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-  - host: hello.defn.run
+  - host: hello.default.defn.run
     http:
       paths:
       - backend:
