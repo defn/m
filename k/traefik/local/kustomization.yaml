@@ -17,9 +17,9 @@ helmCharts:
   version: 22.1.0
 namespace: traefik
 patches:
+- path: patch-ingressroute-traefik-dashboard.yaml
 - path: patch-service-tailscale.yaml
 resources:
 - resource-namespace-traefik.yaml
 - resource-tlsstore-traefik.yaml
-- resource-ingressroute-traefik-dashboard.yaml
 - resource-middleware-http-to-https.yaml
