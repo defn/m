@@ -242,6 +242,7 @@ kustomize: "coder": #KustomizeHelm & {
 				"TODO-cert-manager.io/cluster-issuer":              "zerossl-production"
 				"external-dns.alpha.kubernetes.io/hostname":        _host
 				"kubernetes.io/ingress.class":                      "traefik"
+				"traefik.ingress.kubernetes.io/router.entrypoints": "web,websecure"
 				"traefik.ingress.kubernetes.io/router.middlewares": "traefik-http-to-https@kubernetescrd"
 				"traefik.ingress.kubernetes.io/router.tls":         "true"
 			}
