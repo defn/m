@@ -2543,6 +2543,16 @@ spec:
       name: api@internal
 ---
 apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: http-to-https
+  namespace: traefik
+spec:
+  redirectScheme:
+    permanent: false
+    scheme: https
+---
+apiVersion: traefik.containo.us/v1alpha1
 kind: TLSStore
 metadata:
   name: traefik

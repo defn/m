@@ -968,6 +968,17 @@ kustomize: "traefik": #KustomizeHelm & {
 
 		spec: defaultCertificate: secretName: "defn-run-wildcard"
 	}
+
+	resource: "middleware-http-to-https": {
+		apiVersion: "traefik.containo.us/v1alpha1"
+		kind:       "Middleware"
+		metadata: name: "http-to-https"
+		spec: redirectScheme: {
+			scheme:    "https"
+			permanent: false
+		}
+	}
+
 	psm: "service-tailscale": {
 		apiVersion: "v1"
 		kind:       "Service"
