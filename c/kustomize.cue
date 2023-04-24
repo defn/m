@@ -945,6 +945,8 @@ kustomize: "traefik": #KustomizeHelm & {
 		version:   "22.1.0"
 		repo:      "https://traefik.github.io/charts"
 		values: {
+			logs: general: level:  "DEBUG"
+			logs: access: enabled: true
 		}
 	}
 

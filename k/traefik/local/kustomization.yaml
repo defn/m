@@ -4,6 +4,12 @@ helmCharts:
   namespace: traefik
   releaseName: traefik
   repo: https://traefik.github.io/charts
+  valuesInline:
+    logs:
+      access:
+        enabled: true
+      general:
+        level: DEBUG
   version: 22.1.0
 namespace: traefik
 patches:

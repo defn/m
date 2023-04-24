@@ -8,7 +8,12 @@ resources:
 helmCharts:
   - releaseName: traefik
     namespace: traefik
-    valuesInline: {}
+    valuesInline:
+      logs:
+        general:
+          level: DEBUG
+        access:
+          enabled: true
     name: traefik
     version: 22.1.0
     repo: https://traefik.github.io/charts

@@ -2441,6 +2441,10 @@ spec:
         - --providers.kubernetescrd
         - --providers.kubernetesingress
         - --entrypoints.websecure.http.tls=true
+        - --log.level=DEBUG
+        - --accesslog=true
+        - --accesslog.fields.defaultmode=keep
+        - --accesslog.fields.headers.defaultmode=drop
         image: docker.io/traefik:v2.9.10
         imagePullPolicy: IfNotPresent
         lifecycle: null
