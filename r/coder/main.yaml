@@ -186,10 +186,10 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: zerossl-production
     external-dns.alpha.kubernetes.io/hostname: coder.defn.run
+    kubernetes.io/ingress.class: traefik
   name: coder
   namespace: coder
 spec:
-  ingressClassName: traefik
   rules:
   - host: coder.defn.run
     http:
