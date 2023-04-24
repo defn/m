@@ -970,6 +970,7 @@ kustomize: "nginx": #KustomizeHelm & {
 	}
 }
 
+// https://doc.traefik.io/traefik/routing/providers/kubernetes-ingress/
 // https://artifacthub.io/packages/helm/traefik/traefik
 kustomize: "traefik": #KustomizeHelm & {
 	namespace: "traefik"
