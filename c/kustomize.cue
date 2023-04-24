@@ -1036,6 +1036,11 @@ kustomize: "traefik": #KustomizeHelm & {
 				publishedService: enabled: true
 				allowExternalNameServices: true
 			}
+
+			providers: kubernetesCRD: {
+				allowExternalNameServices: true
+				allowCrossNamespace:       true
+			}
 		}
 	}
 

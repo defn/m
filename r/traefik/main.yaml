@@ -2439,6 +2439,8 @@ spec:
         - --metrics.prometheus=true
         - --metrics.prometheus.entrypoint=metrics
         - --providers.kubernetescrd
+        - --providers.kubernetescrd.allowCrossNamespace=true
+        - --providers.kubernetescrd.allowExternalNameServices=true
         - --providers.kubernetesingress
         - --providers.kubernetesingress.allowExternalNameServices=true
         - --providers.kubernetesingress.ingressendpoint.publishedservice=traefik/traefik

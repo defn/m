@@ -11,6 +11,9 @@ helmCharts:
       general:
         level: DEBUG
     providers:
+      kubernetesCRD:
+        allowCrossNamespace: true
+        allowExternalNameServices: true
       kubernetesIngress:
         allowExternalNameServices: true
         publishedService:
