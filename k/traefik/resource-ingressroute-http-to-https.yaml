@@ -1,0 +1,15 @@
+#ManagedBy: cue
+
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-http-to-https
+  namespace: traefik
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`*.defn.run`)
+      kind: Rule
+      middlewares:
+        - name: http-to-https

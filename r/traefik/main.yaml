@@ -2534,7 +2534,6 @@ metadata:
   namespace: traefik
 spec:
   entryPoints:
-  - web
   - websecure
   routes:
   - kind: Rule
@@ -2544,6 +2543,20 @@ spec:
     services:
     - kind: TraefikService
       name: api@internal
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-http-to-https
+  namespace: traefik
+spec:
+  entryPoints:
+  - web
+  routes:
+  - kind: Rule
+    match: Host(`*.defn.run`)
+    middlewares:
+    - name: http-to-https
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware

@@ -242,7 +242,7 @@ kustomize: "coder": #KustomizeHelm & {
 				"TODO-cert-manager.io/cluster-issuer":              "zerossl-production"
 				"external-dns.alpha.kubernetes.io/hostname":        _host
 				"kubernetes.io/ingress.class":                      "traefik"
-				"traefik.ingress.kubernetes.io/router.entrypoints": "web,websecure"
+				"traefik.ingress.kubernetes.io/router.entrypoints": "websecure"
 				"traefik.ingress.kubernetes.io/router.middlewares": "traefik-http-to-https@kubernetescrd"
 				"traefik.ingress.kubernetes.io/router.tls":         "true"
 			}
@@ -972,6 +972,23 @@ kustomize: "traefik": #KustomizeHelm & {
 		spec: defaultCertificate: secretName: "defn-run-wildcard"
 	}
 
+	resource: "ingressroute-http-to-https": {
+		apiVersion: "traefik.containo.us/v1alpha1"
+		kind:       "IngressRoute"
+		metadata: {
+			name:      "traefik-http-to-https"
+			namespace: "traefik"
+		}
+		spec: entryPoints: ["web"]
+		spec: routes: [{
+			match: "Host(`*.defn.run`)"
+			kind:  "Rule"
+			middlewares: [{
+				name: "http-to-https"
+			}]
+		}]
+	}
+
 	psm: "ingressroute-traefik-dashboard": {
 		apiVersion: "traefik.containo.us/v1alpha1"
 		kind:       "IngressRoute"
@@ -979,7 +996,7 @@ kustomize: "traefik": #KustomizeHelm & {
 			name:      "traefik-dashboard"
 			namespace: "traefik"
 		}
-		spec: entryPoints: ["web", "websecure"]
+		spec: entryPoints: ["websecure"]
 		spec: routes: [{
 			match: "Host(`traefik.defn.run`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
 			kind:  "Rule"
