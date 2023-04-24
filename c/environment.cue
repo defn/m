@@ -40,7 +40,6 @@ env: (#Transform & {
 				"knative": [40, ""]
 				"kourier": [40, ""]
 				"defn": [40, ""]
-				"caddy": [50, ""]
 				"traefik": [50, ""]
 				"hello": [60, ""]
 				"global-vc0": [60, ""]

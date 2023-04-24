@@ -37,3 +37,26 @@ spec:
   traffic:
   - latestRevision: true
     percent: 100
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: hello.defn.run
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+  name: hello
+  namespace: default
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: hello.defn.run
+    http:
+      paths:
+      - backend:
+          service:
+            name: hello
+            port:
+              number: 80
+        path: /
+        pathType: Prefix

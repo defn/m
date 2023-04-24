@@ -3,4 +3,6 @@
 patches: []
 namespace: default
 resources:
-  - hello.yaml
+  - resource-kservice-hello.yaml
+  - resource-ingress-hello.yaml
+  - resource-kservice-bye.yaml
