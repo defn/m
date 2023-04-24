@@ -28,7 +28,7 @@ kustomize: "hello": #Kustomize & {
 			apiVersion: "serving.knative.dev/v1"
 			kind:       "Service"
 			metadata: {
-				labels: "TODO-networking.knative.dev/visibility": "cluster-local"
+				//labels: "networking.knative.dev/visibility": "cluster-local"
 				name:      f
 				namespace: "default"
 			}

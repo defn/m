@@ -3,8 +3,6 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  labels:
-    TODO-networking.knative.dev/visibility: cluster-local
   name: hello
   namespace: default
 spec:
