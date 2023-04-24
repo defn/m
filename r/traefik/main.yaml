@@ -2557,6 +2557,9 @@ spec:
     match: HostRegexp(`{subdomain:[a-zA-Z0-9-]+}.defn.run`)
     middlewares:
     - name: http-to-https
+    services:
+    - kind: TraefikService
+      name: ping@internal
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware

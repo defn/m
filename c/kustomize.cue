@@ -983,6 +983,10 @@ kustomize: "traefik": #KustomizeHelm & {
 		spec: routes: [{
 			match: "HostRegexp(`{subdomain:[a-zA-Z0-9-]+}.defn.run`)"
 			kind:  "Rule"
+			services: [{
+				name: "ping@internal"
+				kind: "TraefikService"
+			}]
 			middlewares: [{
 				name: "http-to-https"
 			}]
