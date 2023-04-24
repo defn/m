@@ -84,10 +84,9 @@ kustomize: "argo-cd": #Kustomize & {
 		metadata: {
 			name: "argo-cd"
 			annotations: {
-				"external-dns.alpha.kubernetes.io/hostname":              _host
-				"traefik.ingress.kubernetes.io/router.tls":               "true"
-				"traefik.ingress.kubernetes.io/router.entrypoints":       "websecure"
-				"traefik.ingress.kubernetes.io/service.serverstransport": "traefik-insecure@kubernetescrd"
+				"external-dns.alpha.kubernetes.io/hostname":        _host
+				"traefik.ingress.kubernetes.io/router.tls":         "true"
+				"traefik.ingress.kubernetes.io/router.entrypoints": "websecure"
 			}
 		}
 
@@ -104,6 +103,17 @@ kustomize: "argo-cd": #Kustomize & {
 					}
 				}]
 			}]
+		}
+	}
+
+	psm: "service-argocd-server": {
+		apiVersion: "v1"
+		kind:       "Service"
+		metadata: {
+			name: "argocd-server"
+			annotations: {
+				"traefik.ingress.kubernetes.io/service.serverstransport": "traefik-insecure@kubernetescrd"
+			}
 		}
 	}
 
