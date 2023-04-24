@@ -965,7 +965,7 @@ kustomize: "traefik": #KustomizeHelm & {
 		apiVersion: "traefik.containo.us/v1alpha1"
 		kind:       "TLSStore"
 		metadata: {
-			name:      "traefik"
+			name:      "default"
 			namespace: "traefik"
 		}
 
