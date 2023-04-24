@@ -28,7 +28,7 @@ kustomize: "hello": #Kustomize & {
 			apiVersion: "serving.knative.dev/v1"
 			kind:       "Service"
 			metadata: {
-				labels: "networking.knative.dev/visibility": "cluster-local"
+				labels: "TODO-networking.knative.dev/visibility": "cluster-local"
 				name:      f
 				namespace: "default"
 			}
@@ -756,7 +756,7 @@ kustomize: "karpenter": #Kustomize & {
 // https://github.com/knative/serving/releases
 kustomize: "knative": #Kustomize & {
 	resource: "knative-serving": {
-		url: "https://github.com/knative/serving/releases/download/knative-v1.9.2/serving-core.yaml"
+		url: "https://github.com/knative/serving/releases/download/knative-v1.9.3/serving-core.yaml"
 	}
 
 	psm: "namespace-knative-serving": core.#Namespace & {
@@ -841,7 +841,7 @@ kustomize: "knative": #Kustomize & {
 			name:      "config-domain"
 			namespace: "knative-serving"
 		}
-		data: {}
+		data: "defn.run": ""
 	}
 
 	psm: "config-map-config-features": core.#ConfigMap & {

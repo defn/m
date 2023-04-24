@@ -2,7 +2,7 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   labels:
-    networking.knative.dev/visibility: cluster-local
+    TODO-networking.knative.dev/visibility: cluster-local
   name: bye
   namespace: default
 spec:
@@ -22,7 +22,7 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   labels:
-    networking.knative.dev/visibility: cluster-local
+    TODO-networking.knative.dev/visibility: cluster-local
   name: hello
   namespace: default
 spec:
