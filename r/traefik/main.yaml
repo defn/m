@@ -2572,6 +2572,14 @@ spec:
     scheme: https
 ---
 apiVersion: traefik.containo.us/v1alpha1
+kind: ServersTransport
+metadata:
+  name: insecure
+  namespace: traefik
+spec:
+  insecureSkipVerify: true
+---
+apiVersion: traefik.containo.us/v1alpha1
 kind: TLSStore
 metadata:
   name: default

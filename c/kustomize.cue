@@ -995,6 +995,16 @@ kustomize: "traefik": #KustomizeHelm & {
 		spec: defaultCertificate: secretName: "defn-run-wildcard"
 	}
 
+	resource: "serverstransport-insecure": {
+		apiVersion: "traefik.containo.us/v1alpha1"
+		kind:       "ServersTransport"
+		metadata: {
+			name:      "insecure"
+			namespace: "traefik"
+		}
+		spec: insecureSkipVerify: true
+	}
+
 	resource: "ingressroute-http-to-https": {
 		apiVersion: "traefik.containo.us/v1alpha1"
 		kind:       "IngressRoute"
