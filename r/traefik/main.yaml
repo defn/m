@@ -2534,7 +2534,8 @@ metadata:
   namespace: traefik
 spec:
   entryPoints:
-  - traefik
+  - web
+  - websecure
   routes:
   - kind: Rule
     match: Host(`traefik.defn.run`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))

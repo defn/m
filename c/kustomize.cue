@@ -979,6 +979,7 @@ kustomize: "traefik": #KustomizeHelm & {
 			name:      "traefik-dashboard"
 			namespace: "traefik"
 		}
+		spec: entryPoints: ["web", "websecure"]
 		spec: routes: [{
 			match: "Host(`traefik.defn.run`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
 			kind:  "Rule"
