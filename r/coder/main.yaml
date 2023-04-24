@@ -190,6 +190,7 @@ metadata:
   name: coder
   namespace: coder
 spec:
+  ingressClassName: traefik
   rules:
   - host: coder.defn.run
     http:

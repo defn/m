@@ -246,6 +246,7 @@ kustomize: "coder": #KustomizeHelm & {
 		}
 
 		spec: {
+			ingressClassName: "traefik"
 			rules: [{
 				host: _host
 				http: paths: [{
