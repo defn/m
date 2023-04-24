@@ -1009,7 +1009,7 @@ kustomize: "traefik": #KustomizeHelm & {
 			match: "HostRegexp(`{subdomain:[a-zA-Z0-9-]+}.defn.run`)"
 			kind:  "Rule"
 			services: [{
-				name: "ping@internal"
+				name: "noop@internal"
 				kind: "TraefikService"
 			}]
 			middlewares: [{
