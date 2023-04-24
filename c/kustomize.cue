@@ -981,7 +981,7 @@ kustomize: "traefik": #KustomizeHelm & {
 		}
 		spec: entryPoints: ["web"]
 		spec: routes: [{
-			match: "Host(`*.defn.run`)"
+			match: "HostRegexp(`{subdomain:[a-zA-Z0-9-]+}.defn.run`)"
 			kind:  "Rule"
 			middlewares: [{
 				name: "http-to-https"

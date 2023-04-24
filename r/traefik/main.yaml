@@ -2554,7 +2554,7 @@ spec:
   - web
   routes:
   - kind: Rule
-    match: Host(`*.defn.run`)
+    match: HostRegexp(`{subdomain:[a-zA-Z0-9-]+}.defn.run`)
     middlewares:
     - name: http-to-https
 ---
