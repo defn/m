@@ -29,15 +29,15 @@ kustomize: "hello": #Kustomize & {
 		kind:       "IngressRoute"
 		metadata: {
 			name:      _domain
-			namespace: "kourier-system"
+			namespace: "default"
 		}
 		spec: entryPoints: ["websecure"]
 		spec: routes: [{
 			match: "HostRegexp(`{subdomain:[a-z0-9-]+}.\(_domain)`)"
 			kind:  "Rule"
 			services: [{
-				name:      "kourier-internal"
-				namespace: "kourier-system"
+				name:      "hello"
+				namespace: "default"
 				kind:      "Service"
 			}]
 		}]
