@@ -9,6 +9,7 @@ spec:
   secretName: defn-run-wildcard
   dnsNames:
     - '*.defn.run'
+    - '*.default.defn.run'
   issuerRef:
     name: zerossl-production
     kind: ClusterIssuer
