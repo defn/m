@@ -917,6 +917,19 @@ kustomize: "nginx": #KustomizeHelm & {
 			name: "nginx"
 		}
 	}
+
+	psm: "service-nginx": {
+		apiVersion: "v1"
+		kind:       "Service"
+
+		metadata: {
+			name: "nginx"
+		}
+
+		spec: {
+			type: "ClusterIP"
+		}
+	}
 }
 
 // https://artifacthub.io/packages/helm/traefik/traefik

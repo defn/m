@@ -1,6 +1,7 @@
 #ManagedBy: cue
 
-patches: []
+patches:
+  - path: patch-service-nginx.yaml
 namespace: nginx
 resources:
   - resource-namespace-nginx.yaml
