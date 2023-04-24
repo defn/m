@@ -923,7 +923,8 @@ kustomize: "nginx": #KustomizeHelm & {
 		kind:       "Service"
 
 		metadata: {
-			name: "nginx"
+			name:      "nginx"
+			namespace: "nginx"
 		}
 
 		spec: {
