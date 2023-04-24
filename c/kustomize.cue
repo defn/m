@@ -39,6 +39,8 @@ kustomize: "hello": #Kustomize & {
 				name:      "hello"
 				namespace: "default"
 				kind:      "Service"
+				port:      80
+				scheme:    "http"
 			}]
 		}]
 	}

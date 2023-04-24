@@ -49,3 +49,5 @@ spec:
     - kind: Service
       name: hello
       namespace: default
+      port: 80
+      scheme: http
