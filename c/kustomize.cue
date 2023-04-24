@@ -24,6 +24,25 @@ kustomize: "hello": #Kustomize & {
 	_funcs: ["hello", "bye"]
 	_domain: "default.defn.run"
 
+	resource: "ingressroute-defn-run-knative": {
+		apiVersion: "traefik.containo.us/v1alpha1"
+		kind:       "IngressRoute"
+		metadata: {
+			name:      "defn-run-knative"
+			namespace: "default"
+		}
+		spec: entryPoints: ["websecure"]
+		spec: routes: [{
+			match: "HostRegexp(`{subdomain:[a-z0-9-]+}.default.defn.run`)"
+			kind:  "Rule"
+			services: [{
+				name:      "kourier-internal"
+				namespace: "kourier-system"
+				kind:      "Service"
+			}]
+		}]
+	}
+
 	for f in _funcs {
 		resource: "kservice-\(f)": {
 			apiVersion: "serving.knative.dev/v1"
@@ -47,35 +66,6 @@ kustomize: "hello": #Kustomize & {
 				traffic: [{
 					latestRevision: true
 					percent:        100
-				}]
-			}
-		}
-
-		resource: "ingress-\(f)": {
-			apiVersion: "networking.k8s.io/v1"
-			kind:       "Ingress"
-			metadata: {
-				name:      f
-				namespace: "default"
-				annotations: {
-					"external-dns.alpha.kubernetes.io/hostname":        "\(f).\(_domain)"
-					"traefik.ingress.kubernetes.io/router.tls":         "true"
-					"traefik.ingress.kubernetes.io/router.entrypoints": "websecure"
-				}
-			}
-
-			spec: {
-				ingressClassName: "traefik"
-				rules: [{
-					host: "\(f).\(_domain)"
-					http: paths: [{
-						path:     "/"
-						pathType: "Prefix"
-						backend: service: {
-							name: f
-							port: number: 80
-						}
-					}]
 				}]
 			}
 		}
@@ -1085,7 +1075,7 @@ kustomize: "traefik": #KustomizeHelm & {
 		}
 		spec: entryPoints: ["web"]
 		spec: routes: [{
-			match: "HostRegexp(`{subdomain:[a-zA-Z0-9-]+}.defn.run`)"
+			match: "HostRegexp(`{subdomain:[a-z0-9-]+}.defn.run`)"
 			kind:  "Rule"
 			services: [{
 				name: "noop@internal"

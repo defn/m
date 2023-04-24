@@ -1,6 +1,5 @@
 namespace: default
 resources:
+- resource-ingressroute-defn-run-knative.yaml
 - resource-kservice-hello.yaml
 - resource-kservice-bye.yaml
-- resource-ingress-hello.yaml
-- resource-ingress-bye.yaml

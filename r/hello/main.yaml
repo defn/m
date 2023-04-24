@@ -34,48 +34,18 @@ spec:
   - latestRevision: true
     percent: 100
 ---
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
 metadata:
-  annotations:
-    external-dns.alpha.kubernetes.io/hostname: bye.default.defn.run
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    traefik.ingress.kubernetes.io/router.tls: "true"
-  name: bye
+  name: defn-run-knative
   namespace: default
 spec:
-  ingressClassName: traefik
-  rules:
-  - host: bye.default.defn.run
-    http:
-      paths:
-      - backend:
-          service:
-            name: bye
-            port:
-              number: 80
-        path: /
-        pathType: Prefix
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  annotations:
-    external-dns.alpha.kubernetes.io/hostname: hello.default.defn.run
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    traefik.ingress.kubernetes.io/router.tls: "true"
-  name: hello
-  namespace: default
-spec:
-  ingressClassName: traefik
-  rules:
-  - host: hello.default.defn.run
-    http:
-      paths:
-      - backend:
-          service:
-            name: hello
-            port:
-              number: 80
-        path: /
-        pathType: Prefix
+  entryPoints:
+  - websecure
+  routes:
+  - kind: Rule
+    match: HostRegexp(`{subdomain:[a-z0-9-]+}.default.defn.run`)
+    services:
+    - kind: Service
+      name: kourier-internal
+      namespace: kourier-system
