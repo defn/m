@@ -12,6 +12,7 @@ helmCharts:
         level: DEBUG
     providers:
       kubernetesIngress:
+        allowExternalNameServices: true
         publishedService:
           enabled: true
   version: 22.1.0

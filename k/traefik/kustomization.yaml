@@ -23,6 +23,7 @@ helmCharts:
         kubernetesIngress:
           publishedService:
             enabled: true
+          allowExternalNameServices: true
     name: traefik
     version: 22.1.0
     repo: https://traefik.github.io/charts

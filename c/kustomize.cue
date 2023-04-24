@@ -1039,7 +1039,10 @@ kustomize: "traefik": #KustomizeHelm & {
 		values: {
 			logs: general: level:  "DEBUG"
 			logs: access: enabled: true
-			providers: kubernetesIngress: publishedService: enabled: true
+			providers: kubernetesIngress: {
+				publishedService: enabled: true
+				allowExternalNameServices: true
+			}
 		}
 	}
 
