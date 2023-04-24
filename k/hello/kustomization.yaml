@@ -3,6 +3,6 @@
 patches: []
 namespace: default
 resources:
-  - resource-ingressroute-defn-run-knative.yaml
+  - resource-ingressroute-default.defn.run.yaml
   - resource-kservice-hello.yaml
   - resource-kservice-bye.yaml

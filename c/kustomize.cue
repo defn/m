@@ -24,16 +24,16 @@ kustomize: "hello": #Kustomize & {
 	_funcs: ["hello", "bye"]
 	_domain: "default.defn.run"
 
-	resource: "ingressroute-defn-run-knative": {
+	resource: "ingressroute-\(_domain)": {
 		apiVersion: "traefik.containo.us/v1alpha1"
 		kind:       "IngressRoute"
 		metadata: {
-			name:      "defn-run-knative"
-			namespace: "default"
+			name:      _domain
+			namespace: "kourier-system"
 		}
 		spec: entryPoints: ["websecure"]
 		spec: routes: [{
-			match: "HostRegexp(`{subdomain:[a-z0-9-]+}.default.defn.run`)"
+			match: "HostRegexp(`{subdomain:[a-z0-9-]+}.\(_domain)`)"
 			kind:  "Rule"
 			services: [{
 				name:      "kourier-internal"

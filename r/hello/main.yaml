@@ -37,7 +37,7 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: defn-run-knative
+  name: default.defn.run
   namespace: default
 spec:
   entryPoints:
