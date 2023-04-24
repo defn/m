@@ -99,7 +99,7 @@ kustomize: "argo-cd": #Kustomize & {
 					pathType: "Prefix"
 					backend: service: {
 						name: "argocd-server"
-						port: number: 80
+						port: number: 443
 					}
 				}]
 			}]
