@@ -3,7 +3,7 @@
     goreleaser.url = github:defn/m/pkg-goreleaser-1.17.2-1?dir=pkg/goreleaser;
     buf.url = github:defn/m/pkg-buf-1.17.0-6?dir=pkg/buf;
     operatorsdk.url = github:defn/m/pkg-operatorsdk-1.28.0-7?dir=pkg/operatorsdk;
-    cosign.url = github:defn/m/pkg-cosign-2.0.1-6?dir=pkg/cosign;
+    cosign.url = github:defn/m/pkg-cosign-2.0.2-1?dir=pkg/cosign;
     latest.url = github:NixOS/nixpkgs?rev=e3b18e82da9ab82b572d70c162d4e13a058aeb7d;
   };
 
