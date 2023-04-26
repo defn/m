@@ -1,11 +1,11 @@
 {
   inputs = {
     gomod2nix.url = github:defn/gomod2nix/1.5.0-9;
-    godev.url = github:defn/m/pkg-godev-0.0.76?dir=pkg/godev;
+    godev.url = github:defn/m/pkg-godev-0.0.78?dir=pkg/godev;
     nodedev.url = github:defn/m/pkg-nodedev-0.0.47?dir=pkg/nodedev;
-    terraform.url = github:defn/m/pkg-terraform-1.4.5-5?dir=pkg/terraform;
-    kustomize.url = github:defn/m/pkg-kustomize-5.0.1-6?dir=pkg/kustomize;
-    helm.url = github:defn/m/pkg-helm-3.11.3-4?dir=pkg/helm;
+    cloud.url = github:defn/m/pkg-cloud-0.0.74?dir=pkg/cloud;
+    kubernetes.url = github:defn/m/pkg-kubernetes-0.0.83?dir=pkg/kubernetes;
+    localdev.url = github:defn/m/pkg-localdev-0.0.111?dir=pkg/localdev;
     latest.url = github:NixOS/nixpkgs?rev=64c27498901f104a11df646278c4e5c9f4d642db;
   };
 
@@ -19,8 +19,7 @@
             src = caller.src;
 
             buildInputs = [
-              inputs.kustomize.defaultPackage.${ctx.system}
-              inputs.helm.defaultPackage.${ctx.system}
+              inputs.kubernetes.defaultPackage.${ctx.system}
             ];
 
             installPhase = ''
@@ -120,7 +119,9 @@
                 (goShell ctx)
                 inputs.godev.defaultPackage.${ctx.system}
                 inputs.nodedev.defaultPackage.${ctx.system}
-                inputs.terraform.defaultPackage.${ctx.system}
+                inputs.cloud.defaultPackage.${ctx.system}
+                inputs.kubernetes.defaultPackage.${ctx.system}
+                inputs.localdev.defaultPackage.${ctx.system}
               ];
             };
 
@@ -148,7 +149,7 @@
 
               buildInputs = [
                 inputs.nodedev.defaultPackage.${ctx.system}
-                inputs.terraform.defaultPackage.${ctx.system}
+                inputs.cloud.defaultPackage.${ctx.system}
               ];
 
               installPhase = ''
@@ -167,7 +168,7 @@
           devShell = ctx: ctx.wrap.devShell {
             devInputs = ctx.commands ++ [
               inputs.nodedev.defaultPackage.${ctx.system}
-              inputs.terraform.defaultPackage.${ctx.system}
+              inputs.cloud.defaultPackage.${ctx.system}
               caller.infra.defaultPackage.${ctx.system}
               (cdktfShell ctx)
             ];
