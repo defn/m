@@ -19,8 +19,7 @@
             src = caller.src;
 
             buildInputs = [
-              inputs.kustomize.defaultPackage.${ctx.system}
-              inputs.helm.defaultPackage.${ctx.system}
+              inputs.kubernetes.defaultPackage.${ctx.system}
             ];
 
             installPhase = ''
@@ -150,7 +149,7 @@
 
               buildInputs = [
                 inputs.nodedev.defaultPackage.${ctx.system}
-                inputs.terraform.defaultPackage.${ctx.system}
+                inputs.cloud.defaultPackage.${ctx.system}
               ];
 
               installPhase = ''
@@ -169,7 +168,7 @@
           devShell = ctx: ctx.wrap.devShell {
             devInputs = ctx.commands ++ [
               inputs.nodedev.defaultPackage.${ctx.system}
-              inputs.terraform.defaultPackage.${ctx.system}
+              inputs.cloud.defaultPackage.${ctx.system}
               caller.infra.defaultPackage.${ctx.system}
               (cdktfShell ctx)
             ];
