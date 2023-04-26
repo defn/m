@@ -178,6 +178,7 @@
           esac
           perl -pe 's{(https://'$DEFN_DEV_HOST_API'):\d+}{$1:6443}' -i ~/.kube/config
 
+          export VAULT_TOKEN="$(pass Initial_Root_Token)"
           $nme vault-init
           $nme vault-config
 
@@ -243,6 +244,7 @@
               ;;
           esac
 
+          echo $DEFN_DEV_HOST_API
           k3d cluster create $name \
             --config k3d/k3d.yaml \
             --registry-config k3d/k3d-registries.yaml \
