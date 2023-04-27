@@ -532,3 +532,24 @@ spec:
       - configMap:
           name: kourier-bootstrap
         name: config-volume
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: '*.default.defn.run'
+  name: default-wildcard
+  namespace: kourier-system
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: wildcard.default.defn.run
+    http:
+      paths:
+      - backend:
+          service:
+            name: kourier-internal
+            port:
+              number: 80
+        path: /
+        pathType: Prefix

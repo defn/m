@@ -551,6 +551,33 @@ kustomize: "kourier": #Kustomize & {
 		}
 		spec: type: "ClusterIP"
 	}
+
+	resource: "ingress-default-wildcard": {
+		apiVersion: "networking.k8s.io/v1"
+		kind:       "Ingress"
+		metadata: {
+			name:      "default-wildcard"
+			namespace: "kourier-system"
+			annotations: {
+				"external-dns.alpha.kubernetes.io/hostname": "*.default.defn.run"
+			}
+		}
+
+		spec: {
+			ingressClassName: "traefik"
+			rules: [{
+				host: "wildcard.default.defn.run"
+				http: paths: [{
+					path:     "/"
+					pathType: "Prefix"
+					backend: service: {
+						name: "kourier-internal"
+						port: number: 80
+					}
+				}]
+			}]
+		}
+	}
 }
 
 kustomize: "dev": #Kustomize & {
