@@ -47,7 +47,7 @@ spec:
     match: HostRegexp(`{subdomain:[a-z0-9-]+}.default.defn.run`)
     services:
     - kind: Service
-      name: kourier-internal
-      namespace: kourier-system
+      name: hello
+      namespace: default
       port: 80
       scheme: http

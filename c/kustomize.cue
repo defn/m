@@ -36,8 +36,8 @@ kustomize: "hello": #Kustomize & {
 			match: "HostRegexp(`{subdomain:[a-z0-9-]+}.\(_domain)`)"
 			kind:  "Rule"
 			services: [{
-				name:      "kourier-internal"
-				namespace: "kourier-system"
+				name:      "hello"
+				namespace: "default"
 				kind:      "Service"
 				port:      80
 				scheme:    "http"
