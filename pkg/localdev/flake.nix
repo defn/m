@@ -3,7 +3,7 @@
     tilt.url = github:defn/m/pkg-tilt-0.32.2-1?dir=pkg/tilt;
     nomad.url = github:defn/m/pkg-nomad-1.5.3-7?dir=pkg/nomad;
     boundary.url = github:defn/m/pkg-boundary-0.12.2-6?dir=pkg/boundary;
-    vault.url = github:defn/m/pkg-vault-1.13.1-7?dir=pkg/vault;
+    vault.url = github:defn/m/pkg-vault-1.13.2-1?dir=pkg/vault;
     gh.url = github:defn/m/pkg-gh-2.27.0-6?dir=pkg/gh;
     earthly.url = github:defn/m/pkg-earthly-0.7.4-4?dir=pkg/earthly;
     buildkite.url = github:defn/m/pkg-buildkite-3.45.0-6?dir=pkg/buildkite;

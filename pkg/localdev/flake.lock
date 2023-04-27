@@ -1250,17 +1250,17 @@
       },
       "locked": {
         "dir": "pkg/vault",
-        "lastModified": 1681616404,
-        "narHash": "sha256-uNC9qhE15wSpdz+wg5UwO3QKjr8sR3MgCzk8He72arI=",
+        "lastModified": 1682569329,
+        "narHash": "sha256-EuTVwMW4iHwKF7lRuuo9N7Qirq4sSZFrd3IVqrliORU=",
         "owner": "defn",
         "repo": "m",
-        "rev": "25487fe3c7749f03f06e11d5fb547604dddd8ee7",
+        "rev": "71fa9059577ddc5d31f43f27e6a1299456b00bc1",
         "type": "github"
       },
       "original": {
         "dir": "pkg/vault",
         "owner": "defn",
-        "ref": "pkg-vault-1.13.1-7",
+        "ref": "pkg-vault-1.13.2-1",
         "repo": "m",
         "type": "github"
       }
